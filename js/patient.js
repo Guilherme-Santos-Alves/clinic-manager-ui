@@ -30,12 +30,28 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// VERFIFICAR INPUTS DE PRESENCIAL OU VIRTUAL
+function checkModality() {
+    let modality = document.getElementsByName("modality");
+
+    if (modality[0].checked === true){
+        return "virtual";
+    } else if(modality[1].checked === true){
+        return "presential";
+    } else if (modality[2].checked === true){
+        return "virtual";
+    } else if(modality[3].checked === true){
+        return "presential";
+    }
+}
+
 // Função para enviar os dados do formulário para a API
 function examsData() {
     let payload = {
-        specialtyExam: document.querySelector("#specialty-exam").value,
-        fromHour: document.querySelector("#exams-from-hour").value,
-        untilHour: document.querySelector("#exams-until-hour").value
+        specialtyExam: (document.querySelector("#specialty-exam").value),
+        modality: (checkModality()),
+        fromHour: (document.querySelector("#exams-from-hour").value),
+        untilHour: (document.querySelector("#exams-until-hour").value)
     };
 
     // Atualizar os valores padrão apenas se os valores forem diferentes dos padrões
