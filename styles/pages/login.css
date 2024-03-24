@@ -1,0 +1,37 @@
+.cl-login> .cl-wrapper> .main-content{
+    width: var(--cl-main-wrapper);
+    height: 100%;
+    padding: 100px 84.5px 0px 84.5px;
+
+}
+
+.cl-login> .cl-wrapper> .main-content> .left> .radio-buttons{
+    padding-top: 16px;
+}
+
+.cl-login> .cl-wrapper> .main-content> .left> .main-title{
+    padding-top: 50px;
+    margin-bottom: 20px;
+}
+
+.cl-login> .cl-wrapper>  .main-content> .left> .main-title> .up{
+    font-family: var(--cl-font-family-base);
+    font-size:calc(var(--cl-font-size-base) + 30px );
+    font-weight: 800;
+}
+
+.cl-login> .cl-wrapper> .main-content> .left> .no-account{
+    width: 300px;
+    display: flex;
+    margin-top: 15px;
+    text-decoration: none;
+    color: var(--cl-color-primary);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+.cl-login> .cl-wrapper> .main-content> .right> .image{
+    top: 0;
+    height: 100vh;
+}

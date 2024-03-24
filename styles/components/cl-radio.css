@@ -1,0 +1,62 @@
+.cl-radio{
+    font-family: var(--cl-font-family-base);
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 350px;
+    height: 30px;
+    font-size: 20px;
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+
+.cl-radio> .radio{
+    font-size: 16px;
+}
+
+.cl-radio> .radio> input{
+    cursor: pointer;
+}
+
+.cl-radio.-patient{
+    font-family: var(--cl-font-family-base);
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 350px;
+    height: 30px;
+    font-size: 20px;
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+
+.cl-radio.-patient{
+    margin-bottom: 80px;
+}
+
+.cl-radio.-patient> .consultations,
+.cl-radio.-patient> .exams{
+    display: flex;
+    align-items: center; 
+    margin-top: 10px;
+}
+
+.cl-radio.-patient> .consultations> input,
+.cl-radio.-patient> .exams> input{
+    cursor: pointer;
+}
+
+.cl-radio.-patient> .consultations> label,
+.cl-radio.-patient> .exams> label{
+    margin: 0px 10px 0px 10px;
+}
+
+.cl-radio.-patient> .consultations> span,
+.cl-radio.-patient> .exams> span{
+    font-size: 28px;
+}
+

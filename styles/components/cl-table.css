@@ -1,0 +1,10 @@
+.cl-table> .head> .row{
+    display: grid;
+    grid-template-columns: 2fr 1fr 200px;
+    
+}
+
+.cl-table> .body> .row{
+    display: grid;
+    grid-template-columns: 2fr 1fr 200px;
+}

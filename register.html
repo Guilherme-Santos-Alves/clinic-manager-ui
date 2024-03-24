@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Excelência e Saúde</title>
+</head>
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,800;1,800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!--COMPONENTS-->
+    <link rel="stylesheet" href="styles/components/cl-header.css">
+    <link rel="stylesheet" href="styles/components/cl-input.css">
+    <link rel="stylesheet" href="styles/components/cl-button.css">
+
+    <!--SETTINGS-->
+    <link rel="stylesheet" href="styles/settings/wrapper.css">
+    <link rel="stylesheet" href="styles/settings/color.css">
+    <link rel="stylesheet" href="styles/settings/text.css">
+
+    <!--BASE-->
+    <link rel="stylesheet" href="styles/base/html.css">
+
+    <!--GENERIC-->
+    <link rel="stylesheet" href="styles/generic/reset.css">
+    <link rel="stylesheet" href="styles/generic/box-sizing.css">
+    <link rel="stylesheet" href="styles/generic/hide-input.css">
+
+    <!--OBJECTS-->
+    
+
+    <!--PAGES-->
+    <link rel="stylesheet" href="styles/pages/register.css">
+
+    <script src="js/register.js"></script>
+
+<body>
+    <div class="cl-register">
+
+        <div class="cl-wrapper">
+            <header class="cl-header">
+                <div class="wrapper">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/logos/clinica-logo.png" alt="logo-clinica">
+                    </div>
+                </div>
+            </header> 
+
+            <div class="main-content">
+                <div class="content" >
+
+                    <span class="steps">PASSO 1 DE 2</span>
+
+                    <h1 class="main-title">
+                        <span class="up">Olá! Vamos criar o seu cadastro</span>
+                    </h1>
+                    
+                    <form action="javascript:void(0)" onsubmit="setPersonalData()">
+                        <div class="cl-inputs -register">
+                            <div class="first-line">
+                                <label for="rg-name">Nome:</label> <input required class="input" id="rg-name" type="text" required>
+                                <label for="rg-surname">Sobrenome:</label> <input required class="input" id="rg-surname" type="text">
+                            </div>
+
+                            <div class="second-line">
+                                <label for="rg-date">Data de Nascimento:</label> <input required class="input" id="rg-birthdate" type="date">
+                                <label for="rg-phone">Telefone:</label> <input required class="input" id="rg-phone" type="text">
+                                <label for="rg-cpf">CPF:</label> <input required class="input" id="rg-cpf" type="text">
+                            </div>
+
+                            <div class="third-line">
+                                <label for="rg-height">Altura:</label> <input required class="input"id="rg-height" type="number">
+                                <label for="rg-wheight">Peso:</label> <input required class="input" id="rg-wheight" type="number" min="0" >
+                                <label for="rg-blood-type">Tipo Sanguíneo:</label>  <select required name="blood-select" id="rg-blood-type">
+                                    <option value="" disabled selected>Selecione o tipo sanguíneo</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                    <label for="rg-blood-type">Tipo Sanguíneo:</label>
+                                </select> 
+                            </div>
+
+                            <div class="fourth-line">
+                                <label for="rg-email">Email:</label> <input required class="input" id="rg-email" type="email">
+                                <label for="rg-password">Senha:</label> <input required class="input" id="rg-password" type="password">      
+                            </div>
+                        </div>
+                        <div class="cl-button -register">
+                            <button type="submit" class="link">Continuar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+</body>
+</html>

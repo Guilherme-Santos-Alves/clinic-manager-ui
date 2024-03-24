@@ -1,0 +1,8 @@
+html{
+    background-color: var(--cl-color-gray-lighter);
+
+    font-family: var(--cl-font-family-base);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}

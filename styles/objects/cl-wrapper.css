@@ -1,0 +1,29 @@
+.cl-wrapper{
+    max-width: var(--cl-main-wrapper);
+    margin: 0 auto;
+}
+
+.cl-wrapper> .main-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+
+.cl-wrapper> .main-content> .right{
+    overflow: hidden;
+    position: relative;
+    height: calc(100vh - 100px);
+}
+
+.cl-wrapper> .main-content> .right> .image{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    min-width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/* -- register.html -- */
+

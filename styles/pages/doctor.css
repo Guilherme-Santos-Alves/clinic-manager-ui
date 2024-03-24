@@ -1,0 +1,6 @@
+.cl-patient> .cl-wrapper> .main-content{
+    width: var(--cl-main-wrapper);
+    height: 100%;
+    padding: 100px 84.5px 0px 84.5px;
+
+}

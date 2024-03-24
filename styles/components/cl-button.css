@@ -1,0 +1,65 @@
+.cl-button> .btn-link:hover{
+    background-color: var(--cl-color-primary-light);
+}
+
+.cl-button{
+    padding-top: 50px;
+}
+
+.cl-button> .btn-link{
+    background-color: var(--cl-color-primary);
+    font-family: var(--cl-font-family-base);
+    color:  var(--cl-color-gray-lighter);
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    height: 60px;
+    width: 350px;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    left: 0;
+    cursor: pointer;
+}
+
+/* -- register.html -- */
+
+.cl-button.-register> .link{
+    background-color: var(--cl-color-primary);
+    font-family: var(--cl-font-family-base);
+    color:  var(--cl-color-gray-lighter);
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    height: 60px;
+    width: 350px;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    left: 0;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.cl-button.-register> .link:hover{
+    background-color: var(--cl-color-primary-light);
+}
+
+.cl-button.-patient> .btn-link{
+    background-color: var(--cl-color-primary);
+    font-family: var(--cl-font-family-base);
+    color:  var(--cl-color-gray-lighter);
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    height: 60px;
+    width: 350px;
+    justify-content: center;
+    transition: 1s;
+    left: 0;
+    cursor: pointer;
+    margin-top: 30px;
+}

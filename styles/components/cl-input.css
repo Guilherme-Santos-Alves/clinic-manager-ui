@@ -1,0 +1,93 @@
+/* -- login.html -- */
+
+.cl-inputs{
+    font-family: var(--cl-font-family-base);
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* .cl-inputs> .cpf{
+    margin-top: 10px;
+} */
+
+.cl-inputs>.input{
+    font-family: var(--cl-font-family-base);
+    font-weight: 400;
+    background-color: var(--cl-color-gray-lighter);
+    border-bottom: solid 2px rgb(163, 162, 162);
+    font-size: 18px;
+    display: block;
+    width: 350px;
+    outline: 0;
+    margin-bottom: 10px;
+}
+
+/* .cl-inputs> .password{
+    margin-top: 20px;
+} */
+/* -- redirect.html -- */
+
+.cl-inputs.-register{
+    margin: 0 auto;
+    margin-top: 32px;
+    justify-content: space-around;
+    background-color: var(--cl-color-gray-lighter);
+}
+
+.cl-inputs.-register> .first-line> .input,
+.cl-inputs.-register> .second-line> .input,
+.cl-inputs.-register> .third-line> .input,
+.cl-inputs.-register> .fourth-line> .input{
+    justify-content: space-around;
+    background-color: var(--cl-color-gray-lighter);
+    width: 200px;
+    height: 20px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    cursor: pointer;
+}
+
+.cl-inputs.-register> .first-line,
+.cl-inputs.-register> .second-line,
+.cl-inputs.-register> .third-line,
+.cl-inputs.-register> .fourth-line{
+    width: 900px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cl-inputs.-register> .first-line> .label,
+.cl-inputs.-register> .second-line> .label,
+.cl-inputs.-register> .third-line> .label,
+.cl-inputs.-register> .fourth-line> .label{
+    display: block;
+}
+
+.cl-inputs.-register> .first-line> .input{
+    width: 350px;
+}
+
+.cl-inputs.-register> .second-line> .input{
+    width: 200px;
+}
+
+.cl-inputs.-register> .third-line> .input{
+    width: 200px;    
+}
+
+.cl-inputs.-register> .third-line> select{
+    justify-content: space-around;
+    background-color: var(--cl-color-gray-lighter);
+    width: 200px;
+    height: 20px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+}
+
+.cl-inputs.-register> .fourth-line> .input{
+    width: 380px;
+}
+
+/* -----patient.html----- */

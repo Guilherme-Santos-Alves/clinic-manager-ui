@@ -1,0 +1,52 @@
+.cl-patient> .cl-wrapper> .main-content{
+    width: var(--cl-main-wrapper);
+    height: 100%;
+    padding: 100px 84.5px 0px 84.5px;
+
+}
+
+.cl-patient> .cl-wrapper> .main-content> .content{
+    display: grid;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+
+.cl-patient> .cl-wrapper> .main-content> .left> .cl-radio-title{
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 80px;
+}
+
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .specialty> select,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .specialty> select{
+    background-color: var(--cl-color-gray-lighter);
+    width: 200px;
+    height: 20px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    margin: 10px;
+}
+
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .from-the-hour> .input,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .from-the-hour> .input{
+    background-color: var(--cl-color-gray-lighter);
+    width: 100px;
+    height: 20px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    margin: 10px
+}
+
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams{
+    display: none;
+}
+
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .specialty> label,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .from-the-hour> label,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .specialty> label,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .from-the-hour> label{
+    font-size: 18px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+}

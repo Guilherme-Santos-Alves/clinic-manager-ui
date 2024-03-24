@@ -1,0 +1,52 @@
+.cl-register-final> .cl-wrapper> .main-content{
+    width: var(--cl-main-wrapper);
+    height: 100%;
+    padding: 100px 84.5px 0px 84.5px;
+    margin: 0 auto;
+}
+
+.cl-register-final> .cl-wrapper> .main-content> .content> .main-title{
+    margin: 0 auto;
+    display: flex;
+    margin-top: 12px;
+    margin-bottom: 50px;
+}
+
+.cl-register-final> .cl-wrapper> .main-content> .content> .main-title> .up{
+    font-family: var(--cl-font-family-base);
+    font-size:calc(var(--cl-font-size-base) + 30px );
+    font-weight: 800;
+    width: auto;
+    margin: 0 auto;
+}
+
+.cl-register-final> .cl-wrapper> .main-content> .content> .steps{
+    font-weight: 600;
+    display: block;
+    font-size: calc( var(--cl-font-family-base) + 4px );
+    font-weight: 600;
+    color: var(--cl-color-primary);
+    margin-top: 20px;
+}
+
+.cl-register-final> .cl-wrapper> .main-content> .content> .cl-inputs.-register{
+    margin-bottom: 130px;
+}
+
+.btn-link> .link{
+    background-color: var(--cl-color-primary);
+    font-family: var(--cl-font-family-base);
+    color:  var(--cl-color-gray-lighter);
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    height: 60px;
+    width: 350px;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    left: 0;
+    margin: 0 auto;
+    margin-top: 190px;
+}

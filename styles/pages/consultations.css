@@ -1,0 +1,23 @@
+.cl-consultations> .cl-wrapper> .main-content{
+    width: var(--cl-main-wrapper);
+    height: 100%;
+    padding: 100px 84.5px 0px 84.5px;
+    margin: 0 auto;
+}
+
+.cl-consultations> .cl-wrapper> .main-content> .content> .main-title{
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 12px;
+    margin-bottom: 50px;
+}
+
+.cl-consultations> .cl-wrapper> .main-content> .content> .main-title> .up{
+    font-family: var(--cl-font-family-base);
+    font-size:calc(var(--cl-font-size-base) + 30px );
+    font-weight: 800;
+    width: auto;
+    margin: 0 auto;
+}
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Excelência e Saúde</title>
+</head>
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,800;1,800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!--COMPONENTS-->
+    <link rel="stylesheet" href="styles/components/cl-header.css">
+    <link rel="stylesheet" href="styles/components/cl-input.css">
+    <link rel="stylesheet" href="styles/components/cl-radio.css">
+    <link rel="stylesheet" href="styles/components/cl-button.css">
+
+    <!--SETTINGS-->
+    <link rel="stylesheet" href="styles/settings/wrapper.css">
+    <link rel="stylesheet" href="styles/settings/color.css">
+    <link rel="stylesheet" href="styles/settings/text.css">
+
+    <!--BASE-->
+    <link rel="stylesheet" href="styles/base/html.css">
+
+    <!--GENERIC-->
+    <link rel="stylesheet" href="styles/generic/reset.css">
+    <link rel="stylesheet" href="styles/generic/box-sizing.css">
+
+    <!--OBJECTS-->
+    <link rel="stylesheet" href="styles/objects/cl-wrapper.css">
+
+    <!--PAGES-->
+    <link rel="stylesheet" href="styles/pages/patient.css">
+
+    <!-- JAVASCRIPT -->
+    <script src="js/patient.js"></script>
+
+<body>
+    <div class="cl-patient">
+
+        <div class="cl-wrapper">
+            <header class="cl-header">
+                <div class="wrapper">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/logos/clinica-logo.png" alt="logo-clinica">
+                    </div>
+                </div>
+            </header>          
+
+            <div class="main-content">                
+                <form class="left" onsubmit="examsData()" action="javascript:void(0)">
+                    <h2 class="cl-radio-title">Selecione uma opção:</h2>
+                    <div class="cl-radio -patient">
+                        <div class="exams">            
+                            <span class="material-symbols-outlined">
+                                stethoscope
+                            </span>
+                            <label for="option-exams">Exame</label>
+                            <input type="radio" required name="option" id="option-exams">
+                        </div>
+    
+                        <div class="consultations">
+                            <span class="material-symbols-outlined">
+                                clinical_notes
+                            </span>
+                            <label for="option-consultations">Consulta</label>
+                            <input type="radio" required name="option" id="option-consultations">
+                        </div>
+                    </div>
+
+                    <div class="content-consultations">
+                        <div class="specialty" id="specialty">
+                            <label class="select-speciality" for="select-speciality">Selecione a Especialidade da consulta:</label><select name="" id="">
+                                <option value="" disabled selected >Especialidade</option> 
+                                <option value="Cardiologia">Cardiologia</option>
+                                <option value="Ortopedia">Ortopedia</option>
+                            </select>
+                        </div>
+                        <div class="from-the-hour" >
+                            <label for="from-date">Entre:</label> <input class="input" type="time" id="consultations-from-hour" value="00:00">
+                            <label for="from-date">e</label> <input class="input" type="time" id="consultations-until-hour" value="23:59">
+                        </div>
+                        <div class="cl-button -patient">
+                            <button type="submit" class="btn-link" id="btn-link">Continuar</button>
+                        </div>
+                    </div>
+                    <div class="content-exams">
+                        <div class="specialty" id="specialty">
+                            <label class="select-speciality" for="select-speciality">Selecione a Especialidade do exame:</label><select required name="" id="specialty-exam">
+                                <option value="" disabled selected >Especialidade</option> 
+                                <option value="Eletrocardiograma">Eletrocardiograma</option>
+                                <option value="Raio X">Raio X</option>
+                            </select>
+                        </div>   
+                        <div class="from-the-hour" >
+                            <label for="from-date">Entre:</label> <input required class="input" type="time" id="exams-from-hour" value="00:00">
+                            <label for="from-date">e</label> <input required class="input" type="time" id="exams-until-hour" value="23:59">
+                        </div>
+                        <div class="cl-button -patient">
+                            <button type="submit" class="btn-link" id="btn-link">Continuar</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="right">
+                    <img class="image" src="assets/image/banner-clinica.png" alt="bg-cubes">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+</body>
+</html>

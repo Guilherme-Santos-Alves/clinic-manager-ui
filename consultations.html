@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Excelência e Saúde</title>
+</head>
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,800;1,800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!--COMPONENTS-->
+    <link rel="stylesheet" href="styles/components/cl-header.css">
+    <link rel="stylesheet" href="styles/components/cl-input.css">
+    <link rel="stylesheet" href="styles/components/cl-button.css">
+    <link rel="stylesheet" href="styles/components/cl-table.css">
+
+    <!--SETTINGS-->
+    <link rel="stylesheet" href="styles/settings/wrapper.css">
+    <link rel="stylesheet" href="styles/settings/color.css">
+    <link rel="stylesheet" href="styles/settings/text.css">
+
+    <!--BASE-->
+    <link rel="stylesheet" href="styles/base/html.css">
+
+    <!--GENERIC-->
+    <link rel="stylesheet" href="styles/generic/reset.css">
+    <link rel="stylesheet" href="styles/generic/box-sizing.css">
+    <link rel="stylesheet" href="styles/generic/hide-input.css">
+
+    <!--OBJECTS-->
+    
+
+    <!--PAGES-->
+    <link rel="stylesheet" href="styles/pages/consultations.css">
+
+    <script src="js/register.js"></script>
+
+<body>
+    <div class="cl-consultations">
+
+        <div class="cl-wrapper">
+            <header class="cl-header">
+                <div class="wrapper">
+                    <div class="image-wrapper">
+                        <img class="image" src="assets/logos/clinica-logo.png" alt="logo-clinica">
+                    </div>
+                </div>
+            </header> 
+
+            <div class="main-content">
+                <div class="content" >
+                    <h1 class="main-title">
+                        <span class="up">Agendamento consultas</span>
+                    </h1>
+                    
+                    <form action="javascript:void(0)" onsubmit="setPersonalData()">
+                        <div class="cl-table">
+                            <div class="head">
+                                <div class="row">
+                                    <h2>Segunda-Feira</h2>
+                                    <div>Horário</div>
+                                    <div>Médico</div>
+                                </div>
+                            </div>
+                            <div class="body" id="table-body">
+                                <div class="row">
+                                    <h6 class="title">-</h6>
+                                    <p class="description">10h</p>
+                                    <p class="doctor-name">Drauzio Varela</p>
+                                </div>
+                                <div class="row">
+                                    <h6 class="title">-</h6>
+                                    <p class="description">10h:30</p>
+                                    <p class="doctor-name">Drauzio Varela</p>
+                                </div>
+                                <div class="row">
+                                    <h6 class="title">-</h6>
+                                    <p class="description">11h</p>
+                                    <p class="doctor-name">Drauzio Varela</p>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="cl-button -register">
+                            <button type="submit" class="link">Agendar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+</body>
+</html>
