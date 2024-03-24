@@ -28,22 +28,25 @@ function registerPatient(){
     
     let payloadPatient = {
         //PERSONAL DATA
-        name: localStorage.getItem('name'),
-        surname: localStorage.getItem('surname'),
-        birthdate: localStorage.getItem('birthdate'),
+        firstName: localStorage.getItem('name'),
+        lastName: localStorage.getItem('surname'),
+        birthDay: localStorage.getItem('birthdate'),
         phone: localStorage.getItem('phone'),
-        cpf: localStorage.getItem('cpf'),
-        height: localStorage.getItem('height'),
-        wheight: localStorage.getItem('wheight'),
-        bloodType: localStorage.getItem('bloodType'),
         email: localStorage.getItem('email'),
         password: localStorage.getItem('password'),
-        //ADRESS
-        cep: (document.querySelector('#rg-cep').value),
-        state: (document.querySelector('#rg-state').value),
-        city: (document.querySelector('#rg-city').value),
-        neighborhood: (document.querySelector('#rg-neighborhood').value),
-        numberHouse: (document.querySelector('#rg-numberHouse').value)
+        cpf: localStorage.getItem('cpf'),
+        bloodType: localStorage.getItem('bloodType'),
+        height: localStorage.getItem('height'),
+        weight: localStorage.getItem('wheight'), 
+        //ADDRESS
+        address: {
+            userDocument: localStorage.getItem('cpf'),
+            number: (document.querySelector('#rg-numberHouse').value),
+            city: (document.querySelector('#rg-city').value),
+            state: (document.querySelector('#rg-state').value), 
+            cep: (document.querySelector('#rg-cep').value), 
+            neighborhood: (document.querySelector('#rg-neighborhood').value)
+        }
     };
 
     fetch("https://localhost:7252/api/patients" , {
@@ -56,6 +59,6 @@ function registerPatient(){
     .then(response => response.json())
     .then(response => {
         alert("Cadastrado com sucesso!");
-        window.location.href = "login.html"
+        window.location.href = "index.html"
     })  
 }
