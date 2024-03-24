@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function cadastrar(){
+function registerPatient(){
     // JÁ VALIDADO PELO HTML
     // PEGAR OS DADOS DO FORM
     // ENVIAR PARA A API   
@@ -46,7 +46,7 @@ function cadastrar(){
         numberHouse: (document.querySelector('#rg-numberHouse').value)
     };
 
-    fetch("https://65f9ccd23909a9a65b1966ed.mockapi.io/api/clinic" , {
+    fetch("https://localhost:7252/api/patients" , {
         method: 'POST',
         body: JSON.stringify(payloadPatient),
         headers: {
