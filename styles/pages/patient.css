@@ -50,3 +50,33 @@
     font-family: var(--cl-font-family-base);
     font-weight: 500;
 }
+
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container> span,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container> span{
+    font-size: 28px;
+}
+
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container> .radio,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container> .radio{
+    margin-right: 25px;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container{
+    font-family: var(--cl-font-family-base);
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 30px;
+    font-size: 20px;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+

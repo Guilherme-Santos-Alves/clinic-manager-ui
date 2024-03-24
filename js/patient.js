@@ -52,4 +52,3 @@ function examsData() {
         console.log(response);
     })
 }
-

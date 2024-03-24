@@ -84,6 +84,16 @@
                             <label for="from-date">Entre:</label> <input class="input" type="time" id="consultations-from-hour" value="00:00">
                             <label for="from-date">e</label> <input class="input" type="time" id="consultations-until-hour" value="23:59">
                         </div>
+                        <div class="radio-container">
+                            <span class="material-symbols-outlined">
+                                phone_iphone
+                            </span>
+                            <label for="radio-virtual-consultations">Telemedicina</label><input required name="modality" class="radio" type="radio" id="radio-virtual-consultations">
+                            <span class="material-symbols-outlined">
+                                person
+                            </span>
+                            <label for="radio-presential-consultations">Presencial</label><input required name="modality" class="radio" type="radio" id="radio-presential-consultations">
+                        </div>
                         <div class="cl-button -patient">
                             <button type="submit" class="btn-link" id="btn-link">Continuar</button>
                         </div>
@@ -99,6 +109,16 @@
                         <div class="from-the-hour" >
                             <label for="from-date">Entre:</label> <input required class="input" type="time" id="exams-from-hour" value="00:00">
                             <label for="from-date">e</label> <input required class="input" type="time" id="exams-until-hour" value="23:59">
+                        </div>
+                        <div class="radio-container">
+                            <span class="material-symbols-outlined">
+                                phone_iphone
+                            </span>
+                            <label for="radio-virtual-exams">Telemedicina</label><input required name="modality" class="radio" type="radio" id="radio-virtual-exams">
+                            <span class="material-symbols-outlined">
+                                person
+                            </span>
+                            <label for="radio-presential-exams">Presencial</label><input required name="modality" class="radio" type="radio" id="radio-presential-exams">
                         </div>
                         <div class="cl-button -patient">
                             <button type="submit" class="btn-link" id="btn-link">Continuar</button>
