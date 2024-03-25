@@ -28,16 +28,16 @@ function registerPatient(){
     
     let payloadPatient = {
         //PERSONAL DATA
-        firstName: localStorage.getItem('name'),
+        firstName:localStorage.getItem('name'),
         lastName: localStorage.getItem('surname'),
         birthDay: localStorage.getItem('birthdate'),
-        phone: localStorage.getItem('phone'),
-        email: localStorage.getItem('email'),
+        phone:    localStorage.getItem('phone'),
+        email   : localStorage.getItem('email'),
         password: localStorage.getItem('password'),
-        cpf: localStorage.getItem('cpf'),
-        bloodType: localStorage.getItem('bloodType'),
-        height: localStorage.getItem('height'),
-        weight: localStorage.getItem('wheight'), 
+        cpf:      localStorage.getItem('cpf'),
+        bloodType:localStorage.getItem('bloodType'),
+        height:   localStorage.getItem('height'),
+        weight:   localStorage.getItem('wheight'), 
         //ADDRESS
         address: {
             userDocument: localStorage.getItem('cpf'),

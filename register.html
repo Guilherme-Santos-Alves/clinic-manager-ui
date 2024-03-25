@@ -58,23 +58,29 @@
                         <span class="up">Olá! Vamos criar o seu cadastro</span>
                     </h1>
                     
-                    <form action="javascript:void(0)" onsubmit="setPersonalData()">
+                    <form action="javascript:void(0)" id="form-register-one">
                         <div class="cl-inputs -register">
                             <div class="first-line">
-                                <label for="rg-name">Nome:</label> <input required class="input" id="rg-name" type="text" required>
-                                <label for="rg-surname">Sobrenome:</label> <input required class="input" id="rg-surname" type="text">
-                            </div>
-
+                                <label for="rg-name">Nome:</label> 
+                                <input required class="input" id="rg-name" type="text" name="firstName">
+                                <label for="rg-surname">Sobrenome:</label> 
+                                <input required class="input" id="rg-surname" type="text" name="lastName">
+                            </div>                        
                             <div class="second-line">
-                                <label for="rg-date">Data de Nascimento:</label> <input required class="input" id="rg-birthdate" type="date">
-                                <label for="rg-phone">Telefone:</label> <input required class="input" id="rg-phone" type="text">
-                                <label for="rg-cpf">CPF:</label> <input required class="input" id="rg-cpf" type="text">
-                            </div>
-
+                                <label for="rg-date">Data de Nascimento:</label> 
+                                <input required class="input" id="rg-birthdate" type="date" name="birthDay">
+                                <label for="rg-phone">Telefone:</label> 
+                                <input required class="input" id="rg-phone" type="text" name="phone">
+                                <label for="rg-cpf">CPF:</label> 
+                                <input required class="input" id="rg-cpf" type="text" name="cpf">
+                            </div>                           
                             <div class="third-line">
-                                <label for="rg-height">Altura:</label> <input required class="input"id="rg-height" type="number">
-                                <label for="rg-wheight">Peso:</label> <input required class="input" id="rg-wheight" type="number" min="0" >
-                                <label for="rg-blood-type">Tipo Sanguíneo:</label>  <select required name="blood-select" id="rg-blood-type">
+                                <label for="rg-height">Altura:</label> 
+                                <input required class="input" id="rg-height" type="number" name="height">
+                                <label for="rg-wheight">Peso:</label> 
+                                <input required class="input" id="rg-wheight" type="number" min="0" name="weight">
+                                <label for="rg-blood-type">Tipo Sanguíneo:</label>  
+                                <select required name="bloodType" id="rg-blood-type">
                                     <option value="" disabled selected>Selecione o tipo sanguíneo</option>
                                     <option value="A+">A+</option>
                                     <option value="A-">A-</option>
@@ -84,15 +90,14 @@
                                     <option value="B-">B-</option>
                                     <option value="O+">O+</option>
                                     <option value="O-">O-</option>
-                                    <label for="rg-blood-type">Tipo Sanguíneo:</label>
                                 </select> 
-                            </div>
-
+                            </div>             
                             <div class="fourth-line">
-                                <label for="rg-email">Email:</label> <input required class="input" id="rg-email" type="email">
-                                <label for="rg-password">Senha:</label> <input required class="input" id="rg-password" type="password">      
-                            </div>
-                        </div>
+                                <label for="rg-email">Email:</label> 
+                                <input required class="input" id="rg-email" type="email" name="email">
+                                <label for="rg-password">Senha:</label> 
+                                <input required class="input" id="rg-password" type="password" name="password">      
+                            </div>                           
                         <div class="cl-button -register">
                             <button type="submit" class="link">Continuar</button>
                         </div>
