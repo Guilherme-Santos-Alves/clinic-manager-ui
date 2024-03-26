@@ -58,7 +58,7 @@
                         <span class="up">Olá! Vamos criar o seu cadastro</span>
                     </h1>
                     
-                    <form action="javascript:void(0)" id="form-register-one">
+                    <form action="javascript:void(0)" id="form-register-one" method="post" onsubmit="registerOne()">
                         <div class="cl-inputs -register">
                             <div class="first-line">
                                 <label for="rg-name">Nome:</label> 
@@ -68,7 +68,7 @@
                             </div>                        
                             <div class="second-line">
                                 <label for="rg-date">Data de Nascimento:</label> 
-                                <input required class="input" id="rg-birthdate" type="date" name="birthDay">
+                                <input required class="input" id="rg-birthdate" type="datetime" name="birthDay">
                                 <label for="rg-phone">Telefone:</label> 
                                 <input required class="input" id="rg-phone" type="text" name="phone">
                                 <label for="rg-cpf">CPF:</label> 
@@ -82,14 +82,14 @@
                                 <label for="rg-blood-type">Tipo Sanguíneo:</label>  
                                 <select required name="bloodType" id="rg-blood-type">
                                     <option value="" disabled selected>Selecione o tipo sanguíneo</option>
-                                    <option value="A+">A+</option>
-                                    <option value="A-">A-</option>
-                                    <option value="AB+">AB+</option>
-                                    <option value="AB-">AB-</option>
-                                    <option value="B+">B+</option>
-                                    <option value="B-">B-</option>
-                                    <option value="O+">O+</option>
-                                    <option value="O-">O-</option>
+                                    <option value="0">A+</option>
+                                    <option value="1">A-</option>
+                                    <option value="4">AB+</option>
+                                    <option value="5">AB-</option>
+                                    <option value="2">B+</option>
+                                    <option value="3">B-</option>
+                                    <option value="6">O+</option>
+                                    <option value="7">O-</option>
                                 </select> 
                             </div>             
                             <div class="fourth-line">

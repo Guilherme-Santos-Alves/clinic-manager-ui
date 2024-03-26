@@ -51,7 +51,7 @@
             </header> 
 
             <div class="main-content">
-                <form class="content" action="javascript:void(0)" onsubmit="registerPatient()">
+                <form class="content" action="javascript:void(0)" id="form-register-final" method="post">
 
                     <span class="steps">PASSO 2 DE 2</span>
 
@@ -62,14 +62,14 @@
                     <div class="cl-inputs -register">
                      
                         <div class="first-line">
-                            <label for="rg-cep">CEP:</label> <input required class="input" id="rg-cep" type="text">
-                            <label for="rg-state">Estado:</label> <input required class="input" id="rg-state" type="text">
+                            <label for="rg-cep">CEP:</label> <input required class="input" id="rg-cep" type="text" name="cep">
+                            <label for="rg-state">Estado:</label> <input required class="input" id="rg-state" type="text" name="state">
                         </div>
 
                         <div class="second-line">
-                            <label for="rg-city">Cidade:</label> <input required class="input" id="rg-city" type="text">
-                            <label for="rg-neighborhood">Bairro:</label> <input required class="input" id="rg-neighborhood" type="text">
-                            <label for="rg-number">Número:</label> <input required class="input" id="rg-numberHouse" type="text">
+                            <label for="rg-city">Cidade:</label> <input required class="input" id="rg-city" type="text" name="city">
+                            <label for="rg-neighborhood">Bairro:</label> <input required class="input" id="rg-neighborhood" type="text" name="neighborhood">
+                            <label for="rg-number">Número:</label> <input required class="input" id="rg-numberHouse" type="text" name="number">
                         </div>
 
                     </div>

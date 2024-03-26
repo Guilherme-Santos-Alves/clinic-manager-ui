@@ -21,44 +21,69 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function registerPatient(){
-    // JÁ VALIDADO PELO HTML
-    // PEGAR OS DADOS DO FORM
-    // ENVIAR PARA A API   
-    
-    let payloadPatient = {
-        //PERSONAL DATA
-        firstName:localStorage.getItem('name'),
-        lastName: localStorage.getItem('surname'),
-        birthDay: localStorage.getItem('birthdate'),
-        phone:    localStorage.getItem('phone'),
-        email   : localStorage.getItem('email'),
-        password: localStorage.getItem('password'),
-        cpf:      localStorage.getItem('cpf'),
-        bloodType:localStorage.getItem('bloodType'),
-        height:   localStorage.getItem('height'),
-        weight:   localStorage.getItem('wheight'), 
-        //ADDRESS
-        address: {
-            userDocument: localStorage.getItem('cpf'),
-            number: (document.querySelector('#rg-numberHouse').value),
-            city: (document.querySelector('#rg-city').value),
-            state: (document.querySelector('#rg-state').value), 
-            cep: (document.querySelector('#rg-cep').value), 
-            neighborhood: (document.querySelector('#rg-neighborhood').value)
-        }
-    };
 
-    fetch("https://localhost:7252/api/patients" , {
-        method: 'POST',
-        body: JSON.stringify(payloadPatient),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }) 
-    .then(response => response.json())
-    .then(response => {
-        alert("Cadastrado com sucesso!");
-        window.location.href = "index.html"
-    })  
+
+// Defina a função jsonToFormData
+function jsonToFormData(json) {
+    const formData = new FormData();
+    // Implementação da função...
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const patientRegisterFinal = document.getElementById('form-register-final');
+
+    patientRegisterFinal.addEventListener('submit', evento => {
+        evento.preventDefault();
+
+        
+        let height = parseFloat(localStorage.getItem("height"));
+        let weight = parseFloat(localStorage.getItem("weight"));
+        let userDocument = parseInt(localStorage.getItem("cpf"));
+        let number = parseInt(document.getElementById("rg-numberHouse").value);
+        let bloodType = parseInt(localStorage.getItem("bloodType"));
+
+
+        const jsonData = {
+            firstName: localStorage.getItem("firstName"),
+            lastName: localStorage.getItem("lastName"),
+            birthDay: localStorage.getItem("birthDay"),
+            phone: localStorage.getItem("phone"),
+            email: localStorage.getItem("email"),
+            password: localStorage.getItem("password"),
+            cpf: localStorage.getItem("cpf"),
+            bloodType: bloodType,
+            height: height,
+            weight: weight,
+            address: {
+                userDocument: userDocument,
+                cep: document.getElementById("rg-cep").value,
+                state: document.getElementById("rg-state").value,
+                city: document.getElementById("rg-city").value,
+                neighborhood: document.getElementById("rg-neighborhood").value,
+                number: number
+            }
+        };
+
+        console.log(JSON.stringify(jsonData));
+
+        // Enviar para a API
+        fetch("https://localhost:7252/api/patients", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            mode: "no-cors",
+            body: JSON.stringify(jsonData)
+        }) 
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            window.location.href = "index.html";
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+        });
+
+    });
+});
+
