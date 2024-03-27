@@ -16,7 +16,18 @@ document.addEventListener('DOMContentLoaded', function() {
 function updateLocalStorage() {
     localStorage.setItem("firstName", document.getElementById("rg-name").value);
     localStorage.setItem("lastName", document.getElementById("rg-surname").value);
-    localStorage.setItem("birthDay", document.getElementById("rg-birthdate").value);
+    
+    // Formatar a data de nascimento (birthday) com segundos e milissegundos
+    const birthDate = new Date(document.getElementById("rg-birthdate").value);
+    const formattedBirthDay = birthDate.getFullYear() + '-' +
+        ('0' + (birthDate.getMonth() + 1)).slice(-2) + '-' +
+        ('0' + birthDate.getDate()).slice(-2) + 'T' +
+        ('0' + birthDate.getHours()).slice(-2) + ':' +
+        ('0' + birthDate.getMinutes()).slice(-2) + ':' +
+        ('0' + birthDate.getSeconds()).slice(-2) + '.' +
+        ('00' + birthDate.getMilliseconds()).slice(-3);
+    
+    localStorage.setItem("birthDay", formattedBirthDay);
     localStorage.setItem("phone", document.getElementById("rg-phone").value);
     localStorage.setItem("cpf", document.getElementById("rg-cpf").value);
     localStorage.setItem("height", document.getElementById("rg-height").value);

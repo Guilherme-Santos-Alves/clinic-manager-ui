@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
         let number = parseInt(document.getElementById("rg-numberHouse").value);
         let bloodType = parseInt(localStorage.getItem("bloodType"));
 
-
         const jsonData = {
             firstName: localStorage.getItem("firstName"),
             lastName: localStorage.getItem("lastName"),
@@ -72,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            mode: "no-cors",
             body: JSON.stringify(jsonData)
         }) 
         .then(response => response.json())
