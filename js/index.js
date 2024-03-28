@@ -16,26 +16,60 @@ function verificarRole(){
 }
 
 
-function login(){
-    // JÁ VALIDADO PELO HTML
-    // PEGAR OS DADOS DO FORM
-    // ENVIAR PARA A API
-    let payload = {
-        role: (verificarRole()),
-        cpf: (document.querySelector('#cpf-input').value),
-        password: (document.querySelector('#password-input').value),
-    }
+// function login(){
+//     // JÁ VALIDADO PELO HTML
+//     // PEGAR OS DADOS DO FORM
+//     // ENVIAR PARA A API
+//     let payload = {
+//         role: (verificarRole()),
+//         cpf: (document.querySelector('#cpf-input').value),
+//         password: (document.querySelector('#password-input').value),
+//     }
 
-    fetch("https://65f9ccd23909a9a65b1966ed.mockapi.io/api/clinic" , {
-        method: 'POST',
-        body: JSON.stringify(payload),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }) 
-    .then(response => response.json())
-    .then(response => {
-        alert("Bem-vindo!");
-        window.location.href = "patient.html"
-    })
-}
+//     fetch("https://65f9ccd23909a9a65b1966ed.mockapi.io/api/clinic" , {
+//         method: 'POST',
+//         body: JSON.stringify(payload),
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     }) 
+//     .then(response => response.json())
+//     .then(response => {
+//         alert("Bem-vindo!");
+//         window.location.href = "patient.html"
+//     })
+// }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const login = document.getElementById('form-login');
+
+    login.addEventListener('submit', evento => {
+        evento.preventDefault();
+
+        const jsonData = {
+            role: (verificarRole()),
+            cpf: (document.querySelector('#cpf-input').value),
+            password: (document.querySelector('#password-input').value)
+        };
+
+        console.log(jsonData);
+
+        // Enviar para a API
+        // fetch("https://localhost:7252/api/patients", {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(jsonData)
+        // }) 
+        // .then(response => response.json())
+        // .then(response => {
+        //     console.log(response);
+        //     window.location.href = "index.html";
+        // })
+        // .catch(error => {
+        //     console.error('Erro:', error);
+        // });
+
+    });
+});
