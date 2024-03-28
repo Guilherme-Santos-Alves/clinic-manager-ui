@@ -37,10 +37,10 @@
     margin: 10px
 }
 
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations,
+/* .cl-patient> .cl-wrapper> .main-content> .left> .content-consultations,
 .cl-patient> .cl-wrapper> .main-content> .left> .content-exams{
     display: none;
-}
+} */
 
 .cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .specialty> label,
 .cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .from-the-hour> label,

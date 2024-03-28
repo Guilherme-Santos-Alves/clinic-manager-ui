@@ -52,7 +52,7 @@
             </header>          
 
             <div class="main-content">                
-                <form class="left" onsubmit="examsData()" action="javascript:void(0)">
+                <form class="left" action="javascript:void(0)" id="form-patient">
                     <h2 class="cl-radio-title">Selecione uma opção:</h2>
                     <div class="cl-radio -patient">
                         <div class="exams">            
@@ -73,56 +73,10 @@
                     </div>
 
                     <div class="content-consultations">
-                        <div class="specialty" id="specialty">
-                            <label class="select-speciality" for="select-speciality">Selecione a Especialidade da consulta:</label><select name="" id="">
-                                <option value="" disabled selected >Especialidade</option> 
-                                <option value="Cardiologia">Cardiologia</option>
-                                <option value="Ortopedia">Ortopedia</option>
-                            </select>
-                        </div>
-                        <div class="from-the-hour" >
-                            <label for="from-date">Entre:</label> <input class="input" type="time" id="consultations-from-hour" value="00:00">
-                            <label for="from-date">e</label> <input class="input" type="time" id="consultations-until-hour" value="23:59">
-                        </div>
-                        <div class="radio-container">
-                            <span class="material-symbols-outlined">
-                                phone_iphone
-                            </span>
-                            <label for="radio-virtual-consultations">Telemedicina</label><input required name="modality" class="radio" type="radio" id="radio-virtual-consultations">
-                            <span class="material-symbols-outlined">
-                                person
-                            </span>
-                            <label for="radio-presential-consultations">Presencial</label><input required name="modality" class="radio" type="radio" id="radio-presential-consultations">
-                        </div>
-                        <div class="cl-button -patient">
-                            <button type="submit" class="btn-link" id="btn-link">Continuar</button>
-                        </div>
+                        
                     </div>
                     <div class="content-exams">
-                        <div class="specialty" id="specialty">
-                            <label class="select-speciality" for="select-speciality">Selecione a Especialidade do exame:</label><select required name="" id="specialty-exam">
-                                <option value="" disabled selected >Especialidade</option> 
-                                <option value="Eletrocardiograma">Eletrocardiograma</option>
-                                <option value="Raio X">Raio X</option>
-                            </select>
-                        </div>   
-                        <div class="from-the-hour" >
-                            <label for="from-date">Entre:</label> <input required class="input" type="time" id="exams-from-hour" value="00:00">
-                            <label for="from-date">e</label> <input required class="input" type="time" id="exams-until-hour" value="23:59">
-                        </div>
-                        <div class="radio-container">
-                            <span class="material-symbols-outlined">
-                                phone_iphone
-                            </span>
-                            <label for="radio-virtual-exams">Telemedicina</label><input required name="modality" class="radio" type="radio" id="radio-virtual-exams">
-                            <span class="material-symbols-outlined">
-                                person
-                            </span>
-                            <label for="radio-presential-exams">Presencial</label><input required name="modality" class="radio" type="radio" id="radio-presential-exams">
-                        </div>
-                        <div class="cl-button -patient">
-                            <button type="submit" class="btn-link" id="btn-link">Continuar</button>
-                        </div>
+                        
                     </div>
                 </form>
 
