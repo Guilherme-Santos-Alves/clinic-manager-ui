@@ -21,24 +21,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Defina a função jsonToFormData
-function jsonToFormData(json) {
-    const formData = new FormData();
-    // Implementação da função...
-}
 
 function registerPatient(){
     // JÁ VALIDADO PELO HTML
     // PEGAR OS DADOS DO FORM
     // ENVIAR PARA A API   
-    const height = parseFloat(localStorage.getItem("height"));
-    const weight = parseFloat(localStorage.getItem("weight"));
-    const userDocument = parseInt(localStorage.getItem("cpf"));
-    const number = parseInt(document.getElementById("rg-numberHouse").value);
-    const bloodType = parseInt(localStorage.getItem("bloodType"));
+    let height = parseFloat(localStorage.getItem("height"));
+    let weight = parseFloat(localStorage.getItem("weight"));
+    let userDocument = parseInt(localStorage.getItem("cpf"));
+    let number = parseInt(document.getElementById("rg-numberHouse").value);
+    let bloodType = parseInt(localStorage.getItem("bloodType"));
     
-    const endpoint = 'https://localhost:7252/api/patients';
-    const requestBody = {
+    let endpoint = 'https://localhost:7252/api/patients';
+    let requestBody = {
         firstName: localStorage.getItem("firstName"),
         lastName: localStorage.getItem("lastName"),
         birthDay: localStorage.getItem("birthDay"),
@@ -58,7 +53,8 @@ function registerPatient(){
             neighborhood: document.getElementById("rg-neighborhood").value
         }
     };
-    
+    console.log(JSON.stringify(requestBody));
+
     fetch(endpoint, {
         method: 'POST',
         headers: {
