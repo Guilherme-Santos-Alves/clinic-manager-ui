@@ -2,7 +2,7 @@
 // Definindo a função showToast globalmente
 
 let successMsg = '<span class="material-symbols-outlined">check_circle</span>Cadastro realizado com sucesso!';
-let errorMsg = '<span class="material-symbols-outlined">cancel</span>Erro no cadastro! Verifique os dados';
+let errorMsg = '<span class="material-symbols-outlined">cancel</span>Erro no cadastro!';
 
 function showToast(msg) {
     let toastBox = document.getElementById('toast-box');
