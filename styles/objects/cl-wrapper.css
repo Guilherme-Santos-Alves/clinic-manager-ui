@@ -5,7 +5,7 @@
 
 .cl-wrapper> .main-content{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr 1fr;
     padding-top: 100px;
     margin: 0 auto;
 }

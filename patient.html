@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles/components/cl-input.css">
     <link rel="stylesheet" href="styles/components/cl-radio.css">
     <link rel="stylesheet" href="styles/components/cl-button.css">
+    <link rel="stylesheet" href="styles/components/cl-toast.css">
 
     <!--SETTINGS-->
     <link rel="stylesheet" href="styles/settings/wrapper.css">
@@ -37,7 +38,7 @@
     <link rel="stylesheet" href="styles/pages/patient.css">
 
     <!-- JAVASCRIPT -->
-    <script src="js/patient.js"></script>
+    <script src="js/patient.js" defer></script>
 
 <body>
     <div class="cl-patient">
@@ -49,9 +50,15 @@
                         <img class="image" src="assets/logos/clinica-logo.png" alt="logo-clinica">
                     </div>
                 </div>
-            </header>          
+            </header> 
 
-            <div class="main-content">                
+            <div class="main-content"> 
+                <button onclick="showToast(successMsg)">sucesso</button>
+                <button onclick="showToast(errorMsg)">erro</button>
+                
+                <div class="cl-toast-box" id="toast-box">
+                    
+                </div>               
                 <form class="left" action="javascript:void(0)" id="form-patient">
                     <h2 class="cl-radio-title">Selecione uma opção:</h2>
                     <div class="cl-radio -patient">
@@ -82,6 +89,7 @@
 
                 <div class="right">
                     <img class="image" src="assets/image/banner-clinica.png" alt="bg-cubes">
+                    
                 </div>
             </div>
         </div>

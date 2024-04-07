@@ -1,3 +1,30 @@
+//FUNÇÃO DOS TOASTS 
+// Definindo a função showToast globalmente
+
+let successMsg = '<span class="material-symbols-outlined">check_circle</span>Cadastro realizado com sucesso!';
+let errorMsg = '<span class="material-symbols-outlined">cancel</span>Erro no cadastro! Verifique os dados';
+
+function showToast(msg) {
+    let toastBox = document.getElementById('toast-box');
+    if (!toastBox) {
+    console.error("Elemento toast-box não encontrado!");
+    return;
+    }
+
+    let toast = document.createElement('div');
+    toast.classList.add('toast');
+    toast.innerHTML = msg;
+    toastBox.appendChild(toast);
+
+    if (msg.includes('Erro')) {
+    toast.classList.add('error');
+    }
+
+    setTimeout(() => {
+    toast.remove();
+    }, 6000); // Remove o toast após 6 segundos 
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     let cepInput = document.querySelector("#rg-cep");
 
@@ -28,7 +55,6 @@ function registerPatient(){
     // ENVIAR PARA A API   
     let height = parseFloat(localStorage.getItem("height"));
     let weight = parseFloat(localStorage.getItem("weight"));
-    let userDocument = parseInt(localStorage.getItem("cpf"));
     let number = parseInt(document.getElementById("rg-numberHouse").value);
     let bloodType = parseInt(localStorage.getItem("bloodType"));
     
@@ -45,7 +71,7 @@ function registerPatient(){
         height: height,
         weight: weight,
         address: {
-            userDocument: userDocument,
+            role: 0,
             number: number,
             city: document.getElementById("rg-city").value,
             state: document.getElementById("rg-state").value,
@@ -71,9 +97,10 @@ function registerPatient(){
     })
     .then(data => {
         console.log('Resposta da API:', data);
+        showToast(successMsg);
     })
     .catch(error => {
-        console.error('Erro:', error);
+        showToast(errorMsg);
     });
 }
 
