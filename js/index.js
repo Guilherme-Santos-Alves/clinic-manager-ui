@@ -1,75 +1,83 @@
-function verificarRole(){
+function verificarRole() {
     let roles = document.getElementsByName("role");
-    console.log(roles); // Verifica se os elementos estão sendo capturados corretamente
     if (roles.length < 3) {
         console.error("Não há elementos suficientes com o nome 'role'");
         return null; // Ou algum valor padrão para indicar erro
     }
 
-    if (roles[0].checked === true){
+    if (roles[0].checked === true) {
         return "paciente";
-    } else if(roles[1].checked === true){
+    } else if (roles[1].checked === true) {
         return "medico";
-    } else if (roles[2].checked === true){
+    } else if (roles[2].checked === true) {
         return "administrador";
     }
 }
 
+let successMsg = '<span class="material-symbols-outlined">check_circle</span> Cadastro realizado com sucesso!';
+let errorMsg = '<span class="material-symbols-outlined">cancel</span> Erro no cadastro!';
 
-// function login(){
-//     // JÁ VALIDADO PELO HTML
-//     // PEGAR OS DADOS DO FORM
-//     // ENVIAR PARA A API
-//     let payload = {
-//         role: (verificarRole()),
-//         cpf: (document.querySelector('#cpf-input').value),
-//         password: (document.querySelector('#password-input').value),
-//     }
+function showToast(msg) {
+    let toastBox = document.getElementById('toast-box');
+    if (!toastBox) {
+        console.error("Elemento toast-box não encontrado!");
+        return;
+    }
 
-//     fetch("https://65f9ccd23909a9a65b1966ed.mockapi.io/api/clinic" , {
-//         method: 'POST',
-//         body: JSON.stringify(payload),
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//     }) 
-//     .then(response => response.json())
-//     .then(response => {
-//         alert("Bem-vindo!");
-//         window.location.href = "patient.html"
-//     })
-// }
+    console.log("Mensagem do toast:", msg); // Verifica a mensagem do toast
 
-document.addEventListener("DOMContentLoaded", function() {
-    const login = document.getElementById('form-login');
+    let toast = document.createElement('div');
+    toast.classList.add('toast');
+    toast.innerHTML = msg;
+    toastBox.appendChild(toast);
 
-    login.addEventListener('submit', evento => {
-        evento.preventDefault();
+    console.log("Toast adicionado ao DOM:", toast); // Verifica se o toast foi adicionado ao DOM corretamente
 
-        const jsonData = {
-            role: (verificarRole()),
-            cpf: (document.querySelector('#cpf-input').value),
-            password: (document.querySelector('#password-input').value)
-        };
+    if (msg.includes('Erro')) {
+        toast.classList.add('error');
+    }
 
-        console.log(jsonData);
+    setTimeout(() => {
+        toast.remove();
+    }, 6000); // Remove o toast após 6 segundos 
+}
 
-        // Enviar para a API
-        // fetch("https://localhost:7252/api/patients", {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(jsonData)
-        // }) 
-        // .then(response => response.json())
-        // .then(response => {
-        //     console.log(response);
-        //     window.location.href = "index.html";
-        // })
-        // .catch(error => {
-        //     console.error('Erro:', error);
-        // });
+function login() {
+    let role = verificarRole();
+    if (!role) {
+        showToast("Papel não definido");
+        return;
+    }
 
+    let endpoint = 'https://localhost:7252/api/patients';
+    let requestBody = {
+        role: role,
+        cpf: document.querySelector('#cpf-input').value,
+        password: document.querySelector('#password-input').value
+    };
+
+    fetch(endpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            // Se necessário, inclua outras headers aqui
+        },
+        body: JSON.stringify(requestBody)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erro ao fazer a requisição: ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Resposta da API:', data);
+        showToast(successMsg);
+    })
+    .catch(error => {
+        console.error('Erro na requisição:', error);
+        showToast(errorMsg);
     });
-});
+}
+
+// O restante do seu código...
