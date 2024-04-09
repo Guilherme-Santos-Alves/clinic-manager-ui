@@ -1,14 +1,9 @@
 /* -- index.html -- */
-
 .cl-inputs{
     font-family: var(--cl-font-family-base);
     font-weight: 400;
     margin-top: 10px;
 }
-
-/* .cl-inputs> .cpf{
-    margin-top: 10px;
-} */
 
 .cl-inputs>.input{
     font-family: var(--cl-font-family-base);
@@ -22,11 +17,7 @@
     margin-bottom: 10px;
 }
 
-/* .cl-inputs> .password{
-    margin-top: 20px;
-} */
-/* -- redirect.html -- */
-
+/* REGISTER AND REGISTER FINAL */
 .cl-inputs.-register{
     margin: 0 auto;
     margin-top: 32px;
@@ -37,7 +28,8 @@
 .cl-inputs.-register> .first-line> .input,
 .cl-inputs.-register> .second-line> .input,
 .cl-inputs.-register> .third-line> .input,
-.cl-inputs.-register> .fourth-line> .input{
+.cl-inputs.-register> .fourth-line> .input,
+.cl-inputs.-register> .fifth-line> .original-line> input{
     justify-content: space-around;
     background-color: var(--cl-color-gray-lighter);
     width: 200px;
@@ -58,6 +50,12 @@
     justify-content: space-between;
 }
 
+.cl-inputs.-register> .fifth-line{
+    width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
 .cl-inputs.-register> .first-line> .label,
 .cl-inputs.-register> .second-line> .label,
 .cl-inputs.-register> .third-line> .label,
@@ -73,13 +71,14 @@
     width: 200px;
 }
 
-.cl-inputs.-register> .third-line> .input{
-    width: 200px;    
+.cl-inputs.-register> .third-line> .input{     
+    width: 200px; 
 }
 
-.cl-inputs.-register> .third-line> select{
+.cl-inputs.-register> .third-line> select,
+.cl-inputs.-register> .fifth-line> .original-line> select,
+.cl-inputs.-register> .fifth-line> .cloned-line> input{
     justify-content: space-around;
-    background-color: var(--cl-color-gray-lighter);
     width: 200px;
     height: 20px;
     outline: 0;
@@ -90,4 +89,75 @@
     width: 380px;
 }
 
-/* -----patient.html----- */
+/* -----REGISTER DOCTOR ----- */
+
+.cl-inputs.-register-doctor{
+    margin: 0 auto;
+    margin-top: 32px;
+    justify-content: space-around;
+    background-color: var(--cl-color-gray-lighter);
+}
+
+.cl-inputs.-register-doctor> .first-line> .input,
+.cl-inputs.-register-doctor> .second-line> .input,
+.cl-inputs.-register-doctor> .third-line> .input,
+.cl-inputs.-register-doctor> .fourth-line> .input,
+.cl-inputs.-register-doctor> .fifth-line> .original-line> input{
+    justify-content: space-around;
+    background-color: var(--cl-color-gray-lighter);
+    width: 200px;
+    height: 20px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    cursor: pointer;
+}
+
+.cl-inputs.-register-doctor> .first-line,
+.cl-inputs.-register-doctor> .second-line,
+.cl-inputs.-register-doctor> .third-line,
+.cl-inputs.-register-doctor> .fourth-line{
+    width: 900px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cl-inputs.-register-doctor> .fifth-line{
+    width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.cl-inputs.-register-doctor> .first-line> .label,
+.cl-inputs.-register-doctor> .second-line> .label,
+.cl-inputs.-register-doctor> .third-line> .label,
+.cl-inputs.-register-doctor> .fourth-line> .label{
+    display: block;
+}
+
+.cl-inputs.-register-doctor> .first-line> .input{
+    width: 350px;
+}
+
+.cl-inputs.-register-doctor> .second-line> .input{
+    width: 200px;
+}
+
+.cl-inputs.-register-doctor> .third-line> .input{     
+    width: 380px;  
+}
+
+.cl-inputs.-register-doctor> .fourth-line> select,
+.cl-inputs.-register-doctor> .fifth-line> .original-line> select,
+.cl-inputs.-register-doctor> .fifth-line> .cloned-line> input{
+    justify-content: space-around;
+    width: 200px;
+    height: 20px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+}
+
+.cl-inputs.-register-doctor> .fourth-line> .input{
+    width: 200px;
+}

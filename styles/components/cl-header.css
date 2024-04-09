@@ -4,7 +4,7 @@
     width: 300px;
     height: 80px;
     padding-top: 10px;
-
+    caret-color: transparent;
 }
 
 .cl-header{
@@ -15,4 +15,5 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
     z-index: 1;
     background-color: var(--cl-color-gray-lighter);
+    caret-color: transparent;
 }

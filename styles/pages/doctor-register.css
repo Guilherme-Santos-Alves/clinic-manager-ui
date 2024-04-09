@@ -1,11 +1,11 @@
-.cl-register> .cl-wrapper> .main-content{
+.doctor-register> .cl-wrapper> .main-content{
     width: var(--cl-main-wrapper);
     height: 100%;
     padding: 100px 84.5px 0px 84.5px;
     margin: 0 auto;
 }
 
-.cl-register> .cl-wrapper> .main-content> .content> .main-title{
+.doctor-register> .cl-wrapper> .main-content> .content> .main-title{
     width: auto;
     margin: 0 auto;
     display: flex;
@@ -13,7 +13,7 @@
     margin-bottom: 50px;
 }
 
-.cl-register> .cl-wrapper> .main-content> .content> .main-title> .up{
+.doctor-register> .cl-wrapper> .main-content> .content> .main-title> .up{
     font-family: var(--cl-font-family-base);
     font-size:calc(var(--cl-font-size-base) + 30px );
     font-weight: 800;
@@ -22,7 +22,7 @@
     caret-color: transparent;
 }
 
-.cl-register> .cl-wrapper> .main-content> .content> .steps{
+.doctor-register> .cl-wrapper> .main-content> .content> .steps{
     font-weight: 600;
     display: block;
     font-size: calc( var(--cl-font-family-base) + 4px );
@@ -30,4 +30,13 @@
     color: var(--cl-color-primary);
     margin-top: 20px;
     caret-color: transparent;
+}
+
+.doctor-register> .cl-wrapper> .main-content> .content> .register-doctor-one> .cl-inputs> .fifth-line> .original-line.-clone{
+    margin-left: 75.5px;
+}
+
+.original-line,
+.original-line.-clone{
+    margin-bottom: 5px;
 }

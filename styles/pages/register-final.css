@@ -18,6 +18,7 @@
     font-weight: 800;
     width: auto;
     margin: 0 auto;
+    caret-color: transparent;
 }
 
 .cl-register-final> .cl-wrapper> .main-content> .content> .steps{
@@ -27,6 +28,7 @@
     font-weight: 600;
     color: var(--cl-color-primary);
     margin-top: 20px;
+    caret-color: transparent;
 }
 
 .cl-register-final> .cl-wrapper> .main-content> .content> .cl-inputs.-register{

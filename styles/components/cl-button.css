@@ -41,6 +41,7 @@
     left: 0;
     margin: 0 auto;
     cursor: pointer;
+    caret-color: transparent;
 }
 
 .cl-button.-register> .link:hover{
@@ -62,4 +63,16 @@
     left: 0;
     cursor: pointer;
     margin-top: 30px;
+}
+
+.cl-button.-add-solution{
+    cursor: pointer;
+    height: 20px;
+    padding: 0;
+    width: 20px;
+    font-size: 15px;
+    background-color: var(--cl-color-primary);
+    border-radius: 5px;
+    color: var(--cl-color-gray-lighter);
+    font-weight: 600;
 }
