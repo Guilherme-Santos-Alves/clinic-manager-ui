@@ -59,7 +59,7 @@
                         <span class="up">Cadastro de Médico</span>
                     </h1>
                     
-                    <form class="register-doctor-one" action="javascript:void(0)" id="register-doctor-one" method="post">
+                    <form class="register-doctor-one" action="javascript:void(0)" id="register-doctor-one" method="post" onsubmit="showData()">
                         <div class="cl-inputs -register-doctor">
                             <div class="first-line">
                                 <label for="rg-name">Nome:</label> 
@@ -112,9 +112,9 @@
                                 </select>
                             </div>   
                             <div class="fifth-line" id="fifth-line">
-                                <div id="divOriginal" class="original-line">
+                                <div class="original-line">
                                     <label for="rg-solution">Soluções:</label>
-                                    <input type="text" id="rg-solution">
+                                    <input class="rg-solution" type="text" id="rg-solution">
                                     <button class="cl-button -add-solution" id="btn-new-specialty" onclick="buildInputSolution()">+</button>
                                 </div> 
                             </div>                       

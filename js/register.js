@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("rg-password").addEventListener('change', updateLocalStorage);
 });
 
-
-
 // Função para atualizar localStorage quando um campo é alterado
 function updateLocalStorage() {
     localStorage.setItem("firstName", document.getElementById("rg-name").value);
