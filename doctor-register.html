@@ -33,7 +33,6 @@
     
 
     <!--PAGES-->
-    <link rel="stylesheet" href="styles/pages/register.css">
     <link rel="stylesheet" href="styles/pages/doctor-register.css">
 
     <script src="js/doctor.register.js"></script>
@@ -59,7 +58,7 @@
                         <span class="up">Cadastro de Médico</span>
                     </h1>
                     
-                    <form class="register-doctor-one" action="javascript:void(0)" id="register-doctor-one" method="post" onsubmit="showData()">
+                    <form class="register-doctor-one" action="javascript:void(0)" id="register-doctor-one" method="post" onsubmit="registerOne()">
                         <div class="cl-inputs -register-doctor">
                             <div class="first-line">
                                 <label for="rg-name">Nome:</label> 
@@ -115,7 +114,7 @@
                                 <div class="original-line">
                                     <label for="rg-solution">Soluções:</label>
                                     <input class="rg-solution" type="text" id="rg-solution">
-                                    <button class="cl-button -add-solution" id="btn-new-specialty" onclick="buildInputSolution()">+</button>
+                                    <button type="button" class="cl-button -add-solution" id="btn-new-specialty" onclick="buildInputSolution(event)">+</button>
                                 </div> 
                             </div>                       
                             

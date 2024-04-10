@@ -1,8 +1,10 @@
-function buildInputSolution() {
+function buildInputSolution(event) {
+    event.preventDefault();
+
     template = `
     <div class="original-line -clone">
         <input type="text" class="rg-solution">
-        <button class="cl-button -add-solution" id="btn-new-specialty" onclick="buildInputSolution()">+</button>
+        <button class="cl-button -add-solution" id="btn-new-specialty" onclick="buildInputSolution(event)">+</button>
     </div> 
     `;
     document.querySelector(".fifth-line").insertAdjacentHTML("beforeend", template);
@@ -53,7 +55,7 @@ function processarValoresInputs() {
 
     console.log(payloadSolution); // Exibir a string resultante no console para fins de demonstração
     
-    localStorage.setItem("solution", payloadSolution);
+    localStorage.setItem("solutions", payloadSolution);
 }
 
 // Função para atualizar localStorage quando um campo é alterado
@@ -68,4 +70,9 @@ function updateLocalStorage() {
     localStorage.setItem("password", document.getElementById("rg-password").value);
     localStorage.setItem("crm", document.getElementById("rg-crm").value);
     localStorage.setItem("specialty", document.getElementById("rg-specialty").value);
+}
+
+//Leva para a próxima página de cadastro
+function registerOne(){
+    window.location.href = "doctor-register-final.html";
 }
