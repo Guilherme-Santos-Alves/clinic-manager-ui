@@ -53,7 +53,7 @@ function processarValoresInputs() {
 
     console.log(payloadSolution); // Exibir a string resultante no console para fins de demonstração
     
-    localStorage.setItem("solution", payloadSolution);
+    localStorage.setItem("solutions", payloadSolution);
 }
 
 // Função para atualizar localStorage quando um campo é alterado

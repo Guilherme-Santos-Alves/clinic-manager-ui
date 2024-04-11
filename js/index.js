@@ -66,6 +66,7 @@ function login() {
     })
     .then(data => {
         console.log('Resposta da API:', data);
+        localStorage.setItem("token", data.token)
         showToast(successMsg);
     })
     .catch(error => {
