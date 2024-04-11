@@ -1,10 +1,8 @@
-function buildInputSolution(event) {
-    event.preventDefault();
-
+function buildInputSolution() {
     template = `
     <div class="original-line -clone">
         <input type="text" class="rg-solution">
-        <button class="cl-button -add-solution" id="btn-new-specialty" onclick="buildInputSolution(event)">+</button>
+        <button class="cl-button -add-solution" id="btn-new-specialty" onclick="buildInputSolution()">+</button>
     </div> 
     `;
     document.querySelector(".fifth-line").insertAdjacentHTML("beforeend", template);
@@ -55,7 +53,7 @@ function processarValoresInputs() {
 
     console.log(payloadSolution); // Exibir a string resultante no console para fins de demonstração
     
-    localStorage.setItem("solutions", payloadSolution);
+    localStorage.setItem("solution", payloadSolution);
 }
 
 // Função para atualizar localStorage quando um campo é alterado

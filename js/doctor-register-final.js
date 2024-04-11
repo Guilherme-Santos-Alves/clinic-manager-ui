@@ -52,11 +52,13 @@ function registerDoctor(){
     // JÁ VALIDADO PELO HTML
     // PEGAR OS DADOS DO FORM
     // ENVIAR PARA A API   
+
     let number = parseInt(document.getElementById("rg-numberHouse").value);
     let bloodType = parseInt(localStorage.getItem("bloodType"));
     let specialty = parseInt(localStorage.getItem("specialty"));
     
-    let endpoint = 'https://localhost:7252/api/patients';
+    let endpoint = 'https://localhost:7231/api/doctors';
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjgzMy4wMDkuMTc4LTMyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiUmVjZXB0aW9uaXN0IiwiZXhwIjoxNzEyODU4MTM5LCJpc3MiOiJDbGluaWNNYW5hZ2VyLkFQSSIsImF1ZCI6IlBhY2llbnRlcywgbcOpZGljb3MgZSByZWNlcHNpb25pc3RhcyJ9.mWcfM-tvotTFWN9D2nOpfhglJvv8LZM-2kNN3k_Cx0Q';
     let requestBody = {
         firstName: localStorage.getItem("firstName"),
         lastName: localStorage.getItem("lastName"),
@@ -84,6 +86,7 @@ function registerDoctor(){
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
             // Se necessário, inclua outras headers aqui
         },
         body: JSON.stringify(requestBody)

@@ -14,8 +14,8 @@ function verificarRole() {
     }
 }
 
-let successMsg = '<span class="material-symbols-outlined">check_circle</span> Cadastro realizado com sucesso!';
-let errorMsg = '<span class="material-symbols-outlined">cancel</span> Erro no cadastro!';
+let successMsg = '<span class="material-symbols-outlined">check_circle</span> Login realizado com sucesso!';
+let errorMsg = '<span class="material-symbols-outlined">cancel</span> Erro no login!';
 
 function showToast(msg) {
     let toastBox = document.getElementById('toast-box');
@@ -43,16 +43,10 @@ function showToast(msg) {
 }
 
 function login() {
-    let role = verificarRole();
-    if (!role) {
-        showToast("Papel não definido");
-        return;
-    }
 
-    let endpoint = 'https://localhost:7252/api/patients';
+    let endpoint = 'https://localhost:7231/api/auth';
     let requestBody = {
-        role: role,
-        cpf: document.querySelector('#cpf-input').value,
+        login: document.querySelector('#cpf-input').value,
         password: document.querySelector('#password-input').value
     };
 

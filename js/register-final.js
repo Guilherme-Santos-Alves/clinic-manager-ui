@@ -58,7 +58,7 @@ function registerPatient(){
     let number = parseInt(document.getElementById("rg-numberHouse").value);
     let bloodType = parseInt(localStorage.getItem("bloodType"));
     
-    let endpoint = 'https://localhost:7252/api/patients';
+    let endpoint = 'https://localhost:7231/api/patients';
     let requestBody = {
         firstName: localStorage.getItem("firstName"),
         lastName: localStorage.getItem("lastName"),
@@ -67,11 +67,11 @@ function registerPatient(){
         email: localStorage.getItem("email"),
         password: localStorage.getItem("password"),
         cpf: localStorage.getItem("cpf"),
+        role: 2,
         bloodType: bloodType,
         height: height,
         weight: weight,
-        address: {
-            role: 0,
+        addressDTO: {
             number: number,
             city: document.getElementById("rg-city").value,
             state: document.getElementById("rg-state").value,
