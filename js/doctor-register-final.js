@@ -2,7 +2,7 @@
 // Definindo a função showToast globalmente
 
 let successMsg = '<span class="material-symbols-outlined">check_circle</span>Cadastro realizado com sucesso!';
-let errorMsg = '<span class="material-symbols-outlined">cancel</span>Erro no cadastro!';
+// let errorMsg = '<span class="material-symbols-outlined">cancel</span>Erro';
 
 function showToast(msg) {
     let toastBox = document.getElementById('toast-box');
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function registerDoctor(){
+function registerDoctor() {
     // JÁ VALIDADO PELO HTML
     // PEGAR OS DADOS DO FORM
     // ENVIAR PARA A API   
@@ -56,7 +56,7 @@ function registerDoctor(){
     let number = parseInt(document.getElementById("rg-numberHouse").value);
     let bloodType = parseInt(localStorage.getItem("bloodType"));
     let specialty = parseInt(localStorage.getItem("specialty"));
-    
+
     let endpoint = 'https://localhost:7231/api/doctors';
     const token = localStorage.getItem("token");
     let requestBody = {
@@ -87,14 +87,13 @@ function registerDoctor(){
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
-            // Se necessário, inclua outras headers aqui
         },
         body: JSON.stringify(requestBody)
     })
     .then(response => {
         if (!response.ok) {
             throw new Error('Erro ao fazer a requisição: ' + response.statusText);
-        }
+        } 
         return response.json();
     })
     .then(data => {
@@ -102,6 +101,38 @@ function registerDoctor(){
         showToast(successMsg);
     })
     .catch(error => {
+        console.error('Erro capturado:', error);
+    
+        let errorMsg = '<span class="material-symbols-outlined">cancel</span>Erro';
+    
+        // Verifica se há uma resposta HTTP
+        if (error && error.body) {
+            // Tentamos analisar o corpo da resposta como JSON
+            try {
+                const responseBody = JSON.parse(error.body);
+                // Verificamos se a resposta contém mensagens de erro
+                if (responseBody && responseBody.errors) {
+                    // Exibimos as mensagens de erro no toast
+                    errorMsg = '';
+                    for (const key in responseBody.errors) {
+                        responseBody.errors[key].forEach(errorMessage => {
+                            errorMsg += `<br>Erro: ${errorMessage}`;
+                        });
+                    }
+                }
+            } catch (parseError) {
+                console.error('Erro ao analisar o corpo da resposta:', parseError);
+            }
+        } else {
+            console.error('Erro:', error.message);
+            errorMsg += `<br>${error.message}`;
+        }
+    
         showToast(errorMsg);
-    });
+    });
+    
+    
+    
+    
 }
+

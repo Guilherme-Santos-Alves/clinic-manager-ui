@@ -53,9 +53,6 @@
             </header> 
 
             <div class="main-content"> 
-                <button onclick="showToast(successMsg)">sucesso</button>
-                <button onclick="showToast(errorMsg)">erro</button>
-                
                 <div class="cl-toast-box" id="toast-box">
                     
                 </div>               
@@ -67,7 +64,7 @@
                                 stethoscope
                             </span>
                             <label for="option-exams">Exame</label>
-                            <input type="radio" required name="option" id="option-exams">
+                            <input type="radio" required name="option" id="option-exams" onclick="listDoctorsSelect()">
                         </div>
     
                         <div class="consultations">
@@ -75,7 +72,7 @@
                                 clinical_notes
                             </span>
                             <label for="option-consultations">Consulta</label>
-                            <input type="radio" required name="option" id="option-consultations">
+                            <input type="radio" required name="option" id="option-consultations" onclick="listDoctorsSelect()">
                         </div>
                     </div>
 
@@ -83,6 +80,7 @@
                         
                     </div>
                     <div class="content-exams">
+                        
                         
                     </div>
                 </form>
