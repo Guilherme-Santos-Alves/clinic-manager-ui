@@ -101,7 +101,7 @@ function registerDoctor() {
         showToast(successMsg);
     })
     .catch(error => {
-        console.error('Erro capturado:', error);
+        console.error.errors('Erro capturado:', error);
     
         let errorMsg = '<span class="material-symbols-outlined">cancel</span>Erro';
     

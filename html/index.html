@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Excelência e Saúde</title>
-
     
-
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,34 +12,34 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!--JAVASCRIPT-->
-    <script src="js/index.js"></script>
+    <script src="../js/index.js"></script>
 
     <!--SETTINGS-->
-    <link rel="stylesheet" href="styles/settings/wrapper.css">
-    <link rel="stylesheet" href="styles/settings/color.css">
-    <link rel="stylesheet" href="styles/settings/text.css">
+    <link rel="stylesheet" href="../styles/settings/wrapper.css">
+    <link rel="stylesheet" href="../styles/settings/color.css">
+    <link rel="stylesheet" href="../styles/settings/text.css">
 
     <!--GENERIC-->
-    <link rel="stylesheet" href="styles/generic/reset.css">
-    <link rel="stylesheet" href="styles/generic/box-sizing.css">
+    <link rel="stylesheet" href="../styles/generic/reset.css">
+    <link rel="stylesheet" href="../styles/generic/box-sizing.css">
 
     <!--BASE-->
-    <link rel="stylesheet" href="styles/base/html.css">
+    <link rel="stylesheet" href="../styles/base/html.css">
 
     <!--OBJECTS-->
-    <link rel="stylesheet" href="styles/objects/cl-wrapper.css">
+    <link rel="stylesheet" href="../styles/objects/cl-wrapper.css">
 
     <!--COMPONENTS-->
-    <link rel="stylesheet" href="styles/components/cl-header.css">
-    <link rel="stylesheet" href="styles/components/cl-radio.css">
-    <link rel="stylesheet" href="styles/components/cl-button.css">
-    <link rel="stylesheet" href="styles/components/cl-input.css">
-    <link rel="stylesheet" href="styles/components/cl-toast.css">
+    <link rel="stylesheet" href="../styles/components/cl-header.css">
+    <link rel="stylesheet" href="../styles/components/cl-radio.css">
+    <link rel="stylesheet" href="../styles/components/cl-button.css">
+    <link rel="stylesheet" href="../styles/components/cl-input.css">
+    <link rel="stylesheet" href="../styles/components/cl-toast.css">
 
     <!--TRUMPS-->
 
     <!--PAGES-->
-    <link rel="stylesheet" href="styles/pages/index.css">
+    <link rel="stylesheet" href="../styles/pages/index.css">
 
 
 </head>
@@ -53,25 +51,21 @@
             <header class="cl-header">
                 <div class="wrapper">
                     <div class="image-wrapper">
-                        <img class="image" src="assets/logos/clinica-logo.png" alt="logo-clinica">
+                        <img class="image" src="../assets/logos/clinica-logo.png" alt="logo-clinica">
                     </div>
                 </div>
             </header>       
 
             <div class="cl-toast-box" id="toast-box">
-                    
             </div>
 
             <div class="main-content">
                  
                 <form class="left" action="javascript:void(0)" id="form-login" onsubmit="login()">
-
                     <h1 class="main-title">
                         <span class="up">Login</span>
                     </h1>
-
                     <label class="label-radios" for="radios">Selecione seu perfil:</label>
-
                     <div class="cl-radio" id="radios">
                         <div class="radio">
                             <input required class="cl-input" type="radio" name="role" value="cliente">
@@ -86,21 +80,18 @@
                             <label for="admin" class="label">Administrador</label>
                         </div>     
                     </div>
-
                     <div class="cl-inputs">
                             <label class="label" for="cpf-input">CPF</label> <input required class="input" type="text" id="cpf-input">
                             <label class="label" for="password-input">Senha</label> <input required class="input" type="password" id="password-input">
                     </div>
-
                     <a class="no-account" href="register.html">Não tem cadastro? clique aqui!</a>
-
                     <div class="cl-button">
                         <button type="submit" class="btn-link" id="btn-link">Continuar</button>
                     </div>
                 </form>
 
                 <div class="right">
-                    <img class="image" src="assets/image/banner-clinica.png" alt="bg-cubes">
+                    <img class="image" src="../assets/image/banner-clinica.png" alt="bg-cubes">
                 </div>
             
             </div>
