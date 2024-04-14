@@ -16,6 +16,11 @@
     margin-top: 40px;
 }
 
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> label,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> label{
+    cursor: pointer;
+}
+
 .cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .specialty,
 .cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .specialty{
     font-size: 18px;
@@ -59,21 +64,45 @@
     margin-right: 19px;
 }
 
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .from-the-hour{
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .from-the-hour,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .from-the-hour{
     margin-top: 15px;
     margin-bottom: 10px;
 } 
 
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container{
+    font-family: var(--cl-font-family-base);
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 347px;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container> label,
+.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container> label{
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    padding-top: 3px;
+    caret-color: transparent;
+}
+
 .cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container> span,
 .cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container> span{
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container> .radio,
 .cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container> .radio{
-    margin-right: 25px;
     cursor: pointer;
     margin-bottom: 2px;
+    margin-right: 20px;
 }
 
 .cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .exam> label,
@@ -120,20 +149,3 @@
     margin-top: 8px;
     margin-bottom: 10px;
 }
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container{
-    font-family: var(--cl-font-family-base);
-    font-weight: 400;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 400px;
-    height: 30px;
-    font-size: 20px;
-    padding-bottom: 40px;
-    padding-top: 10px;
-}
-
-

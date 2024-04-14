@@ -66,6 +66,11 @@
     caret-color: transparent;
 }
 
+.cl-button.-patient> .btn-link:hover{
+    background-color: var(--cl-color-primary-light);
+}
+
+
 .cl-button.-add-solution{
     cursor: pointer;
     height: 20px;

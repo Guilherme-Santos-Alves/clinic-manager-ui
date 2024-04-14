@@ -35,7 +35,7 @@
 }
 
 .cl-radio.-patient{
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .cl-radio.-patient> .consultations,
@@ -53,6 +53,9 @@
 .cl-radio.-patient> .consultations> label,
 .cl-radio.-patient> .exams> label{
     margin: 0px 10px 0px 10px;
+    font-weight: 500;
+    cursor: pointer;
+    caret-color: transparent;
 }
 
 .cl-radio.-patient> .consultations> span,
