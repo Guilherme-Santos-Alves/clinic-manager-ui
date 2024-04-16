@@ -1,0 +1,185 @@
+.cl-exams-or-consultations> .cl-wrapper> .main-content{
+    width: var(--cl-main-wrapper);
+    height: 100%;
+    padding: 100px 84.5px 0px 84.5px;
+}
+
+.cl-exams-or-consultations> .cl-wrapper> .main-content> .content{
+    display: grid;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+
+.cl-radio-title{
+    font-size: 35px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.content-consultations,
+.content-exams{
+    margin-top: 50px;
+}
+
+.content-consultations> .form-box,
+.content-exams> .form-box{
+    display: grid;
+    justify-content: center;
+    width: auto;
+}
+
+.content-consultations> .title,
+.content-exams> .title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.content-consultations> .form-box> label,
+.content-exams> .form-box> label{
+    cursor: pointer;
+}
+
+.content-consultations> .form-box> .specialty,
+.content-exams> .form-box> .specialty{
+    font-size: 18px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.content-consultations> .form-box> .specialty> select,
+.content-exams> .form-box> .specialty> select{
+    background-color: var(--cl-color-gray-lighter);
+    width: 200px;
+    height: 22px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+}
+
+.content-consultations> .form-box> .from-the-hour> .input,
+.content-exams> .form-box> .from-the-hour> .input{
+    background-color: var(--cl-color-gray-lighter);
+    width: 117px;
+    height: 22px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    margin: 0px 0px 8px px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+}
+
+.content-exams> .form-box> .specialty> .between,
+.content-exams> .form-box> .from-the-hour> .between,
+.content-consultations> .form-box> .specialty> .between,
+.content-consultations> .form-box> .from-the-hour> .between{
+    font-size: 18px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    margin-right: 19px;
+}
+
+.content-exams> .form-box> .from-the-hour,
+.content-consultations> .form-box> .from-the-hour{
+    margin-bottom: 10px;
+} 
+
+.content-consultations> .form-box> .radio-container,
+.content-exams> .form-box> .radio-container{
+    font-family: var(--cl-font-family-base);
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 347px;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.content-consultations> .form-box> .radio-container> label,
+.content-exams> .form-box> .radio-container> label{
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    padding-top: 3px;
+    caret-color: transparent;
+}
+
+.content-consultations> .form-box> .radio-container> span,
+.content-exams> .form-box> .radio-container> span{
+    font-size: 26px;
+}
+
+.content-consultations> .form-box> .radio-container> .radio,
+.content-exams> .form-box> .radio-container> .radio{
+    cursor: pointer;
+    margin-bottom: 2px;
+    margin-right: 20px;
+}
+
+.content-exams> .form-box> .exam> label,
+.content-exams> .form-box> .doctor-select> label,
+.content-consultations> .form-box> .exam> label,
+.content-consultations> .form-box> .doctor-select> label{
+    font-size: 18px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.content-exams> .form-box> .exam> .input{
+    background-color: var(--cl-color-gray-lighter);
+    width: 250px;
+    height: 20px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    margin-left: 9px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+}
+
+.content-exams> .form-box> .doctor-select> select,
+.content-consultations> .form-box> .doctor-select> select{
+    background-color: var(--cl-color-gray-lighter);
+    width: 250px;
+    height: 22px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    margin: 6px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+}
+
+.content-exams> .form-box> .exam{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.content-consultations> .form-box> .doctor-select{
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+::-webkit-input-placeholder {
+    color: var(--cl-color-gray);
+}
+
+:-moz-placeholder {
+    color: var(--cl-color-gray);  
+}
+
+::-moz-placeholder {
+    color: var(--cl-color-gray);  
+}
+
+:-ms-input-placeholder {  
+    color: var(--cl-color-gray); 
+}

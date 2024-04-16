@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Excelência e Saúde</title>
 </head>
-
     <!--FONTS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="../https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,800;1,800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!--COMPONENTS-->
     <link rel="stylesheet" href="../styles/components/cl-header.css">
-    <link rel="stylesheet" href="../styles/components/cl-input.css">
-    <link rel="stylesheet" href="../styles/components/cl-radio.css">
-    <link rel="stylesheet" href="../styles/components/cl-button.css">
+    <link rel="stylesheet" href="../styles/components/cl-navbar.css">
     <link rel="stylesheet" href="../styles/components/cl-toast.css">
+    <link rel="stylesheet" href="../styles/components/cl-sidebar.css">
+    <link rel="stylesheet" href="../styles/components/cl-button.css">
+    <link rel="stylesheet" href="../styles/components/my-appointments.css">
+    <link rel="stylesheet" href="../styles/components/select-custom.css">
 
     <!--SETTINGS-->
     <link rel="stylesheet" href="../styles/settings/wrapper.css">
@@ -36,62 +37,120 @@
 
     <!--PAGES-->
     <link rel="stylesheet" href="../styles/pages/patient.css">
+    <link rel="stylesheet" href="../styles/pages/exams-or-consultations.css">
 
-    <!-- JAVASCRIPT -->
-    <script src="../js/patient.js" defer></script>
+    <!-- --JAVASCRIPT-- -->
+    <script src="../js/patient.js"></script>
 
 <body>
     <div class="cl-patient">
-
+        <div class="cl-navbar-content">
+            <div class="image-wrapper">
+                <img class="image" src="../assets/logos/clinica-logo.png" alt="logo-clinica">
+            </div>
+            <!-- <nav>
+                <ul class="nav-links">
+                    <li><a href="">Meu Perfil</a></li>
+                    <li><a href="exams-or-consultations.html">Agendamento Online</a></li>
+                    <li><a href="">Meus Agendamentos</a></li>
+                    <li><a href="">Contato</a></li>
+                </ul>
+            </nav> -->
+            <h3 class="name">
+                Boca de Pinico
+            </h3>
+        </div>
+        <div class="cl-toast-box" id="toast-box">
+            
+        </div>
         <div class="cl-wrapper">
-            <header class="cl-header">
-                <div class="wrapper">
-                    <div class="image-wrapper">
-                        <img class="image" src="../assets/logos/clinica-logo.png" alt="logo-clinica">
+            <div class="main-content">
+                <div class="left">
+                    <div class="main-title">
+                        <h1>Menu</h1>
+                    </div>
+                    <nav class="cl-sidebar">
+                        <ul class="nav-links">
+                            <li>
+                                <span class="material-symbols-outlined">
+                                    account_circle
+                                </span>
+                                <a onclick="">Meu painel</a>
+                            </li>
+                            <li>
+                                <span class="material-symbols-outlined">
+                                    calendar_clock
+                                </span>
+                                <a onclick="buildInputsExams()">Agendar Exame</a>
+                            </li>
+                            <li>
+                                <span class="material-symbols-outlined">
+                                    calendar_clock
+                                </span>
+                                <a onclick="buildInputsConsultations()">Agendar Consulta</a>
+                            </li>
+                            <li>
+                                <span class="material-symbols-outlined">
+                                    event_note
+                                </span>
+                                <a onclick="changeGrid()">Meus Agendamentos</a>
+                            </li>
+                            <li>
+                                <span class="material-symbols-outlined">
+                                    description
+                                </span>
+                                <a onclick="">Editar Dados Cadastrais</a>
+                            </li>
+                        </ul>
+                        <button onclick="apagar()" style="height: 20px; width: 100px; background-color: green;" >Apagar</button>
+                    </nav>
+                </div>
+                <div class="center">
+                    <h1>Meu painel</h1>
+                    <div class="personal-data">
+                        <h2>Dados do Beneficiário:</h2>
+                    <ul>
+                        <li>Nome: <label for=""> Boca de Pinico</label></li>
+                        <li>CPF: 239.223.567.90</li>
+                        <li>Data de Nascimento: 21/10/2005</li>
+                    </ul>
                     </div>
                 </div>
-            </header> 
-
-            <div class="main-content"> 
-                <div class="cl-toast-box" id="toast-box">
-                    
-                </div>               
-                <form class="left" action="javascript:void(0)" id="form-patient">
-                    <h2 class="cl-radio-title">Selecione uma opção:</h2>
-                    <div class="cl-radio -patient">
-                        <div class="exams">            
-                            <span class="material-symbols-outlined">
-                                stethoscope
-                            </span>
-                            <label for="option-exams">Exame</label>
-                            <input type="radio" required name="option" id="option-exams" onclick="listDoctorsSelect()">
-                        </div>
-    
-                        <div class="consultations">
-                            <span class="material-symbols-outlined">
-                                clinical_notes
-                            </span>
-                            <label for="option-consultations">Consulta</label>
-                            <input type="radio" required name="option" id="option-consultations" onclick="listDoctorsSelect()">
-                        </div>
-                    </div>
-
-                    <div class="content-consultations">
-                        
-                    </div>
+                <div class="right">
                     <div class="content-exams">
                         
                     </div>
-                </form>
-
-                <div class="right">
-                    <img class="image" src="../assets/image/banner-clinica.png" alt="bg-cubes">
-                    
+                    <div class="content-consultations">
+                        
+                    </div>
+                    <div class="my-appointments">
+                        <h1>Meus Agendamentos</h1>
+                        <label for="select-custom">Status:</label>
+                        <div class="select-custom" id="select-custom">
+                            <select name="" id="">
+                                <option value="">Todos</option>
+                                <option selected value="">Agendado</option>
+                                <option value="">Efetivado</option>
+                                <option value="">Não Realizado</option>
+                                <option value="">Cancelado</option>
+                            </select>
+                            <div class="custom-arrow">
+                                <span class="material-symbols-outlined">
+                                    arrow_drop_down
+                                </span>
+                            </div>
+                            
+                        </div> 
+                        <button class="search">
+                            <span class="material-symbols-outlined">
+                                search
+                            </span>
+                            <h3>Buscar</h3>
+                        </button>          
+                    </div>  
                 </div>
             </div>
-        </div>
-        
-    </div>
-        
+        </div>       
+    </div>   
 </body>
 </html>

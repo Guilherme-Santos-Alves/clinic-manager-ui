@@ -1,0 +1,41 @@
+.my-appointments{
+    padding: 0px 20px 20px 20px;
+}
+
+.my-appointments> label{
+    display: block;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.my-appointments> .search{
+    background-color: var(--cl-color-primary);
+    color: var(--cl-color-gray-lighter);
+    border-radius: 5px;
+}
+
+.my-appointments> .search{
+    display: block;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-left: 245px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.my-appointments> .search> span{
+    display: inline-block;
+    font-size: 18px;
+    caret-color: transparent;
+}
+
+.my-appointments> .search> h3{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: var(--cl-font-family-base);
+    caret-color: transparent;
+}
+
+

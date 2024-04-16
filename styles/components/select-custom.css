@@ -1,0 +1,42 @@
+.select-custom{
+    position: relative;
+    display: inline-block;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+}
+
+.select-custom> select{
+    width: 335px;
+    height: 30px;
+    cursor: pointer;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    padding-left: 5px;
+}
+
+.custom-arrow {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    background-color: var(--cl-color-primary);
+    border-radius: 0 calc(5px - 1px) calc(5px - 1px) 0;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.custom-arrow> span{
+    color: white;
+    padding-top: 2px;
+    padding-left: 5px;
+    caret-color: transparent;
+}

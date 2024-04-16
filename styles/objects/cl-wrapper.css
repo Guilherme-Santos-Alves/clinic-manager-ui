@@ -6,7 +6,6 @@
 .cl-wrapper> .main-content{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 100px;
     margin: 0 auto;
 }
 
@@ -18,6 +17,15 @@
 
 .cl-wrapper> .main-content> .right> .image{
     height: 100%;
+    position: absolute;
+    top: 0;
+    min-width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.cl-wrapper> .main-content> .right> .image-right> img{
+    height: 100vh;
     position: absolute;
     top: 0;
     min-width: 100%;

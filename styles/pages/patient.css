@@ -1,151 +1,45 @@
 .cl-patient> .cl-wrapper> .main-content{
-    width: var(--cl-main-wrapper);
-    height: 100%;
-    padding: 100px 84.5px 0px 84.5px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .content{
     display: grid;
-    padding-top: 100px;
+    grid-template-columns: 290px auto auto;
     margin: 0 auto;
 }
 
-.cl-patient> .cl-wrapper> .main-content> .left> .cl-radio-title{
-    font-size: 35px;
-    font-weight: 600;
-    margin-top: 40px;
+.cl-patient> .cl-wrapper> .main-content {
+    width: var(--cl-main-wrapper);
+    height: 100%;
 }
 
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> label,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> label{
-    cursor: pointer;
+.cl-patient> .cl-wrapper> .main-content> .left{
+    margin-top: 50px;
 }
 
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .specialty,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .specialty{
+.cl-patient> .cl-wrapper> .main-content> .right{
+    overflow: hidden;
+    position: relative;
+    height: calc(100vh - 100px);
+
+}
+
+.cl-patient> .cl-wrapper> .main-content> .center> h1{
+    margin: 50px 0px 50px 20px;
+}
+
+.cl-patient> .cl-wrapper> .main-content> .center> .personal-data{
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    padding: 0px 20px;
+    border-left: 4px solid var(--cl-color-primary);
+    margin-left: 20px;
+}
+
+.cl-patient> .cl-wrapper> .main-content> .center> .personal-data> h2{
+    margin-bottom: 26px;
+}
+
+.cl-patient> .cl-wrapper> .main-content> .center> .personal-data> ul{
+    margin-left: 20px;
+    list-style: none;
+}
+.cl-patient> .cl-wrapper> .main-content> .center> .personal-data> ul> li{
     font-size: 18px;
-    font-family: var(--cl-font-family-base);
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .specialty> select,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .specialty> select{
-    background-color: var(--cl-color-gray-lighter);
-    width: 200px;
-    height: 22px;
-    outline: 0;
-    border: 2px solid var(--cl-color-gray-light);
-    font-size: 15px;
-    font-weight: 400;
-    font-family: var(--cl-font-family-base);
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .from-the-hour> .input,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .from-the-hour> .input{
-    background-color: var(--cl-color-gray-lighter);
-    width: 117px;
-    height: 22px;
-    outline: 0;
-    border: 2px solid var(--cl-color-gray-light);
-    margin: 0px 0px 8px px;
-    font-size: 15px;
-    font-weight: 400;
-    font-family: var(--cl-font-family-base);
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .specialty> .between,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .from-the-hour> .between,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .specialty> .between,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .from-the-hour> .between{
-    font-size: 18px;
-    font-family: var(--cl-font-family-base);
-    font-weight: 500;
-    margin-right: 19px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .from-the-hour,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .from-the-hour{
-    margin-top: 15px;
-    margin-bottom: 10px;
-} 
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container{
-    font-family: var(--cl-font-family-base);
-    font-weight: 400;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 347px;
-    height: 30px;
-    font-size: 20px;
-    margin-top: 20px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container> label,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container> label{
-    cursor: pointer;
-    font-size: 17px;
-    font-weight: 500;
-    padding-top: 3px;
-    caret-color: transparent;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container> span,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container> span{
-    font-size: 26px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .radio-container> .radio,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .radio-container> .radio{
-    cursor: pointer;
-    margin-bottom: 2px;
-    margin-right: 20px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .exam> label,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .doctor-select> label,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .exam> label,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .doctor-select> label{
-    font-size: 18px;
-    font-family: var(--cl-font-family-base);
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .exam> .input{
-    background-color: var(--cl-color-gray-lighter);
-    width: 250px;
-    height: 20px;
-    outline: 0;
-    border: 2px solid var(--cl-color-gray-light);
-    margin-left: 9px;
-    font-size: 15px;
-    font-weight: 400;
-    font-family: var(--cl-font-family-base);
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .doctor-select> select,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .doctor-select> select{
-    background-color: var(--cl-color-gray-lighter);
-    width: 250px;
-    height: 22px;
-    outline: 0;
-    border: 2px solid var(--cl-color-gray-light);
-    margin: 6px;
-    font-size: 15px;
-    font-weight: 400;
-    font-family: var(--cl-font-family-base);
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .exam,
-.cl-patient> .cl-wrapper> .main-content> .left> .content-exams> .doctor-select{
-    margin-bottom: 8px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left> .content-consultations> .doctor-select{
-    margin-top: 8px;
-    margin-bottom: 10px;
+    padding-bottom: 30px;
 }

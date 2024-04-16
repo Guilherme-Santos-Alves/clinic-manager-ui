@@ -1,0 +1,59 @@
+.cl-navbar-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10% 10px 10%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.cl-navbar-content> .image-wrapper> .image{
+    caret-color: transparent;
+    height: 70px;
+    width: 250px;
+}
+
+.cl-navbar-content> li, a{
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--cl-color-gray-dark);
+    text-decoration: none;
+    caret-color: transparent;
+}
+
+.cl-navbar-content> nav> .cl-navbar-content> nav> .nav-links{
+    list-style: none;
+}
+
+.cl-navbar-content> nav> .nav-links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.cl-navbar-content> nav> .nav-links li a {
+    transition: all 0.2s ease 0s;
+}
+
+.cl-navbar-content> nav> .nav-links li a:hover {
+    color: var(--cl-color-primary);
+}
+
+.cl-navbar-content> button{
+    padding: 9px 25px;
+    background-color:var(--cl-color-primary);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: var(--cl-color-gray-lighter);
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    caret-color: transparent;
+}
+
+.cl-navbar-content> button:hover{
+    background-color:var(--cl-color-primary-light);
+}
