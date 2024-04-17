@@ -1,4 +1,4 @@
-.cl-wrapper{
+/* .cl-wrapper{
     max-width: var(--cl-main-wrapper);
     margin: 0 auto;
 }
@@ -7,9 +7,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
-}
+} */
 
-.cl-wrapper> .main-content> .right{
+.cl-wrapper> .main-content> .right.-login{
     overflow: hidden;
     position: relative;
     height: calc(100vh - 100px);

@@ -132,41 +132,55 @@ function buildInputsExams() {
   const templateExams = `
     <h1 class="title">Agendar Exame</h1>
     <form action="javascript:void(0)" class="form-box">
-      <div class="specialty" id="specialty">
-          <label class="select-speciality" for="specialty-exam">Selecione a especialidade do exame:</label>
-          <select required name="specialty" id="specialty-exam">
-              <option value="" disabled selected>Especialidade</option> 
-              <option value="Exames de imagem">Exames de imagem</option>
-              <option value="Cardiologia">Cardiologia</option>
-          </select>
-      </div>
-      <div class="doctor-select">
-        <label for="doctors-list">Médico:</label>
-        <select name="doctors-list" id="doctors-list">
-        <option value="" disabled selected>Selecione um médico</option>
-        </select> 
-      </div>
-      <div class="exam">
-          <label class="select-speciality" for="exam">Exame:</label>
-          <input class="input" required placeholder="Digite o nome do exame">
-      </div>   
-      <div class="from-the-hour">
-          <label class="between" for="exams-from-hour">Entre:</label> 
-          <input required class="input" type="time" id="exams-from-hour" value="00:00">
-          <label class="e" for="exams-until-hour">e</label> 
-          <input required class="input" type="time" id="exams-until-hour" value="23:59">
-      </div>
-      <div class="radio-container">
-          <span class="material-symbols-outlined">phone_iphone</span>
-          <label for="radio-virtual-exams">Telemedicina</label>
-          <input required name="modality" class="radio" type="radio" id="radio-virtual-exams">
-          <span class="material-symbols-outlined">person</span>
-          <label for="radio-presential-exams">Presencial</label>
-          <input required name="modality" class="radio" type="radio" id="radio-presential-exams">
-      </div>
-      <div class="cl-button -patient">
-          <button type="submit" class="btn-link" id="btn-link-exam" >Continuar</button>
-      </div>
+        <div class="specialty" id="specialty">
+            <div class="select-custom -exam-or-consultation" id="select-custom">
+                <label class="select-speciality" for="specialty-exam">Selecione a especialidade do exame:</label>
+                <select required name="specialty" id="specialty-exam">
+                    <option value="" disabled selected>Especialidade</option> 
+                    <option value="Exames de imagem">Exames de imagem</option>
+                    <option value="Cardiologia">Cardiologia</option>
+                </select>
+                <div class="custom-arrow">
+                    <span class="material-symbols-outlined">
+                        arrow_drop_down
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="select-custom -exam-or-consultation">
+          <div class="doctor-select">
+            <label for="doctors-list">Médico:</label>
+            <select name="doctors-list" id="doctors-list">
+            <option value="" disabled selected>Selecione um médico</option>
+            </select> 
+            <div class="custom-arrow">
+            <span class="material-symbols-outlined">
+                arrow_drop_down
+            </span>
+            </div>
+          </div>
+        </div>
+        <div class="exam">
+            <label class="select-speciality" for="exam">Exame:</label>
+            <input class="input" required placeholder="Digite o nome do exame">
+        </div>   
+        <div class="from-the-hour">
+            <label class="between" for="exams-from-hour">Entre:</label> 
+            <input required class="input" type="time" id="exams-from-hour" value="00:00">
+            <label class="e" for="exams-until-hour">e</label> 
+            <input required class="input" type="time" id="exams-until-hour" value="23:59">
+        </div>
+        <div class="radio-container">
+            <span class="material-symbols-outlined">phone_iphone</span>
+            <label for="radio-virtual-exams">Telemedicina</label>
+            <input required name="modality" class="radio" type="radio" id="radio-virtual-exams">
+            <span class="material-symbols-outlined">person</span>
+            <label for="radio-presential-exams">Presencial</label>
+            <input required name="modality" class="radio" type="radio" id="radio-presential-exams">
+        </div>
+        <div class="cl-button -patient">
+            <button type="submit" class="btn-link" id="btn-link-exam" >Continuar</button>
+        </div>
     </form>
   `;
   listDoctorsSelect();
@@ -184,18 +198,32 @@ function buildInputsConsultations() {
   <h1 class="title">Agendar Consulta</h1>
   <form action="javascript:void(0)" class="form-box">
     <div class="specialty" id="specialty">
-    <label class="select-speciality" for="specialty-consultation">Selecione a especialidade da consulta:</label>
-    <select name="specialty" id="specialty-consultation">
-      <option value="" disabled selected >Especialidade</option> 
-      <option value="Cardiologia">Cardiologia</option>
-      <option value="Ortopedia">Ortopedia</option>
-    </select>
+    <div class="select-custom -exam-or-consultation" id="select-custom">
+        <label class="select-speciality" for="specialty-consultation">Selecione a especialidade da consulta:</label>
+            <select name="specialty" id="specialty-consultation">
+            <option value="" disabled selected >Especialidade</option> 
+            <option value="Cardiologia">Cardiologia</option>
+            <option value="Ortopedia">Ortopedia</option>
+            </select>
+        <div class="custom-arrow">
+            <span class="material-symbols-outlined">
+                arrow_drop_down
+            </span>
+        </div>
     </div>
-    <div class="doctor-select">
-    <label for="doctors-list">Médico:</label>
-    <select name="doctors-list" id="doctors-list">
-    <option value="" disabled selected>Selecione um médico</option>
-    </select> 
+    </div>
+    <div class="select-custom -exam-or-consultation">
+        <div class="doctor-select">
+          <label for="doctors-list">Médico:</label>
+          <select name="doctors-list" id="doctors-list">
+          <option value="" disabled selected>Selecione um médico</option>
+          </select> 
+          <div class="custom-arrow">
+          <span class="material-symbols-outlined">
+              arrow_drop_down
+          </span>
+          </div>
+        </div>
     </div>
     <div class="from-the-hour" >
     <label class="between" for="from-date">Entre:</label>

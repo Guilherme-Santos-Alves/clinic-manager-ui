@@ -2,9 +2,11 @@
     --cl-color-primary: #03B0C1;
     --cl-color-primary-dark: #063D54;
     --cl-color-primary-light: #53ced9;
+    --cl-color-primary-lightest: #ccf4f7;
 
     --cl-color-gray-lighter: #fafafa;
     --cl-color-gray: #767684;
+    --cl-color-gray-dark: #3a3a3e;
     --cl-color-gray-light: #BBB7B7;
     --cl-color-black: #09090A;
 }

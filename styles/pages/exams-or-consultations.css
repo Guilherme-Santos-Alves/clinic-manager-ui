@@ -48,11 +48,11 @@
     margin-bottom: 8px;
 }
 
-.content-consultations> .form-box> .specialty> select,
-.content-exams> .form-box> .specialty> select{
+.content-consultations> .form-box> .specialty> .select-custom.-exam-or-consultation> select,
+.content-exams> .form-box> .specialty> .select-custom.-exam-or-consultation> select{
     background-color: var(--cl-color-gray-lighter);
     width: 200px;
-    height: 22px;
+    height: 24px;
     outline: 0;
     border: 2px solid var(--cl-color-gray-light);
     font-size: 15px;
@@ -124,9 +124,9 @@
 }
 
 .content-exams> .form-box> .exam> label,
-.content-exams> .form-box> .doctor-select> label,
+.content-exams> .form-box> .select-custom.-exam-or-consultation> .doctor-select> label,
 .content-consultations> .form-box> .exam> label,
-.content-consultations> .form-box> .doctor-select> label{
+.content-consultations> .form-box> .select-custom.-exam-or-consultation> .doctor-select> label{
     font-size: 18px;
     font-family: var(--cl-font-family-base);
     font-weight: 500;
@@ -134,7 +134,6 @@
 }
 
 .content-exams> .form-box> .exam> .input{
-    background-color: var(--cl-color-gray-lighter);
     width: 250px;
     height: 20px;
     outline: 0;
@@ -145,8 +144,8 @@
     font-family: var(--cl-font-family-base);
 }
 
-.content-exams> .form-box> .doctor-select> select,
-.content-consultations> .form-box> .doctor-select> select{
+.content-exams> .form-box> .select-custom.-exam-or-consultation> .doctor-select> select,
+.content-consultations> .form-box> .select-custom.-exam-or-consultation> .doctor-select> select{
     background-color: var(--cl-color-gray-lighter);
     width: 250px;
     height: 22px;
@@ -163,7 +162,7 @@
     margin-bottom: 15px;
 }
 
-.content-consultations> .form-box> .doctor-select{
+.content-consultations> .form-box> .select-custom.-exam-or-consultation> .doctor-select{
     margin-top: 8px;
     margin-bottom: 10px;
 }

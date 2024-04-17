@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Excelência e Saúde</title>
-</head>
+
     <!--FONTS-->
-    <link rel="preconnect" href="../https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,800;1,800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../styles/components/cl-button.css">
     <link rel="stylesheet" href="../styles/components/my-appointments.css">
     <link rel="stylesheet" href="../styles/components/select-custom.css">
+    <link rel="stylesheet" href="../styles/components/option-exam.css">
 
     <!--SETTINGS-->
     <link rel="stylesheet" href="../styles/settings/wrapper.css">
@@ -39,118 +40,128 @@
     <link rel="stylesheet" href="../styles/pages/patient.css">
     <link rel="stylesheet" href="../styles/pages/exams-or-consultations.css">
 
-    <!-- --JAVASCRIPT-- -->
+    <!--JAVASCRIPT-->
     <script src="../js/patient.js"></script>
-
+</head>
 <body>
-    <div class="cl-patient">
+    <nav class="cl-sidebar">
+        <div class="image-wrapper">
+            <img class="image" src="../assets/logos/clinica-logo.png" alt="logo-clinica">
+        </div>
+        <ul class="nav-links">
+            <li>
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                <a onclick="">Meu painel</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    calendar_clock
+                </span>
+                <a onclick="buildInputsExams()">Agendar Exame</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    calendar_clock
+                </span>
+                <a onclick="buildInputsConsultations()">Agendar Consulta</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    event_note
+                </span>
+                <a onclick="changeGrid()">Meus Agendamentos</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    description
+                </span>
+                <a onclick="">Editar Dados Cadastrais</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    logout
+                </span>
+                <a href="">Sair</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="cl-navbar">
         <div class="cl-navbar-content">
-            <div class="image-wrapper">
-                <img class="image" src="../assets/logos/clinica-logo.png" alt="logo-clinica">
-            </div>
-            <!-- <nav>
-                <ul class="nav-links">
-                    <li><a href="">Meu Perfil</a></li>
-                    <li><a href="exams-or-consultations.html">Agendamento Online</a></li>
-                    <li><a href="">Meus Agendamentos</a></li>
-                    <li><a href="">Contato</a></li>
-                </ul>
-            </nav> -->
             <h3 class="name">
                 Boca de Pinico
             </h3>
+            <h3>
+                Neymar Jr
+            </h3>
         </div>
-        <div class="cl-toast-box" id="toast-box">
-            
-        </div>
+    </div>
+
+    <div class="cl-patient">
+        <div class="cl-toast-box" id="toast-box"></div>
+        
         <div class="cl-wrapper">
             <div class="main-content">
-                <div class="left">
-                    <div class="main-title">
-                        <h1>Menu</h1>
-                    </div>
-                    <nav class="cl-sidebar">
-                        <ul class="nav-links">
-                            <li>
-                                <span class="material-symbols-outlined">
-                                    account_circle
-                                </span>
-                                <a onclick="">Meu painel</a>
-                            </li>
-                            <li>
-                                <span class="material-symbols-outlined">
-                                    calendar_clock
-                                </span>
-                                <a onclick="buildInputsExams()">Agendar Exame</a>
-                            </li>
-                            <li>
-                                <span class="material-symbols-outlined">
-                                    calendar_clock
-                                </span>
-                                <a onclick="buildInputsConsultations()">Agendar Consulta</a>
-                            </li>
-                            <li>
-                                <span class="material-symbols-outlined">
-                                    event_note
-                                </span>
-                                <a onclick="changeGrid()">Meus Agendamentos</a>
-                            </li>
-                            <li>
-                                <span class="material-symbols-outlined">
-                                    description
-                                </span>
-                                <a onclick="">Editar Dados Cadastrais</a>
-                            </li>
-                        </ul>
-                        <button onclick="apagar()" style="height: 20px; width: 100px; background-color: green;" >Apagar</button>
-                    </nav>
-                </div>
-                <div class="center">
-                    <h1>Meu painel</h1>
-                    <div class="personal-data">
-                        <h2>Dados do Beneficiário:</h2>
-                    <ul>
-                        <li>Nome: <label for=""> Boca de Pinico</label></li>
-                        <li>CPF: 239.223.567.90</li>
-                        <li>Data de Nascimento: 21/10/2005</li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="content-exams">
+                <div class="cl-exams">
+                    <h1 class="title">Agendar Exame</h1>
+                    <form action="javascript:void(0)" class="form-box">
                         
-                    </div>
-                    <div class="content-consultations">
-                        
-                    </div>
-                    <div class="my-appointments">
-                        <h1>Meus Agendamentos</h1>
-                        <label for="select-custom">Status:</label>
-                        <div class="select-custom" id="select-custom">
-                            <select name="" id="">
-                                <option value="">Todos</option>
-                                <option selected value="">Agendado</option>
-                                <option value="">Efetivado</option>
-                                <option value="">Não Realizado</option>
-                                <option value="">Cancelado</option>
-                            </select>
-                            <div class="custom-arrow">
-                                <span class="material-symbols-outlined">
-                                    arrow_drop_down
-                                </span>
+                        <div class="specialty" id="specialty">
+                            <div class="select-custom -exam-or-consultation" id="select-custom">
+                                <label class="select-speciality" for="specialty-exam">Selecione a especialidade do exame:</label>
+                                <select required name="specialty" id="specialty-exam">
+                                    <option value="" disabled selected>Especialidade</option> 
+                                    <option value="Exames de imagem">Exames de imagem</option>
+                                    <option value="Cardiologia">Cardiologia</option>
+                                </select>
+                                <div class="custom-arrow">
+                                    <span class="material-symbols-outlined">
+                                        arrow_drop_down
+                                    </span>
+                                </div>
                             </div>
-                            
-                        </div> 
-                        <button class="search">
+                        </div>
+                        <div class="select-custom -exam-or-consultation">
+                        <div class="doctor-select">
+                            <label for="doctors-list">Médico:</label>
+                            <select name="doctors-list" id="doctors-list">
+                            <option value="" disabled selected>Selecione um médico</option>
+                            </select> 
+                            <div class="custom-arrow">
                             <span class="material-symbols-outlined">
-                                search
+                                arrow_drop_down
                             </span>
-                            <h3>Buscar</h3>
-                        </button>          
-                    </div>  
+                            </div>
+                        </div>
+                        </div>
+                        <div class="exam">
+                            <label class="select-speciality" for="exam">Exame:</label>
+                            <input class="input" required placeholder="Digite o nome do exame">
+                        </div>   
+                        <div class="from-the-hour">
+                            <label class="between" for="exams-from-hour">Entre:</label> 
+                            <input required class="input" type="time" id="exams-from-hour" value="00:00">
+                            <label class="e" for="exams-until-hour">e</label> 
+                            <input required class="input" type="time" id="exams-until-hour" value="23:59">
+                        </div>
+                        <div class="radio-container">
+                            <span class="material-symbols-outlined">phone_iphone</span>
+                            <label for="radio-virtual-exams">Telemedicina</label>
+                            <input required name="modality" class="radio" type="radio" id="radio-virtual-exams">
+                            <span class="material-symbols-outlined">person</span>
+                            <label for="radio-presential-exams">Presencial</label>
+                            <input required name="modality" class="radio" type="radio" id="radio-presential-exams">
+                        </div>
+                        <div class="cl-button -patient">
+                            <button type="submit" class="btn-link" id="btn-link-exam" >Continuar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>       
-    </div>   
+            <!-- Outros elementos dentro de cl-patient, se houver -->
+        </div>
+    </div>
 </body>
 </html>

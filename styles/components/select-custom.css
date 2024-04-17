@@ -3,12 +3,6 @@
     display: inline-block;
 }
 
-select {
-    appearance: none;
-    -webkit-appearance: none; 
-    -moz-appearance: none; 
-}
-
 .select-custom> select{
     width: 335px;
     height: 30px;
@@ -19,9 +13,12 @@ select {
     font-weight: 400;
     font-family: var(--cl-font-family-base);
     padding-left: 5px;
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
 }
 
-.custom-arrow {
+.select-custom> .custom-arrow {
     content: '';
     position: absolute;
     top: 0;
@@ -34,9 +31,98 @@ select {
     cursor: pointer;
 }
 
-.custom-arrow> span{
+.select-custom> .custom-arrow> span{
     color: white;
     padding-top: 2px;
     padding-left: 5px;
     caret-color: transparent;
+}
+
+.select-custom.-exam-or-consultation> select{
+    width: 335px;
+    height: 30px;
+    cursor: pointer;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    padding-left: 5px;
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+}
+
+.select-custom.-exam-or-consultation> .custom-arrow> span{
+    color: white;
+    caret-color: transparent;
+}
+
+.select-custom.-exam-or-consultation> .doctor-select{
+    position: relative;
+    display: inline-block;
+}
+
+.select-custom.-exam-or-consultation> .doctor-select> select{
+    width: 220px;
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    padding-left: 5px;
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+}
+
+.select-custom.-exam-or-consultation> .doctor-select> .custom-arrow> span{
+    color: white;
+    caret-color: transparent;
+    padding-left: 5px;
+}
+
+.select-custom.-exam-or-consultation> .doctor-select> .custom-arrow {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    background-color: var(--cl-color-primary);
+    border-radius: 0 calc(5px - 1px) calc(5px - 1px) 0;
+    pointer-events: none;
+    cursor: pointer;
+    height: 22px;
+    margin-top: 6px;
+}
+
+.cl-exams> .form-box> .specialty> .select-custom.-exam-or-consultation> select{
+    background-color: var(--cl-color-gray-lighter);
+    width: 389px;
+    height: 32px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    display: block;
+}
+
+.cl-exams> .form-box> .specialty> .select-custom.-exam-or-consultation> .custom-arrow{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    background-color: var(--cl-color-primary);
+    border-radius: 0 calc(5px - 1px) calc(5px - 1px) 0;
+    pointer-events: none;
+    cursor: pointer;
+    height: 32px;
+    margin-top: 26px;
+
 }

@@ -1,45 +1,17 @@
-.cl-patient> .cl-wrapper> .main-content{
+.main-content {
+    display: flex;
+    justify-content: center;
+}
+
+.cl-patient {
     display: grid;
-    grid-template-columns: 290px auto auto;
-    margin: 0 auto;
+    grid-template-columns: auto; /* Definindo as colunas do grid, onde a segunda coluna (1fr) ocupará o espaço restante */
 }
 
-.cl-patient> .cl-wrapper> .main-content {
-    width: var(--cl-main-wrapper);
-    height: 100%;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .left{
-    margin-top: 50px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .right{
-    overflow: hidden;
+.cl-wrapper{
+    margin: var(--home-wrapper);
     position: relative;
-    height: calc(100vh - 100px);
-
+    height: calc(100vh - 75px);
+    width: calc(100% - 300px);
 }
 
-.cl-patient> .cl-wrapper> .main-content> .center> h1{
-    margin: 50px 0px 50px 20px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .center> .personal-data{
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
-    padding: 0px 20px;
-    border-left: 4px solid var(--cl-color-primary);
-    margin-left: 20px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .center> .personal-data> h2{
-    margin-bottom: 26px;
-}
-
-.cl-patient> .cl-wrapper> .main-content> .center> .personal-data> ul{
-    margin-left: 20px;
-    list-style: none;
-}
-.cl-patient> .cl-wrapper> .main-content> .center> .personal-data> ul> li{
-    font-size: 18px;
-    padding-bottom: 30px;
-}

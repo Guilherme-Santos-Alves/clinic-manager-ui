@@ -1,41 +1,63 @@
-.my-appointments{
+.my-appointments {
     padding: 0px 20px 20px 20px;
 }
 
-.my-appointments> label{
+.my-appointments > .form-appointments> label {
     display: block;
     margin-top: 50px;
     font-size: 18px;
     font-weight: 500;
 }
 
-.my-appointments> .search{
+.my-appointments > .form-appointments> .search {
     background-color: var(--cl-color-primary);
     color: var(--cl-color-gray-lighter);
     border-radius: 5px;
-}
-
-.my-appointments> .search{
     display: block;
     font-weight: 400;
     margin-top: 10px;
-    margin-left: 245px;
+    margin-left: 235px;
     padding: 5px;
     cursor: pointer;
 }
 
-.my-appointments> .search> span{
+.my-appointments > .form-appointments> .search > span {
     display: inline-block;
-    font-size: 18px;
+    vertical-align: middle;
+    margin-right: 5px; 
     caret-color: transparent;
 }
 
-.my-appointments> .search> h3{
+.my-appointments > .form-appointments> .search > h3 {
     display: inline-block;
     font-weight: 400;
     font-size: 18px;
     font-family: var(--cl-font-family-base);
     caret-color: transparent;
+    vertical-align: middle;
+    caret-color: transparent;
 }
 
+.my-appointments > .appointments{
+    margin-top: 20px;
+}
 
+.my-appointments > .appointments> .content{
+    border-left: 4px solid var(--cl-color-primary);
+    margin-bottom: 30px;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: var(--cl-font-family-base);
+    color: var(--cl-color-primary-dark);
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
+}
+
+.my-appointments > .appointments> .content:hover{
+    font-size: 20px;
+}
+
+.my-appointments > .appointments> .content> ul{
+    margin-bottom: 5px;
+}
