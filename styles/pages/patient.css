@@ -1,17 +1,16 @@
-.main-content {
-    display: flex;
-    justify-content: center;
-}
-
 .cl-patient {
     display: grid;
     grid-template-columns: auto; /* Definindo as colunas do grid, onde a segunda coluna (1fr) ocupará o espaço restante */
 }
 
-.cl-wrapper{
+.cl-patient> .cl-wrapper{
     margin: var(--home-wrapper);
     position: relative;
     height: calc(100vh - 75px);
     width: calc(100% - 300px);
 }
 
+.cl-patient> .cl-wrapper> .main-content {
+    display: flex;
+    justify-content: center;
+}

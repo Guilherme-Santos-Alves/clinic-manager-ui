@@ -3,16 +3,20 @@
     width: 300px;
     height: 100vh;
     position: absolute;
+    box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .cl-sidebar> .image-wrapper{
     background-color: var(--cl-color-gray-lighter);
+    justify-content: center;
+    display: flex;
 }
 
 .cl-sidebar> .image-wrapper> .image{
     caret-color: transparent;
     height: 70px;
     width: 250px;
+
 }
 
 .cl-sidebar > .nav-links{

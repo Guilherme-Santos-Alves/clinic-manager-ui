@@ -1,0 +1,158 @@
+.cl-consultations {
+    margin-top: 50px;
+}
+
+.cl-consultations > .form-box {
+    display: grid;
+    justify-content: center;
+    width: auto;
+}
+
+.cl-consultations > .title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    color: var(--cl-color-primary-dark);
+    font-size: 70px;
+}
+
+.cl-consultations > .form-box > .specialty {
+    font-size: 28px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--cl-color-primary-dark);
+}
+
+.cl-consultations > .form-box > .exam {
+    margin-bottom: 20px;
+}
+
+.cl-consultations .form-box > .exam > .input {
+    width: 380px;
+    height: 32px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    margin-left: 11px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    padding-left: 5px;
+}
+
+.cl-consultations > .form-box > .from-the-hour > .input {
+    background-color: var(--cl-color-gray-lighter);
+    width: 181px;
+    height: 32px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    margin: 0px 0px 8px px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+}
+
+.cl-consultations > .form-box > .from-the-hour {
+    margin-bottom: 20px;
+}
+
+.cl-consultations > .form-box > .from-the-hour > .e {
+    font-size: 28px;
+    margin: 0px 10px;
+    color: var(--cl-color-primary-dark);
+}
+
+.cl-consultations > .form-box > .from-the-hour > .between {
+    font-size: 28px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    margin-right: 26px;
+    color: var(--cl-color-primary-dark);
+}
+
+.cl-consultations > .form-box > .radio-container {
+    margin-left: 20px;
+    display: flex;
+}
+
+.cl-consultations > .form-box > .radio-container > label {
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 500;
+    caret-color: transparent;
+    margin: 0px 10px;
+    color: var(--cl-color-primary-dark);
+}
+
+.cl-consultations > .form-box > .radio-container > span {
+    font-size: 30px;
+    margin: auto 0;
+    color: var(--cl-color-primary-dark);
+}
+
+.cl-consultations > .form-box > .radio-container > .radio {
+    cursor: pointer;
+    margin-bottom: 2px;
+    margin-right: 30px;
+    width: 18px;
+}
+
+.cl-consultations > .form-box > .select-custom.-exam-or-consultation > .doctor-select {
+    margin-bottom: 20px;
+}
+
+.cl-consultations > .form-box > .exam > label,
+.cl-consultations > .form-box > .select-custom.-exam-or-consultation > .doctor-select > label {
+    font-size: 28px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--cl-color-primary-dark);
+}
+
+.cl-consultations> .form-box> .select-custom.-exam-or-consultation> .doctor-select> select{
+    width: 406px;
+    height: 32px;
+    cursor: pointer;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    padding-left: 5px;
+    margin-left: 4px;
+    outline: 0;
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+}
+
+.cl-consultations> .form-box> .specialty> .select-custom.-exam-or-consultation> select{
+    background-color: var(--cl-color-gray-lighter);
+    width: 515px;
+    height: 32px;
+    outline: 0;
+    border: 2px solid var(--cl-color-gray-light);
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    display: block;
+    margin-top: 10px;
+}
+
+.cl-consultations> .form-box> .specialty> .select-custom.-exam-or-consultation> .custom-arrow{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    background-color: var(--cl-color-primary);
+    border-radius: 0 calc(5px - 1px) calc(5px - 1px) 0;
+    pointer-events: none;
+    cursor: pointer;
+    height: 32px;
+    margin-top: 43px;
+}

@@ -64,15 +64,17 @@
 }
 
 .select-custom.-exam-or-consultation> .doctor-select> select{
-    width: 220px;
-    height: 40px;
+    width: 382px;
+    height: 32px;
     cursor: pointer;
     border: 2px solid var(--cl-color-gray-light);
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
     font-family: var(--cl-font-family-base);
     padding-left: 5px;
+    margin-left: 4px;
+    outline: 0;
     appearance: none;
     -webkit-appearance: none; 
     -moz-appearance: none; 
@@ -95,34 +97,7 @@
     border-radius: 0 calc(5px - 1px) calc(5px - 1px) 0;
     pointer-events: none;
     cursor: pointer;
-    height: 22px;
-    margin-top: 6px;
-}
-
-.cl-exams> .form-box> .specialty> .select-custom.-exam-or-consultation> select{
-    background-color: var(--cl-color-gray-lighter);
-    width: 389px;
     height: 32px;
-    outline: 0;
-    border: 2px solid var(--cl-color-gray-light);
-    font-size: 18px;
-    font-weight: 400;
-    font-family: var(--cl-font-family-base);
-    display: block;
-}
-
-.cl-exams> .form-box> .specialty> .select-custom.-exam-or-consultation> .custom-arrow{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 35px;
-    background-color: var(--cl-color-primary);
-    border-radius: 0 calc(5px - 1px) calc(5px - 1px) 0;
-    pointer-events: none;
-    cursor: pointer;
-    height: 32px;
-    margin-top: 26px;
-
+    padding-top: 3px;
+    margin-top: 4px;
 }

@@ -1,18 +1,18 @@
-.cl-navbar{
-    height: 75px;
-    width: calc( 100% - 300px);
+.cl-navbar {
+    width: calc(100% - 300px);
     background-color: var(--cl-color-primary-dark);
     margin-left: 300px;
-    top: 0%;
-    position: fixed;
+    top: 0;
+    position: absolute;
+    height: 70px;
 }
 
 .cl-navbar-content{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     align-items: center;
     padding: 10px 10% 10px 10%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
     height: 75px;
 }
 
@@ -23,7 +23,6 @@
 }
 .cl-navbar-content> h3{
     color: var(--cl-color-gray-lighter);
-    
 }
 
 .cl-navbar-content> li, a{
