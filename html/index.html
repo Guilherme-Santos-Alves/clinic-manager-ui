@@ -60,7 +60,6 @@
             </div>
 
             <div class="main-content">
-                 <div class="left">
                     <form class="form-login" action="javascript:void(0)" id="form-login" onsubmit="login()">
                         <h1 class="main-title">
                             <span class="up">Login</span>
@@ -68,15 +67,15 @@
                         <label class="label-radios" for="radios">Selecione seu perfil:</label>
                         <div class="cl-radio" id="radios">
                             <div class="radio">
-                                <input required class="cl-input" type="radio" name="role" value="cliente">
+                                <input required class="cl-input" type="radio" name="role" value="cliente" id="cliente">
                                 <label for="cliente" class="label">Paciente</label>
                             </div>
                             <div class="radio">
-                                <input required class="cl-input" type="radio" name="role" value="medico">
+                                <input required class="cl-input" type="radio" name="role" value="medico" id="medico">
                                 <label for="medico" class="label">Médico</label>
                             </div>   
                             <div class="radio">
-                                <input required class="cl-input" type="radio" name="role" value="admin">
+                                <input required class="cl-input" type="radio" name="role" value="admin" id="admin">
                                 <label for="admin" class="label">Administrador</label>
                             </div>     
                         </div>
@@ -88,13 +87,7 @@
                         <div class="cl-button">
                             <button type="submit" class="btn-link" id="btn-link">Continuar</button>
                         </div>
-                    </form>
-                 </div>
-
-                <div class="right -login">
-                    <img class="image" src="../assets/image/banner-clinica.png" alt="bg-cubes">
-                </div>
-            
+                    </form>   
             </div>
         </div>
     </div>

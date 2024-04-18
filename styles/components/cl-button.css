@@ -3,24 +3,26 @@
 }
 
 .cl-button{
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
 .cl-button> .btn-link{
     background-color: var(--cl-color-primary);
     font-family: var(--cl-font-family-base);
     color:  var(--cl-color-gray-lighter);
-    font-size: 20px;
+    font-size: 28px;
     text-decoration: none;
     border-radius: 50px;
     display: flex;
-    height: 60px;
-    width: 350px;
+    height: 80px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     transition: 1s;
     left: 0;
     cursor: pointer;
+    margin: 0 auto;
+    caret-color: transparent;
 }
 
 /* -- register.html -- */

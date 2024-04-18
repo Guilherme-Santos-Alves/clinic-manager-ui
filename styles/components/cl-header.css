@@ -16,4 +16,5 @@
     z-index: 1;
     background-color: var(--cl-color-gray-lighter);
     caret-color: transparent;
+    top: 0%;
 }

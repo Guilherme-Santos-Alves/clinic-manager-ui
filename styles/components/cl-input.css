@@ -5,16 +5,18 @@
     margin-top: 10px;
 }
 
-.cl-inputs>.input{
+.cl-inputs> .input{
     font-family: var(--cl-font-family-base);
     font-weight: 400;
-    background-color: var(--cl-color-gray-lighter);
+    background-color: var(--cl-color-primary-dark);
     border-bottom: solid 2px rgb(163, 162, 162);
-    font-size: 18px;
+    font-size: 22px;
     display: block;
-    width: 350px;
+    width: 100%;
     outline: 0;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
+    color: var(--cl-color-gray-lighter);
+    padding-top: 12px;
 }
 
 /* REGISTER AND REGISTER FINAL */
