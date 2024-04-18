@@ -1,57 +1,23 @@
-<div class="cl-exams">
-    
-  </div>
+<div class="select-custom -appointments" id="select-custom">
+    <select name="" id="">
+        <option value="">Todos</option>
+        <option selected value="">Agendado</option>
+        <option value="">Efetivado</option>
+        <option value="">Não Realizado</option>
+        <option value="">Cancelado</option>
+    </select>
+    <div class="custom-arrow">
+        <span class="material-symbols-outlined">
+            arrow_drop_down
+        </span>
+    </div>
+</div> 
 
-
-  <div class="cl-consultations">
-    <h1 class="title">Agendar Consulta</h1>
-    <form action="javascript:void(0)" class="form-box">
-        <div class="specialty" id="specialty">
-            <div class="select-custom -exam-or-consultation" id="select-custom">
-                <label class="select-speciality" for="specialty-consultation">Selecione a especialidade da consulta:</label>
-                    <select name="specialty" id="specialty-consultation">
-                    <option value="" disabled selected >Especialidade</option> 
-                    <option value="Cardiologia">Cardiologia</option>
-                    <option value="Ortopedia">Ortopedia</option>
-                    </select>
-                <div class="custom-arrow">
-                    <span class="material-symbols-outlined">
-                        arrow_drop_down
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="select-custom -exam-or-consultation">
-        <div class="doctor-select">
-            <label for="doctors-list">Médico:</label>
-            <select name="doctors-list" id="doctors-list">
-            <option value="" disabled selected>Selecione um médico</option>
-            </select> 
-            <div class="custom-arrow">
-            <span class="material-symbols-outlined">
-                arrow_drop_down
-            </span>
-            </div>
-        </div>
-        </div>
-        <div class="from-the-hour" >
-            <label class="between" for="from-date">Entre:</label>
-            <input class="input" type="time" id="consultations-from-hour" value="00:00">
-            <label class="e" for="from-date">e</label>
-            <input class="input" type="time" id="consultations-until-hour" value="23:59">
-        </div>
-        <div class="radio-container">
-            <span class="material-symbols-outlined">
-            phone_iphone
-            </span>
-            <label for="radio-virtual-consultations">Telemedicina</label><input required name="modality" class="radio" type="radio" id="radio-virtual-consultations" onchange="checkModality()">
-            <span class="material-symbols-outlined">
-            person
-            </span>
-            <label for="radio-presential-consultations">Presencial</label><input required name="modality" class="radio" type="radio" id="radio-presential-consultations" onchange="checkModality()">
-        </div>
-        <div class="cl-button -patient">
-            <button type="submit" class="btn-link" id="btn-link-consultation" >Continuar</button>
-        </div>                     
-    </form>
+<div class="search-button">
+    <button type="submit" class="search">
+        <span class="material-symbols-outlined">
+            search
+        </span>
+        <h3>Buscar</h3>
+    </button>
 </div>

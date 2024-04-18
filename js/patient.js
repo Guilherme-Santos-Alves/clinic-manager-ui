@@ -129,6 +129,8 @@ function buildInputsExams() {
   contentConsultations.innerHTML = '';
   let contentExams = document.querySelector(".cl-exams");
   contentExams.innerHTML = '';
+  let contentAppointments = document.querySelector(".my-appointments");
+  contentAppointments.innerHTML = '';
 
   // Template do formulário de exames
   const templateExams = `
@@ -196,6 +198,8 @@ function buildInputsConsultations() {
   contentConsultations.innerHTML = '';
   let contentExams = document.querySelector(".cl-exams");
   contentExams.innerHTML = '';
+  let contentAppointments = document.querySelector(".my-appointments");
+  contentAppointments.innerHTML = '';
   
   let templateConsultations = `
   <h1 class="title">Agendar Consulta</h1>
@@ -285,4 +289,94 @@ function buildInputsConsultations() {
     //     console.error('Erro:', error);
     // });
   });
+}
+
+function buildMyAppoinyments(){
+  let contentConsultations = document.querySelector(".cl-consultations");
+  contentConsultations.innerHTML = '';
+  let contentExams = document.querySelector(".cl-exams");
+  contentExams.innerHTML = '';
+  let contentAppointments = document.querySelector(".my-appointments");
+  contentAppointments.innerHTML = '';
+
+  let templateAppointments = `
+  <h1>Meus Agendamentos</h1>
+  <form class="form-appointments" action="">
+      <div class="search-input">
+          <label for="select-custom">Pesquisa:</label>
+          <input type="text" >
+      </div>
+      <div class="select-custom -appointments" id="select-custom">
+          <label for="select-staus">Status:</label>
+          <select name="" id="select-staus">
+              <option value="">Todos</option>
+              <option selected value="">Agendado</option>
+              <option value="">Efetivado</option>
+              <option value="">Não Realizado</option>
+              <option value="">Cancelado</option>
+          </select>
+          <div class="custom-arrow">
+              <span class="material-symbols-outlined">
+                  arrow_drop_down
+              </span>
+          </div>
+      </div> 
+      <div class="search-button">
+          <button type="submit" class="search">
+              <span class="material-symbols-outlined">
+                  search
+              </span>
+          </button>
+      </div>
+  </form>
+  <div class="appointments">
+      <div class="content">
+          <ul>21/12/23 - 10:30</ul>
+          <ul>Clínica Médica</ul>
+          <ul>Av.Terminal de Papicu</ul>
+      </div>
+      <div class="content">
+          <ul>21/12/23 - 10:30</ul>
+          <ul>Clínica Médica</ul>
+          <ul>Av.Terminal de Papicu</ul>
+      </div>
+      <div class="content">
+          <ul>21/12/23 - 10:30</ul>
+          <ul>Clínica Médica</ul>
+          <ul>Av.Terminal de Papicu</ul>
+      </div>
+      <div class="content">
+          <ul>21/12/23 - 10:30</ul>
+          <ul>Clínica Médica</ul>
+          <ul>Av.Terminal de Papicu</ul>
+      </div>
+      <div class="content">
+          <ul>21/12/23 - 10:30</ul>
+          <ul>Clínica Médica</ul>
+          <ul>Av.Terminal de Papicu</ul>
+      </div>
+      <div class="content">
+          <ul>21/12/23 - 10:30</ul>
+          <ul>Clínica Médica</ul>
+          <ul>Av.Terminal de Papicu</ul>
+      </div>
+      <div class="content">
+          <ul>21/12/23 - 10:30</ul>
+          <ul>Clínica Médica</ul>
+          <ul>Av.Terminal de Papicu</ul>
+      </div>
+      <div class="content">
+          <ul>21/12/23 - 10:30</ul>
+          <ul>Clínica Médica</ul>
+          <ul>Av.Terminal de Papicu</ul>
+      </div>
+      <div class="content">
+          <ul>21/12/23 - 10:30</ul>
+          <ul>Clínica Médica</ul>
+          <ul>Av.Terminal de Papicu</ul>
+      </div>
+  </div>
+  `;
+
+  document.querySelector(".my-appointments").insertAdjacentHTML("beforeend", templateAppointments);
 }

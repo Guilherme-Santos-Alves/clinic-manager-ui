@@ -2,36 +2,61 @@
     padding: 0px 20px 20px 20px;
 }
 
-.my-appointments > .form-appointments> label {
+.my-appointments> h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    color: var(--cl-color-primary-dark);
+    font-size: 60px;
+}
+
+
+.my-appointments > .form-appointments> .search-input{
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.my-appointments > .form-appointments> .search-input> label {
     display: block;
     margin-top: 50px;
     font-size: 18px;
     font-weight: 500;
 }
 
-.my-appointments > .form-appointments> .search {
+.my-appointments > .form-appointments> .search-input> input{
+    width: 350px;
+    height: 34px;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+}
+
+.my-appointments > .form-appointments> .search-button{
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 1.7px;
+}
+
+.my-appointments > .form-appointments> .search-button> .search {
     background-color: var(--cl-color-primary);
     color: var(--cl-color-gray-lighter);
     border-radius: 5px;
-    display: block;
     font-weight: 400;
-    margin-top: 10px;
-    margin-left: 235px;
-    padding: 5px;
+    padding: 4px;
     cursor: pointer;
+    height: 34.5px;
 }
 
-.my-appointments > .form-appointments> .search > span {
+.my-appointments > .form-appointments> .search-button> .search > span {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 5px; 
     caret-color: transparent;
 }
 
-.my-appointments > .form-appointments> .search > h3 {
+.my-appointments > .form-appointments> .search-button> .search > h3 {
     display: inline-block;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 22px;
     font-family: var(--cl-font-family-base);
     caret-color: transparent;
     vertical-align: middle;
@@ -47,7 +72,7 @@
     margin-bottom: 30px;
     padding-left: 20px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 22px;
     font-family: var(--cl-font-family-base);
     color: var(--cl-color-primary-dark);
     cursor: pointer;
@@ -55,9 +80,13 @@
 }
 
 .my-appointments > .appointments> .content:hover{
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .my-appointments > .appointments> .content> ul{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.select-custom.-appointments> label{
+    display: block;
 }

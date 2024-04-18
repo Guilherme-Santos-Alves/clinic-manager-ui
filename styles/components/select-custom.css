@@ -101,3 +101,19 @@
     padding-top: 3px;
     margin-top: 4px;
 }
+
+.select-custom.-appointments> select{
+    width: 250px;
+    height: 34px;
+    display: inline-block;
+}
+
+.select-custom.-appointments{
+    display: inline-block;
+    align-items: center;
+}
+
+.select-custom.-appointments> .custom-arrow{
+    height: 34px;
+    margin-top: 20px;
+}

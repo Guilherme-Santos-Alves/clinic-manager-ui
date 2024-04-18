@@ -60,35 +60,36 @@
             </div>
 
             <div class="main-content">
-                 
-                <form class="left" action="javascript:void(0)" id="form-login" onsubmit="login()">
-                    <h1 class="main-title">
-                        <span class="up">Login</span>
-                    </h1>
-                    <label class="label-radios" for="radios">Selecione seu perfil:</label>
-                    <div class="cl-radio" id="radios">
-                        <div class="radio">
-                            <input required class="cl-input" type="radio" name="role" value="cliente">
-                            <label for="cliente" class="label">Paciente</label>
+                 <div class="left">
+                    <form class="form-login" action="javascript:void(0)" id="form-login" onsubmit="login()">
+                        <h1 class="main-title">
+                            <span class="up">Login</span>
+                        </h1>
+                        <label class="label-radios" for="radios">Selecione seu perfil:</label>
+                        <div class="cl-radio" id="radios">
+                            <div class="radio">
+                                <input required class="cl-input" type="radio" name="role" value="cliente">
+                                <label for="cliente" class="label">Paciente</label>
+                            </div>
+                            <div class="radio">
+                                <input required class="cl-input" type="radio" name="role" value="medico">
+                                <label for="medico" class="label">Médico</label>
+                            </div>   
+                            <div class="radio">
+                                <input required class="cl-input" type="radio" name="role" value="admin">
+                                <label for="admin" class="label">Administrador</label>
+                            </div>     
                         </div>
-                        <div class="radio">
-                            <input required class="cl-input" type="radio" name="role" value="medico">
-                            <label for="medico" class="label">Médico</label>
-                        </div>   
-                        <div class="radio">
-                            <input required class="cl-input" type="radio" name="role" value="admin">
-                            <label for="admin" class="label">Administrador</label>
-                        </div>     
-                    </div>
-                    <div class="cl-inputs">
-                            <label class="label" for="cpf-input">CPF</label> <input required class="input" type="text" id="cpf-input">
-                            <label class="label" for="password-input">Senha</label> <input required class="input" type="password" id="password-input">
-                    </div>
-                    <a class="no-account" href="register.html">Não tem cadastro? clique aqui!</a>
-                    <div class="cl-button">
-                        <button type="submit" class="btn-link" id="btn-link">Continuar</button>
-                    </div>
-                </form>
+                        <div class="cl-inputs">
+                                <label class="label" for="cpf-input">CPF</label> <input required class="input" type="text" id="cpf-input">
+                                <label class="label" for="password-input">Senha</label> <input required class="input" type="password" id="password-input">
+                        </div>
+                        <a class="no-account" href="register.html">Não tem cadastro? clique aqui!</a>
+                        <div class="cl-button">
+                            <button type="submit" class="btn-link" id="btn-link">Continuar</button>
+                        </div>
+                    </form>
+                 </div>
 
                 <div class="right -login">
                     <img class="image" src="../assets/image/banner-clinica.png" alt="bg-cubes">

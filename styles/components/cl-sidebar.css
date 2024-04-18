@@ -1,9 +1,11 @@
 .cl-sidebar {
     background-color: var(--cl-color-primary-dark);
     width: 300px;
-    height: 100vh;
-    position: absolute;
+    min-height: 100vh;
+    overflow-y: auto;
+    position: fixed;
     box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
 }
 
 .cl-sidebar> .image-wrapper{
@@ -37,6 +39,7 @@
     align-items: center;
 }
 
+
 .cl-sidebar > .nav-links > li > span {
     font-size: 30px;
     margin-right: 20px;
@@ -57,4 +60,5 @@
 .cl-sidebar> .nav-links li a:hover {
     color: var(--cl-color-primary);
     text-decoration: underline;
+    font-size: 20px;
 }
