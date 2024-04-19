@@ -4,6 +4,8 @@
 
 .cl-button{
     padding-top: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .cl-button> .btn-link{

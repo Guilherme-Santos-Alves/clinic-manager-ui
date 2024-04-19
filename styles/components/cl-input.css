@@ -1,4 +1,8 @@
 /* -- index.html -- */
+::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .cl-inputs{
     font-family: var(--cl-font-family-base);
     font-weight: 400;
@@ -9,14 +13,16 @@
     font-family: var(--cl-font-family-base);
     font-weight: 400;
     background-color: var(--cl-color-primary-dark);
-    border-bottom: solid 2px rgb(163, 162, 162);
+    border: solid 3px rgb(163, 162, 162);
+    border-radius: 4px;
     font-size: 22px;
     display: block;
     width: 100%;
     outline: 0;
+    margin-top: 10px;
     margin-bottom: 18px;
     color: var(--cl-color-gray-lighter);
-    padding-top: 12px;
+    padding: 6px;
 }
 
 /* REGISTER AND REGISTER FINAL */
