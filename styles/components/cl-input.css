@@ -3,6 +3,10 @@
     -webkit-appearance: none;
 }
 
+::-webkit-calendar-picker-indicator {
+    filter: invert(100%) hue-rotate(180deg);
+}
+
 .cl-inputs{
     font-family: var(--cl-font-family-base);
     font-weight: 400;
@@ -30,7 +34,6 @@
     margin: 0 auto;
     margin-top: 32px;
     justify-content: space-around;
-    background-color: var(--cl-color-gray-lighter);
 }
 
 .cl-inputs.-register> .first-line> .input,
@@ -39,19 +42,19 @@
 .cl-inputs.-register> .fourth-line> .input,
 .cl-inputs.-register> .fifth-line> .original-line> input{
     justify-content: space-around;
-    background-color: var(--cl-color-gray-lighter);
     width: 200px;
     height: 20px;
     outline: 0;
     border: 2px solid var(--cl-color-gray-light);
     cursor: pointer;
+    background-color: var(--cl-color-primary-dark);
 }
 
 .cl-inputs.-register> .first-line,
 .cl-inputs.-register> .second-line,
 .cl-inputs.-register> .third-line,
 .cl-inputs.-register> .fourth-line{
-    width: 900px;
+    width: 1000px;
     margin: 0 auto;
     margin-bottom: 30px;
     display: flex;
@@ -64,15 +67,17 @@
     z-index: 1;
 }
 
-.cl-inputs.-register> .first-line> .label,
-.cl-inputs.-register> .second-line> .label,
-.cl-inputs.-register> .third-line> .label,
-.cl-inputs.-register> .fourth-line> .label{
-    display: block;
+.cl-inputs.-register> .first-line> label,
+.cl-inputs.-register> .second-line> label,
+.cl-inputs.-register> .third-line> .select-custom.-register> label,
+.cl-inputs.-register> .third-line> label,
+.cl-inputs.-register> .fourth-line> label{
+    color: var(--cl-color-gray-lighter);
+    font-size: 20px;
 }
 
 .cl-inputs.-register> .first-line> .input{
-    width: 350px;
+    width: 370px;
 }
 
 .cl-inputs.-register> .second-line> .input{
@@ -80,7 +85,11 @@
 }
 
 .cl-inputs.-register> .third-line> .input{     
-    width: 200px; 
+    width: 220px; 
+}
+
+.cl-inputs.-register> .fourth-line> .input{
+    width: 400px;
 }
 
 .cl-inputs.-register> .third-line> select,
@@ -91,10 +100,18 @@
     height: 20px;
     outline: 0;
     border: 2px solid var(--cl-color-gray-light);
+    color: var(--cl-color-gray-lighter);
 }
 
+.cl-inputs.-register> .first-line> .input,
+.cl-inputs.-register> .second-line> .input,
+.cl-inputs.-register> .third-line> .input,
 .cl-inputs.-register> .fourth-line> .input{
-    width: 380px;
+    height: 32px;
+    border-radius: 5px;
+    color: var(--cl-color-gray-lighter);
+    font-size: 16px;
+    padding: 5px;
 }
 
 /* -----REGISTER DOCTOR ----- */

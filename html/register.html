@@ -10,11 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,800;1,800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,800;1,800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!--COMPONENTS-->
     <link rel="stylesheet" href="../styles/components/cl-header.css">
     <link rel="stylesheet" href="../styles/components/cl-input.css">
     <link rel="stylesheet" href="../styles/components/cl-button.css">
+    <link rel="stylesheet" href="../styles/components/select-custom.css">
 
     <!--SETTINGS-->
     <link rel="stylesheet" href="../styles/settings/wrapper.css">
@@ -78,18 +81,25 @@
                                 <input required class="input" id="rg-height" type="number" name="height">
                                 <label for="rg-wheight">Peso:</label> 
                                 <input required class="input" id="rg-wheight" type="number" min="0" name="weight">
-                                <label for="rg-blood-type">Tipo Sanguíneo:</label>  
-                                <select required name="bloodType" id="rg-blood-type">
-                                    <option value="" disabled selected>Selecione o tipo sanguíneo</option>
-                                    <option value="0">A+</option>
-                                    <option value="1">A-</option>
-                                    <option value="4">AB+</option>
-                                    <option value="5">AB-</option>
-                                    <option value="2">B+</option>
-                                    <option value="3">B-</option>
-                                    <option value="6">O+</option>
-                                    <option value="7">O-</option>
-                                </select> 
+                                <div class="select-custom -register" id="select-custom">
+                                    <label for="rg-blood-type">Tipo Sanguíneo:</label>
+                                    <select required name="bloodType" id="rg-blood-type">
+                                        <option value="" disabled selected>Selecione o tipo sanguíneo</option>
+                                        <option value="0">A+</option>
+                                        <option value="1">A-</option>
+                                        <option value="4">AB+</option>
+                                        <option value="5">AB-</option>
+                                        <option value="2">B+</option>
+                                        <option value="3">B-</option>
+                                        <option value="6">O+</option>
+                                        <option value="7">O-</option>
+                                    </select>
+                                    <div class="custom-arrow">
+                                        <span class="material-symbols-outlined">
+                                            arrow_drop_down
+                                        </span>
+                                    </div>
+                                </div>  
                             </div>             
                             <div class="fourth-line">
                                 <label for="rg-email">Email:</label> 

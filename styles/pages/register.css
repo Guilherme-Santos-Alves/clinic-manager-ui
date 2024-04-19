@@ -1,21 +1,28 @@
+.cl-register{
+    background-color: var(--cl-color-primary-dark);
+    height: 100vh;
+}
+
 .cl-register> .cl-wrapper> .main-content{
     width: var(--cl-main-wrapper);
     height: 100%;
     padding: 100px 84.5px 0px 84.5px;
     margin: 0 auto;
+    background-color: var(--cl-color-primary-dark);
 }
 
 .cl-register> .cl-wrapper> .main-content> .content> .main-title{
     width: auto;
     margin: 0 auto;
     display: flex;
-    margin-top: 12px;
+    margin-top: 50px;
     margin-bottom: 50px;
+    color: var(--cl-color-gray-lighter);
 }
 
 .cl-register> .cl-wrapper> .main-content> .content> .main-title> .up{
     font-family: var(--cl-font-family-base);
-    font-size:calc(var(--cl-font-size-base) + 30px );
+    font-size: 50px;
     font-weight: 800;
     width: auto;
     margin: 0 auto;
@@ -25,7 +32,7 @@
 .cl-register> .cl-wrapper> .main-content> .content> .steps{
     font-weight: 600;
     display: block;
-    font-size: calc( var(--cl-font-family-base) + 4px );
+    font-size: 20px;
     font-weight: 600;
     color: var(--cl-color-primary);
     margin-top: 20px;

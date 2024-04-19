@@ -1,21 +1,3 @@
-window.addEventListener('scroll', function() {
-  var sidebar = document.querySelector('.cl-sidebar');
-  var alturaViewport = window.innerHeight;
-  var scrollTop = window.scrollY;
-  var alturaTotal = Math.max(document.body.scrollHeight, document.body.offsetHeight, 
-                             document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-  
-  var alturaRestante = alturaTotal - (alturaViewport + scrollTop);
-  
-  if (alturaRestante <= 0) {
-      // Se não houver mais espaço para rolar, ajusta a altura da barra lateral para a altura total da página
-      sidebar.style.height = alturaTotal + 'px';
-  } else {
-      // Caso contrário, ajusta a altura da barra lateral para a altura da viewport
-      sidebar.style.height = alturaViewport + 'px';
-  }
-});
-
 let successMsg = '<span class="material-symbols-outlined">check_circle</span>Sucesso';
 let errorMsg = '<span class="material-symbols-outlined">cancel</span>Erro';
 
@@ -37,10 +19,9 @@ function showToast(msg) {
 
   setTimeout(() => {
     toast.remove();
-  }, 6000); // Remove o toast após 6 segundos 
+  }, 6000);
 }
 
-// RESGATA OS NOMES DOS MEDICOS E MOSTRA NO HTML
 function listDoctorsSelect(){
   const token = localStorage.getItem("token");
 
@@ -81,35 +62,6 @@ window.onload = function() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  let optionRadios = document.getElementsByName("option");
-  let contentExams = document.querySelector(".content-exams");
-  let contentConsultations = document.querySelector(".content-consultations");
-
-  // Adicionando um ouvinte de evento de mudança a cada rádio
-  optionRadios.forEach((radio) => {
-    radio.addEventListener("change", checkExamOrConsultation);
-  });
-
-  // Função para verificar se a opção de exame ou consulta foi selecionada e chamar a função apropriada
-  function checkExamOrConsultation() {
-    if (optionRadios[0].checked) {
-      console.log("Opção Exame selecionada.");
-      buildInputsExams();
-      if (contentConsultations) {
-        contentConsultations.innerHTML = ''; // Limpa o conteúdo da div
-      }
-    } else if (optionRadios[1].checked) {
-      console.log("Opção Consulta selecionada.");
-      buildInputsConsultations();
-      if (contentExams) {
-        contentExams.innerHTML = ''; // Limpa o conteúdo da div
-      }
-    }
-  }
-});
-
-// VERFIFICAR INPUTS DE PRESENCIAL OU VIRTUAL
 function checkModality() {
   let modality = document.getElementsByName("modality");
 
@@ -132,7 +84,6 @@ function buildInputsExams() {
   let contentAppointments = document.querySelector(".my-appointments");
   contentAppointments.innerHTML = '';
 
-  // Template do formulário de exames
   const templateExams = `
   <h1 class="title">Agendar Exame</h1>
   <form action="javascript:void(0)" class="form-box">
@@ -188,8 +139,9 @@ function buildInputsExams() {
       </div>
   </form>
   `;
+  
   listDoctorsSelect();
-  // Inserir o formulário na seção de exames
+
   document.querySelector(".cl-exams").insertAdjacentHTML("beforeend", templateExams);  
 }
 
