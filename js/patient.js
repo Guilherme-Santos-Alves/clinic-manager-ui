@@ -126,14 +126,6 @@ function buildInputsExams() {
           <label class="e" for="exams-until-hour">e</label> 
           <input required class="input" type="time" id="exams-until-hour" value="23:59">
       </div>
-      <div class="radio-container">
-          <span class="material-symbols-outlined">phone_iphone</span>
-          <label for="radio-virtual-exams">Telemedicina</label>
-          <input required name="modality" class="radio" type="radio" id="radio-virtual-exams">
-          <span class="material-symbols-outlined">person</span>
-          <label for="radio-presential-exams">Presencial</label>
-          <input required name="modality" class="radio" type="radio" id="radio-presential-exams">
-      </div>
       <div class="cl-button -patient">
           <button type="submit" class="btn-link" id="btn-link-exam" >Continuar</button>
       </div>
@@ -155,7 +147,7 @@ function buildInputsConsultations() {
   
   let templateConsultations = `
   <h1 class="title">Agendar Consulta</h1>
-    <form action="javascript:void(0)" class="form-box">
+    <form action="javascript:void(0)" class="form-box" onsubmit="fetchConsultations()">
         <div class="specialty" id="specialty">
             <div class="select-custom -exam-or-consultation" id="select-custom">
                 <label class="select-speciality" for="specialty-consultation">Selecione a especialidade da consulta:</label>
@@ -185,10 +177,10 @@ function buildInputsConsultations() {
         </div>
         </div>
         <div class="from-the-hour" >
-            <label class="between" for="from-date">Entre:</label>
-            <input class="input" type="time" id="consultations-from-hour" value="00:00">
-            <label class="e" for="from-date">e</label>
-            <input class="input" type="time" id="consultations-until-hour" value="23:59">
+          <label class="e" for="consultations-until-hour">Data:</label>
+          <input class="input" type="date" id="consultations-until-hour" value="23:59">
+          <label class="between" for="consultations-from-hour">Hora:</label>
+          <input class="input" type="time" id="consultations-from-hour" value="00:00">               
         </div>
         <div class="radio-container">
             <span class="material-symbols-outlined">
@@ -209,37 +201,33 @@ function buildInputsConsultations() {
   listDoctorsSelect();
 
   document.querySelector(".cl-consultations").insertAdjacentHTML("beforeend", templateConsultations);
+  
+}
 
-  const patient = document.querySelector(".left");
+function fetchConsultations(){
+  const jsonDataConsultations = {
+    specialtyConsultation: document.querySelector("#specialty-consultation").value,
+    modality: checkModality(),
+    fromHour: document.querySelector("#consultations-from-hour").value,
+    untilHour: document.querySelector("#consultations-until-hour").value,
+  };
 
-  patient.addEventListener("submit", (evento) => {
-    evento.preventDefault();
+  console.log(jsonDataConsultations);
 
-    const jsonDataConsultations = {
-      specialtyConsultation: document.querySelector("#specialty-consultation").value,
-      modality: checkModality(),
-      fromHour: document.querySelector("#consultations-from-hour").value,
-      untilHour: document.querySelector("#consultations-until-hour").value,
-    };
-
-    console.log(jsonDataConsultations);
-
-    // Enviar para a API
-    // fetch("https://localhost:7252/api/patients", {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(jsonData)
-    // })
-    // .then(response => response.json())
-    // .then(response => {
-    //     console.log(response);
-    //     window.location.href = "index.html";
-    // })
-    // .catch(error => {
-    //     console.error('Erro:', error);
-    // });
+  fetch("https://localhost:7252/api/patients", {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(jsonData)
+  })
+  .then(response => response.json())
+  .then(response => {
+      console.log(response);
+      window.location.href = "index.html";
+  })
+  .catch(error => {
+      console.error('Erro:', error);
   });
 }
 

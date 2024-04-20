@@ -43,7 +43,7 @@
 
 .cl-consultations > .form-box > .from-the-hour > .input {
     background-color: var(--cl-color-gray-lighter);
-    width: 181px;
+    width: 172px;
     height: 32px;
     outline: 0;
     border: 2px solid var(--cl-color-gray-light);
@@ -60,16 +60,16 @@
 
 .cl-consultations > .form-box > .from-the-hour > .e {
     font-size: 28px;
-    margin: 0px 10px;
     color: var(--cl-color-primary-dark);
+    margin-right: 10px;
 }
 
 .cl-consultations > .form-box > .from-the-hour > .between {
     font-size: 28px;
     font-family: var(--cl-font-family-base);
     font-weight: 500;
-    margin-right: 26px;
     color: var(--cl-color-primary-dark);
+    margin: 0px 5px;
 }
 
 .cl-consultations > .form-box > .radio-container {
