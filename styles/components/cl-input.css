@@ -5,6 +5,7 @@
 
 ::-webkit-calendar-picker-indicator {
     filter: invert(100%) hue-rotate(180deg);
+    cursor: pointer;
 }
 
 .cl-inputs{
@@ -52,8 +53,7 @@
 
 .cl-inputs.-register> .first-line,
 .cl-inputs.-register> .second-line,
-.cl-inputs.-register> .third-line,
-.cl-inputs.-register> .fourth-line{
+.cl-inputs.-register> .third-line{
     width: 1000px;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -61,10 +61,12 @@
     justify-content: space-between;
 }
 
-.cl-inputs.-register> .fifth-line{
-    width: 900px;
+.cl-inputs.-register> .fourth-line{
+    width: 1000px;
     margin: 0 auto;
-    z-index: 1;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .cl-inputs.-register> .first-line> label,
@@ -74,6 +76,7 @@
 .cl-inputs.-register> .fourth-line> label{
     color: var(--cl-color-gray-lighter);
     font-size: 20px;
+    margin: auto 0;
 }
 
 .cl-inputs.-register> .first-line> .input{
@@ -120,7 +123,7 @@
     margin: 0 auto;
     margin-top: 32px;
     justify-content: space-around;
-    background-color: var(--cl-color-gray-lighter);
+    background-color: var(--cl-color-primary-dark);
 }
 
 .cl-inputs.-register-doctor> .first-line> .input,
@@ -129,48 +132,51 @@
 .cl-inputs.-register-doctor> .fourth-line> .input,
 .cl-inputs.-register-doctor> .fifth-line> .original-line> input{
     justify-content: space-around;
-    background-color: var(--cl-color-gray-lighter);
+    background-color: var(--cl-color-primary-dark);
     width: 200px;
-    height: 20px;
+    height: 32px;
     outline: 0;
     border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
     cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    color: var(--cl-color-gray-lighter);
 }
 
 .cl-inputs.-register-doctor> .first-line,
 .cl-inputs.-register-doctor> .second-line,
 .cl-inputs.-register-doctor> .third-line,
-.cl-inputs.-register-doctor> .fourth-line{
-    width: 900px;
+.cl-inputs.-register-doctor> .fourth-line,
+.cl-inputs.-register-doctor> .fifth-line{
+    width: 1060px;
     margin: 0 auto;
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
 }
 
-.cl-inputs.-register-doctor> .fifth-line{
-    width: 900px;
-    margin: 0 auto;
-    z-index: 1;
-}
-
-.cl-inputs.-register-doctor> .first-line> .label,
-.cl-inputs.-register-doctor> .second-line> .label,
-.cl-inputs.-register-doctor> .third-line> .label,
-.cl-inputs.-register-doctor> .fourth-line> .label{
-    display: block;
+.cl-inputs.-register-doctor> .first-line> label,
+.cl-inputs.-register-doctor> .second-line> label,
+.cl-inputs.-register-doctor> .third-line> label,
+.cl-inputs.-register-doctor> .fourth-line> .select-custom.-register-doctor> label,
+.cl-inputs.-register-doctor> .fourth-line> label,
+.cl-inputs.-register-doctor> .fifth-line> .original-line> label{
+    color: var(--cl-color-gray-lighter);
+    font-size: 20px;
+    margin: auto 0;
 }
 
 .cl-inputs.-register-doctor> .first-line> .input{
-    width: 350px;
+    width: 390px;
 }
 
 .cl-inputs.-register-doctor> .second-line> .input{
-    width: 200px;
+    width: 220px;
 }
 
 .cl-inputs.-register-doctor> .third-line> .input{     
-    width: 380px;  
+    width: 420px;  
 }
 
 .cl-inputs.-register-doctor> .fourth-line> select,
@@ -185,4 +191,11 @@
 
 .cl-inputs.-register-doctor> .fourth-line> .input{
     width: 200px;
+}
+
+.cl-inputs.-register-doctor> .fifth-line{
+    display: block;
+}
+.cl-inputs> .fifth-line> .original-line.-clone{
+    margin-left: 94px;
 }

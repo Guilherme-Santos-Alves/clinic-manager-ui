@@ -68,7 +68,7 @@ function login() {
         console.log('Resposta da API:', data);
         localStorage.setItem("token", data.token)
         showToast(successMsg);
-        window.location.href = "doctor-register.html"
+        window.location.href = "patient.html"
     })
     .catch(error => {
         console.error('Erro na requisição:', error);

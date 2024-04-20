@@ -138,3 +138,24 @@
     padding-top: 2px;
     margin-bottom: 2px;
 }
+
+.select-custom.-register-doctor> select{
+    width: 250px;
+    height: 32px;
+    display: inline-block;
+    background-color: var(--cl-color-primary-dark);
+    color: var(--cl-color-gray-lighter);
+    padding: 5px;
+    font-size: 16px;
+}
+
+.select-custom-.register-doctor{
+    display: inline-block;
+    align-items: center;
+}
+
+.select-custom.-register-doctor> .custom-arrow{
+    height: 32px;
+    padding-top: 2px;
+    margin-bottom: 2px;
+}

@@ -28,6 +28,12 @@
 }
 
 /* -- register.html -- */
+.cl-button.-register{
+    margin: 0;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
 
 .cl-button.-register> .link{
     background-color: var(--cl-color-primary);
@@ -78,9 +84,9 @@
 
 .cl-button.-add-solution{
     cursor: pointer;
-    height: 20px;
+    height: 32px;
     padding: 0;
-    width: 20px;
+    width: 32px;
     font-size: 15px;
     background-color: var(--cl-color-primary);
     border-radius: 5px;

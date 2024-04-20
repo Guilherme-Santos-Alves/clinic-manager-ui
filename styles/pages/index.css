@@ -1,6 +1,6 @@
 .cl-login{
     background-color: var(--cl-color-primary-dark);
-    height: calc(100vh - 100px);
+    height: calc(100vh - 80px);
 }
 
 .cl-login> .cl-wrapper> .main-content{
@@ -10,7 +10,7 @@
     background-color: var(--cl-color-primary-dark);
     margin: 0 auto;
     margin-right: 180px;
-    margin-top: 100px;
+    margin-top: 80px;
     padding: 20px;
     display: flex;
     align-items: center;

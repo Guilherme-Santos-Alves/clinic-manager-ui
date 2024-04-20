@@ -15,8 +15,7 @@
     width: auto;
     margin: 0 auto;
     display: flex;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     color: var(--cl-color-gray-lighter);
 }
 
@@ -27,6 +26,7 @@
     width: auto;
     margin: 0 auto;
     caret-color: transparent;
+    margin-top: 40px;
 }
 
 .cl-register> .cl-wrapper> .main-content> .content> .steps{
@@ -37,4 +37,5 @@
     color: var(--cl-color-primary);
     margin-top: 20px;
     caret-color: transparent;
+    margin-left: 100px;
 }

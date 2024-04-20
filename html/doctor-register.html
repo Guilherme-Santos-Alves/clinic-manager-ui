@@ -10,12 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,800;1,800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
 
     <!--COMPONENTS-->
     <link rel="stylesheet" href="../styles/components/cl-header.css">
     <link rel="stylesheet" href="../styles/components/cl-input.css">
     <link rel="stylesheet" href="../styles/components/cl-button.css">
-
+    <link rel="stylesheet" href="../styles/components/select-custom.css">
     <!--SETTINGS-->
     <link rel="stylesheet" href="../styles/settings/wrapper.css">
     <link rel="stylesheet" href="../styles/settings/color.css">
@@ -30,7 +32,7 @@
     <link rel="stylesheet" href="../styles/generic/hide-input.css">
 
     <!--OBJECTS-->
-    
+    <link rel="stylesheet" href="../styles/objects/cl-wrapper.css">
 
     <!--PAGES-->
     <link rel="stylesheet" href="../styles/pages/doctor-register.css">
@@ -82,33 +84,47 @@
                                 </select> 
                             </div>             
                             <div class="fourth-line">
-                                <label for="rg-blood-type">Tipo Sanguíneo:</label>  
-                                <select required name="bloodType" id="rg-blood-type">
-                                    <option value="" disabled selected>Selecione o tipo sanguíneo</option>
-                                    <option value="0">A+</option>
-                                    <option value="1">A-</option>
-                                    <option value="4">AB+</option>
-                                    <option value="5">AB-</option>
-                                    <option value="2">B+</option>
-                                    <option value="3">B-</option>
-                                    <option value="6">O+</option>
-                                    <option value="7">O-</option>
-                                </select>
+                                <div class="select-custom -register-doctor" id="select-custom">
+                                    <label for="rg-blood-type">Tipo Sanguíneo:</label>  
+                                    <select required name="bloodType" id="rg-blood-type">
+                                        <option value="" disabled selected>Selecione o tipo sanguíneo</option>
+                                        <option value="0">A+</option>
+                                        <option value="1">A-</option>
+                                        <option value="4">AB+</option>
+                                        <option value="5">AB-</option>
+                                        <option value="2">B+</option>
+                                        <option value="3">B-</option>
+                                        <option value="6">O+</option>
+                                        <option value="7">O-</option>
+                                    </select>
+                                    <div class="custom-arrow">
+                                        <span class="material-symbols-outlined">
+                                            arrow_drop_down
+                                        </span>
+                                    </div>
+                                </div> 
                                 <label for="rg-crm">CRM:</label> 
                                 <input required class="input" id="rg-crm" name="crm">
-                                <label for="rg-specialty">Especialidade:</label> 
-                                <select required class="input" id="rg-specialty" name="specialty">
-                                    <option value="" selected disabled>Selecione a Especialidade</option>
-                                    <option value="0">Clínica Médica</option>
-                                    <option value="1">Cardiologia</option>
-                                    <option value="2">Neurologia</option>
-                                    <option value="3">Endocrinologia</option>
-                                    <option value="4">Ortopedia</option>
-                                    <option value="5">Dermatologia</option>
-                                    <option value="6">Oftalmologia</option>
-                                    <option value="7">Ginecologia</option>
-                                    <option value="8">Pediatria</option>
-                                </select>
+                                <div class="select-custom -register-doctor" id="select-custom">
+                                    <label for="rg-specialty">Especialidade:</label> 
+                                    <select required class="input" id="rg-specialty" name="specialty">
+                                        <option value="" selected disabled>Selecione a Especialidade</option>
+                                        <option value="0">Clínica Médica</option>
+                                        <option value="1">Cardiologia</option>
+                                        <option value="2">Neurologia</option>
+                                        <option value="3">Endocrinologia</option>
+                                        <option value="4">Ortopedia</option>
+                                        <option value="5">Dermatologia</option>
+                                        <option value="6">Oftalmologia</option>
+                                        <option value="7">Ginecologia</option>
+                                        <option value="8">Pediatria</option>
+                                    </select>
+                                    <div class="custom-arrow">
+                                        <span class="material-symbols-outlined">
+                                            arrow_drop_down
+                                        </span>
+                                    </div>
+                                </div> 
                             </div>   
                             <div class="fifth-line" id="fifth-line">
                                 <div class="original-line">
