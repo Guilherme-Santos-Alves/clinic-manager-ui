@@ -35,7 +35,7 @@ function listDoctorsSelect(){
     .then((response) => {
       response.json().then((doctors) => {
           doctors.forEach((doctor) => {
-            let listDoctors = `<option value="1">${doctor.firstName + " " + doctor.lastName}</option>`
+            let listDoctors = `<option value="${doctor.userId}">${doctor.firstName + " " + doctor.lastName}</option>`
             document.querySelector("#doctors-list").insertAdjacentHTML("beforeend" , listDoctors);
           });
       });
@@ -55,7 +55,7 @@ window.onload = function() {
     .then((response) => {
       response.json().then((doctors) => {
           doctors.forEach((doctor) => {
-            let showName = `${doctor.firstName + " " + doctor.lastName}`
+            let showName = `${doctor.userId} ${doctor.firstName + " " + doctor.lastName}`
             document.querySelector(".name").insertAdjacentHTML("beforeend" , showName);
           });
       });
@@ -66,15 +66,10 @@ function checkModality() {
   let modality = document.getElementsByName("modality");
 
   if (modality[0].checked === true) {
-    return "virtual";
+    return 1;
   } else if (modality[1].checked === true) {
-    return "presential";
-  } else if (modality[2].checked === true) {
-    return "virtual";
-  } else if (modality[3].checked === true) {
-    return "presential";
-  }
-}
+    return 0;
+}}
 
 function buildInputsExams() {
   let contentConsultations = document.querySelector(".cl-consultations");
@@ -167,7 +162,7 @@ function buildInputsConsultations() {
         <div class="doctor-select">
             <label for="doctors-list">Médico:</label>
             <select name="doctors-list" id="doctors-list">
-            <option value="" disabled selected>Selecione um médico</option>
+              <option value="" disabled selected>Selecione um médico</option>
             </select> 
             <div class="custom-arrow">
             <span class="material-symbols-outlined">
@@ -178,9 +173,9 @@ function buildInputsConsultations() {
         </div>
         <div class="from-the-hour" >
           <label class="e" for="consultations-until-hour">Data:</label>
-          <input class="input" type="date" id="consultations-until-hour" value="23:59">
+          <input class="input" type="date" id="date">
           <label class="between" for="consultations-from-hour">Hora:</label>
-          <input class="input" type="time" id="consultations-from-hour" value="00:00">               
+          <input class="input" type="time" id="hour" value="00:00">               
         </div>
         <div class="radio-container">
             <span class="material-symbols-outlined">
@@ -205,29 +200,37 @@ function buildInputsConsultations() {
 }
 
 function fetchConsultations(){
+  const token = localStorage.getItem("token");
+  let idDoctor = parseInt(document.querySelector("#doctors-list").value);
+
   const jsonDataConsultations = {
-    specialtyConsultation: document.querySelector("#specialty-consultation").value,
-    modality: checkModality(),
-    fromHour: document.querySelector("#consultations-from-hour").value,
-    untilHour: document.querySelector("#consultations-until-hour").value,
+    patientId: 2,
+    doctorId: idDoctor,
+    name: document.querySelector("#specialty-consultation").value,
+    patientName: "Neymar Jr",
+    doctorName: document.querySelector("#doctors-list option:checked").text,
+    startDate: document.querySelector("#date").value + "T" + document.querySelector("#hour").value,
+    modality: checkModality()
   };
 
   console.log(jsonDataConsultations);
 
-  fetch("https://localhost:7252/api/patients", {
+  fetch("https://localhost:7231/api/services", {
       method: 'POST',
       headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
       },
-      body: JSON.stringify(jsonData)
+      body: JSON.stringify(jsonDataConsultations)
   })
   .then(response => response.json())
   .then(response => {
       console.log(response);
-      window.location.href = "index.html";
+      showToast(successMsg);
   })
   .catch(error => {
       console.error('Erro:', error);
+      showToast(errorMsg);
   });
 }
 
