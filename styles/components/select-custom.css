@@ -78,6 +78,7 @@
     appearance: none;
     -webkit-appearance: none; 
     -moz-appearance: none; 
+    margin-bottom: 2px;
 }
 
 .select-custom.-exam-or-consultation> .doctor-select> .custom-arrow> span{
@@ -104,7 +105,7 @@
 
 .select-custom.-appointments> select{
     width: 250px;
-    height: 34px;
+    height: 35px;
     display: inline-block;
 }
 
@@ -116,6 +117,7 @@
 .select-custom.-appointments> .custom-arrow{
     height: 34px;
     margin-top: 20px;
+    padding-top: 2px;
 }
 
 .select-custom.-register> select{

@@ -44,7 +44,8 @@
     font-weight: 400;
     padding: 4px;
     cursor: pointer;
-    height: 34.5px;
+    height: 36px;
+    width: 36px;
 }
 
 .my-appointments > .form-appointments> .search-button> .search > span {

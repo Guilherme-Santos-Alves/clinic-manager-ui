@@ -43,7 +43,7 @@
 
 .cl-exams > .form-box > .from-the-hour > .input {
     background-color: var(--cl-color-gray-lighter);
-    width: 168px;
+    width: 154px;
     height: 32px;
     outline: 0;
     border: 2px solid var(--cl-color-gray-light);
@@ -52,6 +52,7 @@
     font-size: 18px;
     font-weight: 400;
     font-family: var(--cl-font-family-base);
+    padding: 5px;
 }
 
 .cl-exams > .form-box > .from-the-hour {
@@ -68,8 +69,7 @@
     font-size: 28px;
     font-family: var(--cl-font-family-base);
     font-weight: 500;
-    margin-right: 26px;
-    margin-left: 2px;
+    margin-right: 10px;
     color: var(--cl-color-primary-dark);
 }
 

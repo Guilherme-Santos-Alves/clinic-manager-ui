@@ -81,7 +81,7 @@ function buildInputsExams() {
 
   const templateExams = `
   <h1 class="title">Agendar Exame</h1>
-  <form action="javascript:void(0)" class="form-box">
+  <form action="javascript:void(0)" class="form-box" onsubmit="postExams()">
       
       <div class="specialty" id="specialty">
           <div class="select-custom -exam-or-consultation" id="select-custom">
@@ -113,13 +113,13 @@ function buildInputsExams() {
       </div>
       <div class="exam">
           <label class="select-speciality" for="exam">Exame:</label>
-          <input class="input" required placeholder="Digite o nome do exame">
+          <input class="input" required placeholder="Digite o nome do exame" id="exam-name">
       </div>   
       <div class="from-the-hour">
-          <label class="between" for="exams-from-hour">Entre:</label> 
-          <input required class="input" type="time" id="exams-from-hour" value="00:00">
-          <label class="e" for="exams-until-hour">e</label> 
-          <input required class="input" type="time" id="exams-until-hour" value="23:59">
+          <label class="between" for="date">Data:</label> 
+          <input required class="input" type="date" id="date">
+          <label class="e" for="hour">Hora:</label> 
+          <input required class="input" type="time" id="hour" value="00:00">
       </div>
       <div class="cl-button -patient">
           <button type="submit" class="btn-link" id="btn-link-exam" >Continuar</button>
@@ -130,6 +130,41 @@ function buildInputsExams() {
   listDoctorsSelect();
 
   document.querySelector(".cl-exams").insertAdjacentHTML("beforeend", templateExams);  
+}
+
+function postExams(){
+  const token = localStorage.getItem("token");
+  let idDoctor = parseInt(document.querySelector("#doctors-list").value);
+
+  const jsonDataExams = {
+    patientId: 2,
+    doctorId: idDoctor,
+    name: document.querySelector("#exam-name").value,
+    patientName: "Neymar Jr",
+    doctorName: document.querySelector("#doctors-list option:checked").text,
+    startDate: document.querySelector("#date").value + "T" + document.querySelector("#hour").value,
+    modality: 0
+  };
+
+  console.log(jsonDataExams);
+
+  fetch("https://localhost:7231/api/services", {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(jsonDataExams)
+  })
+  .then(response => response.json())
+  .then(response => {
+      console.log(response);
+      showToast(successMsg);
+  })
+  .catch(error => {
+      console.error('Erro:', error);
+      showToast(errorMsg);
+  });
 }
 
 function buildInputsConsultations() {
@@ -172,9 +207,9 @@ function buildInputsConsultations() {
         </div>
         </div>
         <div class="from-the-hour" >
-          <label class="e" for="consultations-until-hour">Data:</label>
+          <label class="e" for="date">Data:</label>
           <input class="input" type="date" id="date">
-          <label class="between" for="consultations-from-hour">Hora:</label>
+          <label class="between" for="hour">Hora:</label>
           <input class="input" type="time" id="hour" value="00:00">               
         </div>
         <div class="radio-container">
@@ -216,12 +251,12 @@ function fetchConsultations(){
   console.log(jsonDataConsultations);
 
   fetch("https://localhost:7231/api/services", {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-      },
-      body: JSON.stringify(jsonDataConsultations)
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(jsonDataConsultations)
   })
   .then(response => response.json())
   .then(response => {
@@ -244,7 +279,7 @@ function buildMyAppoinyments(){
 
   let templateAppointments = `
   <h1>Meus Agendamentos</h1>
-  <form class="form-appointments" action="">
+  <form class="form-appointments" action="javascript:void(0)" onsubmit="appointments()">
       <div class="search-input">
           <label for="select-custom">Pesquisa:</label>
           <input type="text" >
@@ -252,11 +287,11 @@ function buildMyAppoinyments(){
       <div class="select-custom -appointments" id="select-custom">
           <label for="select-staus">Status:</label>
           <select name="" id="select-staus">
-              <option value="">Todos</option>
-              <option selected value="">Agendado</option>
-              <option value="">Efetivado</option>
+              <option value="all">Todos</option>
+              <option selected value="pending">Agendado</option>
+              <option value="finished">Efetivado</option>
               <option value="">Não Realizado</option>
-              <option value="">Cancelado</option>
+              <option value="canceled">Cancelado</option>
           </select>
           <div class="custom-arrow">
               <span class="material-symbols-outlined">
@@ -273,53 +308,47 @@ function buildMyAppoinyments(){
       </div>
   </form>
   <div class="appointments">
-      <div class="content">
-          <ul>21/12/23 - 10:30</ul>
-          <ul>Clínica Médica</ul>
-          <ul>Av.Terminal de Papicu</ul>
-      </div>
-      <div class="content">
-          <ul>21/12/23 - 10:30</ul>
-          <ul>Clínica Médica</ul>
-          <ul>Av.Terminal de Papicu</ul>
-      </div>
-      <div class="content">
-          <ul>21/12/23 - 10:30</ul>
-          <ul>Clínica Médica</ul>
-          <ul>Av.Terminal de Papicu</ul>
-      </div>
-      <div class="content">
-          <ul>21/12/23 - 10:30</ul>
-          <ul>Clínica Médica</ul>
-          <ul>Av.Terminal de Papicu</ul>
-      </div>
-      <div class="content">
-          <ul>21/12/23 - 10:30</ul>
-          <ul>Clínica Médica</ul>
-          <ul>Av.Terminal de Papicu</ul>
-      </div>
-      <div class="content">
-          <ul>21/12/23 - 10:30</ul>
-          <ul>Clínica Médica</ul>
-          <ul>Av.Terminal de Papicu</ul>
-      </div>
-      <div class="content">
-          <ul>21/12/23 - 10:30</ul>
-          <ul>Clínica Médica</ul>
-          <ul>Av.Terminal de Papicu</ul>
-      </div>
-      <div class="content">
-          <ul>21/12/23 - 10:30</ul>
-          <ul>Clínica Médica</ul>
-          <ul>Av.Terminal de Papicu</ul>
-      </div>
-      <div class="content">
-          <ul>21/12/23 - 10:30</ul>
-          <ul>Clínica Médica</ul>
-          <ul>Av.Terminal de Papicu</ul>
-      </div>
+      
   </div>
   `;
 
   document.querySelector(".my-appointments").insertAdjacentHTML("beforeend", templateAppointments);
+}
+
+function appointments(){
+    let cleanAppointments = document.querySelector(".appointments");
+    cleanAppointments.innerHTML = '';
+
+    let status = document.getElementById("select-staus").value;
+
+    const token = localStorage.getItem("token");
+    
+    //`https://localhost:7231/api/services?status=${status}` URL COM O PARAMETRO STATUS
+    fetch("https://localhost:7231/api/services", {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    })
+    .then((response) => {
+        response.json().then((appointments) => {
+            appointments.forEach((appointment) => {
+                var startDateStr = appointment.startDate;
+                var startDate = new Date(startDateStr);
+                var hour = startDate.getHours();
+                var minutes = startDate.getMinutes();
+                var date = startDate.getDate();
+                var month = startDate.getMonth() + 1;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                hour = hour < 10 ? "0" + hour : hour;
+                month = month < 10 ? "0" + month : month;
+                date = date < 10 ? "0" + date : date;
+                
+                let hourAndMinutes = '<div class="content"><ul> Data: ' + date + "/" + month + "  -  " +  'Hora: ' + hour + ":" + minutes + '</ul><ul>' + appointment.name + '</ul><ul>Dr. ' + appointment.doctorName + '</ul><ul>Av.Terminal de Papicu, 262</ul></div>';
+    
+                document.querySelector(".appointments").insertAdjacentHTML("beforeend", hourAndMinutes);
+            });
+        });
+    });
 }
