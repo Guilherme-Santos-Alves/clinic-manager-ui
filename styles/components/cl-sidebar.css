@@ -40,10 +40,18 @@
 }
 
 
-.cl-sidebar > .nav-links > li > span {
+.cl-sidebar > .nav-links > li > span{
     font-size: 30px;
     margin-right: 20px;
 }
+
+.cl-sidebar > .nav-links > li > svg {
+    margin-right: 20px;
+    height: 30px;
+    width: 30px;
+    stroke-width: 777px; /* Ajuste a largura do traço conforme necessário */
+}
+
 
 .cl-sidebar > .nav-links > li > a {
     font-family: var(--cl-font-family-base);

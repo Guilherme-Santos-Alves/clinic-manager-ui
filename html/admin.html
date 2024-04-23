@@ -10,9 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,800;1,800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--COMPONENTS-->
-    <link rel="stylesheet" href="../styles/components/cl-header.css">
+    <link rel="stylesheet" href="../styles/components/cl-navbar.css">
+    <link rel="stylesheet" href="../styles/components/cl-sidebar.css">
+    <link rel="stylesheet" href="../styles/components/cl-toast.css">
+    <link rel="stylesheet" href="../styles/components/dropdown.css">
 
     <!--SETTINGS-->
     <link rel="stylesheet" href="../styles/settings/wrapper.css">
@@ -32,31 +37,90 @@
     <!--PAGES-->
     <link rel="stylesheet" href="../styles/pages/admin.css">
 
+    <script src="../js/rotate.js"></script>
+
 <body>
-    <div class="cl-patient">
-
-        <div class="cl-wrapper">
-            <header class="cl-header">
-                <div class="wrapper">
-                    <div class="image-wrapper">
-                        <img class="image" src="../assets/logos/clinica-logo.png" alt="logo-clinica">
-                    </div>
-                </div>
-            </header>          
-
-            <div class="main-content">
-                <form class="left" >
-                <h1>recepcionista</h1>
-                
-                    
-                </form>
-
-                <div class="right">
-                    <img class="image" src="../assets/image/banner-clinica.png" alt="bg-cubes">
-                </div>
-            </div>
+    <nav class="cl-sidebar">
+        <div class="image-wrapper">
+            <img class="image" src="../assets/logos/clinica-logo.png" alt="logo-clinica">
         </div>
-        
+        <ul class="nav-links">
+            <li>
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                <a onclick="">Meu painel</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    calendar_clock
+                </span>
+                <a onclick="buildInputsConsultations()">Agendar Consulta</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    calendar_clock
+                </span>
+                <a onclick="buildInputsExams()">Agendar Exame</a>
+            </li>
+            <li class="dropdown -sidebar" id="dropdown-sidebar">
+                <span class="material-symbols-outlined">
+                    stethoscope
+                </span>
+                <a onclick="rotacionar()">Gerenciar Médico 
+                    <span class="material-symbols-outlined" id="arrow">
+                        chevron_right
+                    </span>
+                </a>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="doctor-register.html">- Cadastrar Médico</a>
+                    <a href="doctor-register.html">- Editar Médico</a>
+                    <a href="doctor-register.html">- Deletar Médico3</a>
+                </div>
+                
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    how_to_reg
+                </span>
+                <a href="register.html">Cadatrar Paciente</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    event_note
+                </span>
+                <a onclick="buildMyAppoinyments()">Agendamentos</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    description
+                </span>
+                <a onclick="">Dados Cadastrais</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    logout
+                </span>
+                <a href="index.html">Sair</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="cl-navbar">
+        <div class="cl-navbar-content">
+            <h3 class="name" onclick="showToast(errorMsg)">
+                adm home
+            </h3>
+            <h3>
+                Neymar Jr
+            </h3>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="cl-toast-box" id="toast-box">
+                    
+        </div> 
     </div>
         
 </body>
