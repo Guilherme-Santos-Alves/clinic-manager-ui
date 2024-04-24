@@ -1,6 +1,16 @@
-.cl-patient> .cl-wrapper> .main-content{
-    width: var(--cl-main-wrapper);
-    height: 100%;
-    padding: 100px 84.5px 0px 84.5px;
+.cl-admin {
+    display: grid;
+    grid-template-columns: auto; /* Definindo as colunas do grid, onde a segunda coluna (1fr) ocupará o espaço restante */
+}
 
+.cl-admin> .cl-wrapper{
+    margin: var(--home-wrapper);
+    position: relative;
+    height: calc(100vh - 75px);
+    width: calc(100% - 320px);
+}
+
+.cl-admin> .cl-wrapper> .main-content {
+    display: flex;
+    justify-content: center;
 }

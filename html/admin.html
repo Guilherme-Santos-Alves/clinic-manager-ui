@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="../styles/components/cl-sidebar.css">
     <link rel="stylesheet" href="../styles/components/cl-toast.css">
     <link rel="stylesheet" href="../styles/components/dropdown.css">
+    <link rel="stylesheet" href="../styles/components/my-appointments.css">
+    <link rel="stylesheet" href="../styles/components/cl-button.css">
+    <link rel="stylesheet" href="../styles/components/select-custom.css">
 
     <!--SETTINGS-->
     <link rel="stylesheet" href="../styles/settings/wrapper.css">
@@ -38,6 +41,7 @@
     <link rel="stylesheet" href="../styles/pages/admin.css">
 
     <script src="../js/rotate.js"></script>
+    <script src="../js/admin.js"></script>
 
 <body>
     <nav class="cl-sidebar">
@@ -67,24 +71,32 @@
                 <span class="material-symbols-outlined">
                     stethoscope
                 </span>
-                <a onclick="rotacionar()">Gerenciar Médico 
+                <a onclick="rotacionar()">Gerenciar Médicos
                     <span class="material-symbols-outlined" id="arrow">
                         chevron_right
                     </span>
                 </a>
                 <div class="dropdown-menu" id="dropdown-menu">
-                    <a href="doctor-register.html">- Cadastrar Médico</a>
-                    <a href="doctor-register.html">- Editar Médico</a>
-                    <a href="doctor-register.html">- Deletar Médico3</a>
+                    <a href="doctor-register.html">Cadastrar Médico</a>
+                    <a href="doctor-register.html">Editar Médico</a>
+                    <a href="doctor-register.html">Deletar Médico</a>
                 </div>
-                
             </li>
-            <li>
+            <li class="dropdown-patient" id="dropdown-patient"> <!-- Corrigido para dropdown-patient -->
                 <span class="material-symbols-outlined">
-                    how_to_reg
+                    person
                 </span>
-                <a href="register.html">Cadatrar Paciente</a>
-            </li>
+                <a onclick="dropdownPatient()">Gerenciar Pacientes
+                    <span class="material-symbols-outlined" id="arrow-patient">
+                        chevron_right
+                    </span>
+                </a>
+                <div class="dropdown-menu-patient" id="dropdown-menu-patient">
+                    <a href="doctor-register.html">Cadastrar Paciente</a>
+                    <a href="doctor-register.html">Editar Paciente</a>
+                    <a href="doctor-register.html">Inativar Paciente</a> <!-- Corrigido para "Inativar Paciente" -->
+                </div>
+            </li>            
             <li>
                 <span class="material-symbols-outlined">
                     event_note
@@ -117,11 +129,16 @@
         </div>
     </div>
 
-    <div class="main-content">
-        <div class="cl-toast-box" id="toast-box">
-                    
-        </div> 
+    <div class="cl-admin">
+        <div class="cl-wrapper">
+            <div class="main-content">
+                <div class="my-appointments">
+
+                </div>
+            </div>
+        </div>
     </div>
+    <form action="" onsubmit="corneto()"></form>
         
 </body>
 </html>

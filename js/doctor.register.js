@@ -42,8 +42,6 @@ function processarValoresInputs() {
             payloadSolution += ', ';
         }
     });
-
-    console.log(payloadSolution);
     
     localStorage.setItem("solutions", payloadSolution);
 }

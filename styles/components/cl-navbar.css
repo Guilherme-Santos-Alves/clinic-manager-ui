@@ -1,7 +1,7 @@
 .cl-navbar {
-    width: calc(100% - 300px);
+    width: calc(100% - 320px);
     background-color: var(--cl-color-primary-dark);
-    margin-left: 300px;
+    margin-left: 320px;
     top: 0;
     position: fixed;
     height: 70px;

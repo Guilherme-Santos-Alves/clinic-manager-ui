@@ -1,7 +1,8 @@
 .cl-sidebar {
     background-color: var(--cl-color-primary-dark);
-    width: 300px;
-    min-height: 100vh;
+    width: 320px;
+    height: 100vh;
+    max-height: 100vh;
     overflow-y: auto;
     position: fixed;
     box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.15);
@@ -66,7 +67,5 @@
 }
 
 .cl-sidebar> .nav-links li a:hover {
-    color: var(--cl-color-primary);
-    text-decoration: underline;
     font-size: 20px;
 }

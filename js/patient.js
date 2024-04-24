@@ -153,61 +153,60 @@ function buildInputsConsultations() {
   
   let templateConsultations = `
   <h1 class="title">Agendar Consulta</h1>
-    <form action="javascript:void(0)" class="form-box" onsubmit="fetchConsultations()">
-        <div class="specialty" id="specialty">
-            <div class="select-custom -exam-or-consultation" id="select-custom">
-                <label class="select-speciality" for="specialty-consultation">Selecione a especialidade da consulta:</label>
-                    <select name="specialty" id="specialty-consultation">
-                    <option value="" disabled selected >Especialidade</option> 
-                    <option value="Cardiologia">Cardiologia</option>
-                    <option value="Ortopedia">Ortopedia</option>
-                    </select>
-                <div class="custom-arrow">
-                    <span class="material-symbols-outlined">
-                        arrow_drop_down
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="select-custom -exam-or-consultation">
-        <div class="doctor-select">
-            <label for="doctors-list">Médico:</label>
-            <select name="doctors-list" id="doctors-list">
-              <option value="" disabled selected>Selecione um médico</option>
-            </select> 
-            <div class="custom-arrow">
-            <span class="material-symbols-outlined">
-                arrow_drop_down
-            </span>
-            </div>
-        </div>
-        </div>
-        <div class="from-the-hour" >
-          <label class="e" for="date">Data:</label>
-          <input class="input" type="date" id="date">
-          <label class="between" for="hour">Hora:</label>
-          <input class="input" type="time" id="hour" value="00:00">               
-        </div>
-        <div class="radio-container">
-            <span class="material-symbols-outlined">
-            phone_iphone
-            </span>
-            <label for="radio-virtual-consultations">Telemedicina</label><input required name="modality" class="radio" type="radio" id="radio-virtual-consultations" onchange="checkModality()">
-            <span class="material-symbols-outlined">
-            person
-            </span>
-            <label for="radio-presential-consultations">Presencial</label><input required name="modality" class="radio" type="radio" id="radio-presential-consultations" onchange="checkModality()">
-        </div>
-        <div class="cl-button -patient">
-            <button type="submit" class="btn-link" id="btn-link-consultation" >Continuar</button>
-        </div>                     
-    </form>
+  <form id="form-consultations" action="javascript:void(0)" class="form-box" onsubmit="fetchConsultations()">
+      <div class="specialty" id="specialty">
+          <div class="select-custom -exam-or-consultation" id="select-custom">
+              <label class="select-speciality" for="specialty-consultation">Selecione a especialidade da consulta:</label>
+                  <select name="specialty" id="specialty-consultation">
+                  <option value="" disabled selected >Especialidade</option> 
+                  <option value="Cardiologia">Cardiologia</option>
+                  <option value="Ortopedia">Ortopedia</option>
+                  </select>
+              <div class="custom-arrow">
+                  <span class="material-symbols-outlined">
+                      arrow_drop_down
+                  </span>
+              </div>
+          </div>
+      </div>
+      <div class="select-custom -exam-or-consultation">
+      <div class="doctor-select">
+          <label for="doctors-list">Médico:</label>
+          <select name="doctors-list" id="doctors-list">
+            <option value="" disabled selected>Selecione um médico</option>
+          </select> 
+          <div class="custom-arrow">
+          <span class="material-symbols-outlined">
+              arrow_drop_down
+          </span>
+          </div>
+      </div>
+      </div>
+      <div class="from-the-hour" >
+        <label class="e" for="date">Data:</label>
+        <input class="input" type="date" id="date">
+        <label class="between" for="hour">Hora:</label>
+        <input class="input" type="time" id="hour">               
+      </div>
+      <div class="radio-container">
+          <span class="material-symbols-outlined">
+          phone_iphone
+          </span>
+          <label for="radio-virtual-consultations">Telemedicina</label><input required name="modality" class="radio" type="radio" id="radio-virtual-consultations" onchange="checkModality()">
+          <span class="material-symbols-outlined">
+          person
+          </span>
+          <label for="radio-presential-consultations">Presencial</label><input required name="modality" class="radio" type="radio" id="radio-presential-consultations" onchange="checkModality()">
+      </div>
+      <div class="cl-button -patient">
+          <button type="submit" class="btn-link" id="btn-link-consultation" >Continuar</button>
+      </div>                     
+  </form>
   `;
 
   listDoctorsSelect();
 
   document.querySelector(".cl-consultations").insertAdjacentHTML("beforeend", templateConsultations);
-  
 }
 
 function fetchConsultations(){
@@ -229,21 +228,23 @@ function fetchConsultations(){
   fetch("https://localhost:7231/api/services", {
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
     },
     body: JSON.stringify(jsonDataConsultations)
   })
   .then(response => response.json())
   .then(response => {
-      console.log(response);
-      showToast(successMsg);
+    console.log(response);
+    showToast(successMsg);
+    limparCampo();
   })
   .catch(error => {
-      console.error('Erro:', error);
-      showToast(errorMsg);
+    console.error('Erro:', error);
+    showToast(errorMsg);
   });
 }
+
 
 function buildMyAppoinyments(){
   let contentConsultations = document.querySelector(".cl-consultations");
@@ -327,4 +328,13 @@ function appointments(){
             });
         });
     });
+}
+
+function limparCampo() {
+  const form = document.getElementById("form-consultations");
+  var inputs = form.querySelectorAll('input, textarea, select');
+
+  inputs.forEach(function(input) {
+      input.value = '';
+  });
 }
