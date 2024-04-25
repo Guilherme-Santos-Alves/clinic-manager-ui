@@ -29,6 +29,7 @@
     height: 34px;
     border: 2px solid var(--cl-color-gray-light);
     border-radius: 5px;
+    background-color: var(--cl-color-gray-lighter);
 }
 
 .my-appointments > .form-appointments> .search-button{
@@ -90,4 +91,8 @@
 
 .select-custom.-appointments> label{
     display: block;
+}
+
+.my-appointments > .appointments> .content> .open-popup{
+    color: var(--cl-color-primary);
 }

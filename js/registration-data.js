@@ -211,12 +211,12 @@ function buildMyDataDoctor(){
         <div class="line">
             <div class="left">
                 <label for="">CRM:</label>
-                <input type="text" id="email">
+                <input type="text" id="crm">
             </div>
             <div class="right">
                 <label for="">Especialidade:</label>
                 <div class="select-custom -registration">
-                    <select name="" id="bloodType">
+                    <select name="" id="specialty">
                         <option value="0">Clínica Médica</option>
                         <option value="1">Cardiologia</option>
                         <option value="2">Neurologia</option>
@@ -241,14 +241,8 @@ function buildMyDataDoctor(){
                 <input type="text" id="email">
             </div>
             <div class="right">
-                <label for="">Senha:</label>
-                <input type="text" id="password">
-            </div>
-        </div>
-        <div class="line">
-            <div class="left">
                 <label for="">Soluções:</label>
-                <input type="text" id="email">
+                <input type="text" id="solutions">
             </div>
         </div>
 
@@ -284,4 +278,46 @@ function buildMyDataDoctor(){
     `;
 
     document.querySelector(".registration-data").insertAdjacentHTML("beforeend", template);
+    getDataDoctor();
+}
+
+function getDataDoctor() {
+    const token = localStorage.getItem("token");
+    const doctorDocument = localStorage.getItem("document");
+  
+    fetch(`https://localhost:7231/api/doctors/document/${doctorDocument}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+    })
+    .then((response) => {
+      response.json().then((doctor) => {
+        document.querySelector("#firstName").value = doctor.firstName;
+        document.querySelector("#lastName").value = doctor.lastName;
+        document.querySelector("#cpf").value = doctor.cpf;
+        
+        const birthDate = new Date(doctor.birthday);
+        const day = birthDate.getDate();
+        const month = birthDate.getMonth() + 1;
+        const year = birthDate.getFullYear();
+        const formattedBirthDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+        document.querySelector("#birthDay").value = formattedBirthDate;
+
+        document.querySelector("#phone").value = doctor.phone;
+        document.querySelector("#bloodType").value = doctor.bloodType;
+        document.querySelector("#crm").value = doctor.crm;
+        document.querySelector("#specialty").value = doctor.specialty;
+        document.querySelector("#email").value = doctor.email;
+        document.querySelector("#solutions").value = doctor.solutions;
+
+        
+        document.querySelector("#state").value = doctor.addressDTO.state;
+        document.querySelector("#city").value = doctor.addressDTO.city;
+        document.querySelector("#neighborhood").value = doctor.addressDTO.neighborhood;
+        document.querySelector("#cep").value = doctor.addressDTO.cep;
+        document.querySelector("#number").value = doctor.addressDTO.number;
+      });
+    });
 }

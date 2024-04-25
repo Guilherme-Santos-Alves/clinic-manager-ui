@@ -25,7 +25,7 @@ function login() {
         localStorage.setItem("token", data.token)
         showToast(successMsg);
         localStorage.setItem("document", requestBody.login);
-        window.location.href = "patient.html"
+        window.location.href = "doctor.html"
     })
     .catch(error => {
         console.error('Erro na requisição:', error);

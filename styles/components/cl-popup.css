@@ -1,0 +1,66 @@
+.popup{
+    height: 400px;
+    width: 800px;
+    margin-top: 20px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: auto;
+    background-color: var(--cl-color-gray-lighter);
+    display: none;
+    position: fixed;
+}
+
+.popup> .popup-content> .title{
+    display: flex;
+    justify-content: center;
+    color: var(--cl-color-primary-dark);
+    margin-top: 0px;
+}
+
+.popup> .popup-content> .content{
+    background-color: var(--cl-color-gray-lighter);
+    padding: 10px;
+}
+
+.popup> .popup-content> .popup-nav{
+    height: 60px;
+    background-color: var(--cl-color-primary-dark);
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.popup> .popup-content> .popup-nav> img{
+    height: 60px;
+    width: 180px;
+    margin: auto 0;
+    padding: 5px 0px;
+}
+
+.close-popup {
+    background-color: transparent;
+    margin-left: 700px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--cl-color-primary-dark);
+    padding: 2px 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.close-popup > span {
+    font-size: 28px;
+    color: var(--cl-color-gray-lighter);
+    cursor: pointer;
+    display: inline-block;
+}
+
+.close-popup > label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--cl-font-family-base);
+    color: var(--cl-color-gray-lighter);
+    cursor: pointer;
+}

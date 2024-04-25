@@ -329,7 +329,7 @@ function appointments(){
                 month = month < 10 ? "0" + month : month;
                 date = date < 10 ? "0" + date : date;
                 
-                let hourAndMinutes = '<div class="content"><ul> Data: ' + date + "/" + month + "  -  " +  'Hora: ' + hour + ":" + minutes + '</ul><ul>' + appointment.name + '</ul><ul>Dr. ' + appointment.doctorName + '</ul><ul>Av.Terminal de Papicu, 262</ul></div>';
+                let hourAndMinutes = '<div class="content" id="content-appointment" onclick="showPopup()"><ul> Data: ' + date + "/" + month + "  -  " +  'Hora: ' + hour + ":" + minutes + '</ul><ul>' + appointment.name + '</ul><ul>Dr. ' + appointment.doctorName + '</ul><ul>Av.Terminal de Papicu, 262</ul><ul class="open-popup">Clique para iniciar/cancelar</ul></div>';
     
                 document.querySelector(".appointments").insertAdjacentHTML("beforeend", hourAndMinutes);
             });
@@ -337,11 +337,13 @@ function appointments(){
     });
 }
 
+
+
 function limparCampo() {
   const form = document.getElementById("form-consultations");
   var inputs = form.querySelectorAll('input, textarea, select, radio');
 
   inputs.forEach(function(input) {
-      input.value = '';
+    input.value = '';
   });
 }
