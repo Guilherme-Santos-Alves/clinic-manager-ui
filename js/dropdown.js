@@ -1,6 +1,6 @@
 var anguloAtual = 0;
 
-function rotacionar() {
+function dropdown() {
     var dropdownMenu = document.getElementById('dropdown-menu');
     var dropdownSidebar = document.getElementById('dropdown-sidebar');
     var elementoArrow = document.getElementById('arrow');

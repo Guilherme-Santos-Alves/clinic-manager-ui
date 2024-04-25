@@ -20,23 +20,23 @@ function listDoctorsSelect(){
 
 window.onload = function() {
   const token = localStorage.getItem("token");
+  const patientDocument = localStorage.getItem("document");
 
-  fetch("https://localhost:7231/api/doctors", {
+  fetch(`https://localhost:7231/api/patients/document/${patientDocument}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     },
-    })
-    .then((response) => {
-      response.json().then((doctors) => {
-          doctors.forEach((doctor) => {
-            let showName = `${doctor.userId} ${doctor.firstName + " " + doctor.lastName}`
-            document.querySelector(".name").insertAdjacentHTML("beforeend" , showName);
-          });
-      });
+  })
+  .then((response) => {
+    response.json().then((patient) => {
+      let showName = `${patient.firstName + " " + patient.lastName}`;
+      document.querySelector(".name").insertAdjacentHTML("beforeend" , showName);
+    });
   });
 }
+
 
 function checkModality() {
   let modality = document.getElementsByName("modality");
@@ -54,6 +54,8 @@ function buildInputsExams() {
   contentExams.innerHTML = '';
   let contentAppointments = document.querySelector(".my-appointments");
   contentAppointments.innerHTML = '';
+  let registrationData = document.querySelector(".registration-data");
+  registrationData.innerHTML = '';
 
   const templateExams = `
   <h1 class="title">Agendar Exame</h1>
@@ -62,7 +64,7 @@ function buildInputsExams() {
       <div class="specialty" id="specialty">
           <div class="select-custom -exam-or-consultation" id="select-custom">
               <label class="select-speciality" for="specialty-exam">Selecione a especialidade do exame:</label>
-              <select required name="specialty" id="specialty-exam">
+              <select required name="specialty" id="specialty-exam" required>
                   <option value="" disabled selected>Especialidade</option> 
                   <option value="Exames de imagem">Exames de imagem</option>
                   <option value="Cardiologia">Cardiologia</option>
@@ -77,8 +79,8 @@ function buildInputsExams() {
       <div class="select-custom -exam-or-consultation">
       <div class="doctor-select">
           <label for="doctors-list">Médico:</label>
-          <select name="doctors-list" id="doctors-list">
-          <option value="" disabled selected>Selecione um médico</option>
+          <select name="doctors-list" id="doctors-list" required>
+            <option value="" disabled selected>Selecione um médico</option>
           </select> 
           <div class="custom-arrow">
           <span class="material-symbols-outlined">
@@ -95,7 +97,7 @@ function buildInputsExams() {
           <label class="between" for="date">Data:</label> 
           <input required class="input" type="date" id="date">
           <label class="e" for="hour">Hora:</label> 
-          <input required class="input" type="time" id="hour" value="00:00">
+          <input required class="input" type="time" id="hour">
       </div>
       <div class="cl-button -patient">
           <button type="submit" class="btn-link" id="btn-link-exam" >Continuar</button>
@@ -136,6 +138,7 @@ function postExams(){
   .then(response => {
       console.log(response);
       showToast(successMsg);
+      limparCampo()
   })
   .catch(error => {
       console.error('Erro:', error);
@@ -150,6 +153,8 @@ function buildInputsConsultations() {
   contentExams.innerHTML = '';
   let contentAppointments = document.querySelector(".my-appointments");
   contentAppointments.innerHTML = '';
+  let registrationData = document.querySelector(".registration-data");
+  registrationData.innerHTML = '';
   
   let templateConsultations = `
   <h1 class="title">Agendar Consulta</h1>
@@ -157,10 +162,10 @@ function buildInputsConsultations() {
       <div class="specialty" id="specialty">
           <div class="select-custom -exam-or-consultation" id="select-custom">
               <label class="select-speciality" for="specialty-consultation">Selecione a especialidade da consulta:</label>
-                  <select name="specialty" id="specialty-consultation">
-                  <option value="" disabled selected >Especialidade</option> 
-                  <option value="Cardiologia">Cardiologia</option>
-                  <option value="Ortopedia">Ortopedia</option>
+                  <select name="specialty" id="specialty-consultation" required>
+                    <option value="" disabled selected >Especialidade</option> 
+                    <option value="Cardiologia">Cardiologia</option>
+                    <option value="Ortopedia">Ortopedia</option>
                   </select>
               <div class="custom-arrow">
                   <span class="material-symbols-outlined">
@@ -172,7 +177,7 @@ function buildInputsConsultations() {
       <div class="select-custom -exam-or-consultation">
       <div class="doctor-select">
           <label for="doctors-list">Médico:</label>
-          <select name="doctors-list" id="doctors-list">
+          <select name="doctors-list" id="doctors-list" required>
             <option value="" disabled selected>Selecione um médico</option>
           </select> 
           <div class="custom-arrow">
@@ -184,19 +189,19 @@ function buildInputsConsultations() {
       </div>
       <div class="from-the-hour" >
         <label class="e" for="date">Data:</label>
-        <input class="input" type="date" id="date">
+        <input class="input" type="date" id="date" required>
         <label class="between" for="hour">Hora:</label>
-        <input class="input" type="time" id="hour">               
+        <input class="input" type="time" id="hour" required>               
       </div>
       <div class="radio-container">
           <span class="material-symbols-outlined">
           phone_iphone
           </span>
-          <label for="radio-virtual-consultations">Telemedicina</label><input required name="modality" class="radio" type="radio" id="radio-virtual-consultations" onchange="checkModality()">
+          <label for="radio-virtual-consultations">Telemedicina</label><input required name="modality" class="radio" type="radio" id="radio-virtual-consultations" onchange="checkModality()" required>
           <span class="material-symbols-outlined">
           person
           </span>
-          <label for="radio-presential-consultations">Presencial</label><input required name="modality" class="radio" type="radio" id="radio-presential-consultations" onchange="checkModality()">
+          <label for="radio-presential-consultations">Presencial</label><input required name="modality" class="radio" type="radio" id="radio-presential-consultations" onchange="checkModality()" required>
       </div>
       <div class="cl-button -patient">
           <button type="submit" class="btn-link" id="btn-link-consultation" >Continuar</button>
@@ -253,6 +258,8 @@ function buildMyAppoinyments(){
   contentExams.innerHTML = '';
   let contentAppointments = document.querySelector(".my-appointments");
   contentAppointments.innerHTML = '';
+  let registrationData = document.querySelector(".registration-data");
+  registrationData.innerHTML = '';
 
   let templateAppointments = `
   <h1>Meus Agendamentos</h1>
@@ -332,7 +339,7 @@ function appointments(){
 
 function limparCampo() {
   const form = document.getElementById("form-consultations");
-  var inputs = form.querySelectorAll('input, textarea, select');
+  var inputs = form.querySelectorAll('input, textarea, select, radio');
 
   inputs.forEach(function(input) {
       input.value = '';

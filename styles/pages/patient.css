@@ -7,7 +7,7 @@
     margin: var(--home-wrapper);
     position: relative;
     height: calc(100vh - 75px);
-    width: calc(100% - 300px);
+    width: calc(100% - 320px);
 }
 
 .cl-patient> .cl-wrapper> .main-content {

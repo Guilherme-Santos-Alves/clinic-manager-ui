@@ -1,0 +1,83 @@
+.registration-data> .form-box> .line> div> input{
+    width: 370px;
+    height: 32px;
+    cursor: pointer;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    padding: 5px;
+    background-color: var(--cl-color-gray-lighter);
+}
+
+.registration-data> .form-box> .line{
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    width: 800px;
+    height: 80px;
+}
+
+.registration-data> .form-box> .line> div> label{
+    color: var(--cl-color-primary-dark);
+    font-size:18px;
+}
+
+.registration-data> h1{
+    color: var(--cl-color-primary-dark);
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+.registration-data> .form-box> h2{
+    color: var(--cl-color-primary-dark);
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+.select-custom.-registration.-registration{
+    position: relative;
+    display: inline-block;
+}
+
+.select-custom.-registration> select{
+    width: 370px;
+    height: 32px;
+    cursor: pointer;
+    background-color: var(--cl-color-gray-lighter);
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    padding: 5px;
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+}
+
+.select-custom.-registration> .custom-arrow {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    background-color: var(--cl-color-primary);
+    border-radius: 0 calc(5px - 1px) calc(5px - 1px) 0;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.select-custom.-registration> .custom-arrow> span{
+    color: white;
+    padding-top: 3px;
+    padding-left: 5px;
+    caret-color: transparent;
+}

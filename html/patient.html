@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../styles/components/select-custom.css">
     <link rel="stylesheet" href="../styles/components/cl-consultations.css">
     <link rel="stylesheet" href="../styles/components/cl-exams.css">
+    <link rel="stylesheet" href="../styles/components/registration-data.css">
 
     <!--SETTINGS-->
     <link rel="stylesheet" href="../styles/settings/wrapper.css">
@@ -44,6 +45,7 @@
     <!--JAVASCRIPT-->
     <script src="../js/patient.js"></script>
     <script src="../js/show-toast.js"></script>
+    <script src="../js/registration-data.js"></script>
 </head>
 <body>
     <nav class="cl-sidebar">
@@ -79,7 +81,7 @@
                 <span class="material-symbols-outlined">
                     description
                 </span>
-                <a onclick="">Dados Cadastrais</a>
+                <a onclick="buildMyDataPatient()">Dados Cadastrais</a>
             </li>
             <li>
                 <span class="material-symbols-outlined">
@@ -92,11 +94,11 @@
     
     <div class="cl-navbar">
         <div class="cl-navbar-content">
-            <h3 class="name" onclick="showToast(errorMsg)">
-                Boca de Pinico
-            </h3>
             <h3>
-                Neymar Jr
+                Paciente
+            </h3>
+            <h3 class="name" onclick="showToast(errorMsg)">
+                
             </h3>
         </div>
     </div>
@@ -117,6 +119,9 @@
                 </div>
                 <div class="my-appointments">
                               
+                </div>
+                <div class="registration-data">
+                    
                 </div>
             </div>
         </div>

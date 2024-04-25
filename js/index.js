@@ -1,4 +1,5 @@
 function login() {
+    
 
     let endpoint = 'https://localhost:7231/api/auth';
     let requestBody = {
@@ -23,6 +24,7 @@ function login() {
         console.log('Resposta da API:', data);
         localStorage.setItem("token", data.token)
         showToast(successMsg);
+        localStorage.setItem("document", requestBody.login);
         window.location.href = "patient.html"
     })
     .catch(error => {
