@@ -48,6 +48,7 @@
     <script src="../js/show-toast.js"></script>
     <script src="../js/registration-data.js"></script>
     <script src="../js/popup.js"></script>
+    <script src="../js/appointments.js"></script>
 </head>
 <body>
     <nav class="cl-sidebar">
@@ -129,15 +130,17 @@
                     <div class="popup-content">
                         <div class="popup-nav">
                             <img src="../assets/logos/clinica-logo-reverse.png" alt="">
+                            <button class="close-popup">
+                                <span class="material-symbols-outlined" id="close-popup">
+                                    disabled_by_default
+                                </span>
+                            </button>
                         </div>
-                        <button class="close-popup">
-                            <label for="close-popup">Fechar</label>
-                            <span class="material-symbols-outlined" id="close-popup">
-                                disabled_by_default
-                            </span>
-                        </button>
-                        <h2 class="title">Title</h2>
-                        <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aliquid minima, vel incidunt commodi fugit soluta, quod ea voluptates, fuga magni sit unde reprehenderit ipsam repellat ratione tempore et esse impedit adipisci quia sapiente minus. At, maiores quaerat. Facere, placeat explicabo maiores consectetur corrupti aliquam quod. Magnam aperiam et aut voluptates soluta, quae est. Ullam laudantium eum illo repellat totam, nesciunt alias at dolores itaque temporibus, consectetur porro maxime. Animi commodi dicta cum deleniti aliquid temporibus consequatur. Eaque sed itaque, repellendus, laboriosam enim nostrum debitis sint tempore accusantium quos soluta illo assumenda fuga, animi possimus libero pariatur. Sint, voluptas non!</p>
+                        <div class="popup-btn">
+                            <button class="enter" id="btn-enter">Entrar na Reunião</button>
+                            <button class="attachment" id="btn-attachment">Gerar Anexo</button>
+                            <button class="finish" id="btn-finish">Finalizar</button>
+                        </div>                        
                     </div>
                 </popup>
             </div>

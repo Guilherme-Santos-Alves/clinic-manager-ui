@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../styles/components/cl-consultations.css">
     <link rel="stylesheet" href="../styles/components/cl-exams.css">
     <link rel="stylesheet" href="../styles/components/registration-data.css">
+    <link rel="stylesheet" href="../styles/components/cl-popup.css">
 
     <!--SETTINGS-->
     <link rel="stylesheet" href="../styles/settings/wrapper.css">
@@ -48,6 +49,8 @@
     <script src="../js/registration-data.js"></script>
     <script src="../js/doctor.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/appointments.js"></script>
+    <script src="../js/popup.js"></script>
 
 </head>
 <body>
@@ -126,6 +129,23 @@
                 <div class="registration-data">
                     
                 </div>
+                <popup class="popup">
+                    <div class="popup-content">
+                        <div class="popup-nav">
+                            <img src="../assets/logos/clinica-logo-reverse.png" alt="">
+                            <button class="close-popup">
+                                <span class="material-symbols-outlined" id="close-popup">
+                                    disabled_by_default
+                                </span>
+                            </button>
+                        </div>
+                        <div class="popup-btn">
+                            <button class="enter" id="btn-enter">Entrar na Reunião</button>
+                            <button class="attachment" id="btn-attachment">Gerar Anexo</button>
+                            <button class="finish" id="btn-finish">Finalizar</button>
+                        </div>                        
+                    </div>
+                </popup>
             </div>
         </div>
     </div>
