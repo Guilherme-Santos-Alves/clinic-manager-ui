@@ -19,11 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let btnAttachment = document.querySelector("#btn-attachment");
 
     btnEnter.addEventListener("click", function() {
-        alert(`${idAppointment}`);
+        startAppointment(`${idAppointment}`);
     });
 
     btnFinish.addEventListener("click", function() {
-        alert(`finish${idAppointment}`);
         finishAppointment(`${idAppointment}`);
     });
 

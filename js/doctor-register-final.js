@@ -76,6 +76,7 @@ function registerDoctor() {
     .then(data => {
         console.log('Resposta da API:', data);
         showToast(successMsg);
+        window.location.href = "doctor.html";
     })
     .catch(error => {
         console.error.errors('Erro capturado:', error);

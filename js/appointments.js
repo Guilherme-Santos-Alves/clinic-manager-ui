@@ -1,4 +1,4 @@
-function buildMyAppoinyments(){
+function buildMyAppointments(role){
     let contentConsultations = document.querySelector(".cl-consultations");
     contentConsultations.innerHTML = '';
     let contentExams = document.querySelector(".cl-exams");
@@ -44,18 +44,28 @@ function buildMyAppoinyments(){
     `;
   
     document.querySelector(".my-appointments").insertAdjacentHTML("beforeend", templateAppointments);
+    localStorage.setItem("roleName", role);
 }
   
-function appointments(){
+function appointments(role){
     let cleanAppointments = document.querySelector(".appointments");
     cleanAppointments.innerHTML = '';
 
     let status = document.getElementById("select-staus").value;
 
+    let roleUrl = localStorage.getItem("roleName");
+
+    let userId;
+    if (roleUrl === 'patients'){
+        userId = localStorage.getItem("patientId");
+    } else if (roleUrl === 'doctors'){
+        userId = localStorage.getItem("doctorId");
+    }
+
     const token = localStorage.getItem("token");
     
     //`https://localhost:7231/api/services?status=${status}` URL COM O PARAMETRO STATUS
-    fetch(`https://localhost:7231/api/services/doctors/${3}`, {
+    fetch(`https://localhost:7231/api/services/${roleUrl}/${userId}`, {
     method: 'GET',
     headers: {
     'Content-Type': 'application/json',
@@ -98,9 +108,73 @@ function appointments(){
     });
 }
 
+// function appointmentsDoctor(role){
+//     let cleanAppointments = document.querySelector(".appointments");
+//     cleanAppointments.innerHTML = '';
+
+//     let status = document.getElementById("select-staus").value;
+
+//     let doctorId = localStorage.getItem("doctorId");
+//     const token = localStorage.getItem("token");
+    
+//     //`https://localhost:7231/api/services?status=${status}` URL COM O PARAMETRO STATUS
+//     fetch(`https://localhost:7231/api/services/${role}/${doctorId}`, {
+//     method: 'GET',
+//     headers: {
+//     'Content-Type': 'application/json',
+//     'Authorization': `Bearer ${token}`
+//     },
+//     })
+//     .then((response) => {
+//         response.json().then((appointments) => {
+//             appointments.forEach((appointment) => {
+//                 var startDateStr = appointment.startDate;
+//                 var startDate = new Date(startDateStr);
+//                 var hour = startDate.getHours();
+//                 var minutes = startDate.getMinutes();
+//                 var date = startDate.getDate();
+//                 var month = startDate.getMonth() + 1;
+//                 minutes = minutes < 10 ? "0" + minutes : minutes;
+//                 hour = hour < 10 ? "0" + hour : hour;
+//                 month = month < 10 ? "0" + month : month;
+//                 date = date < 10 ? "0" + date : date;
+//                 let idAppointment = appointment.id;
+                
+//                 let hourAndMinutes = 
+//                 '<div class="content" id="content-appointment">' +
+//                 '<div class="data">' +
+//                     '<ul> Data: ' + date + "/" + month + "  -  " +  'Hora: ' + hour + ":" + minutes + '</ul>' +
+//                     '<ul>' + appointment.name + '</ul>' +
+//                     '<ul>Dr. ' + appointment.doctorName + '</ul>' +
+//                     '<ul>Av.Terminal de Papicu, 262</ul>' +
+//                 '</div>' +
+//                 '<div class="btns">' +
+//                     `<button class="start" onclick="showPopup(${idAppointment})">Iniciar</button>` +
+//                     '<button class="cancel">Cancelar</button>' +
+//                 '</div>'
+//                 '</div>';
+
+    
+//                 document.querySelector(".appointments").insertAdjacentHTML("beforeend", hourAndMinutes);
+//             });
+//         });
+//     });
+// }
+
 function finishAppointment(id){
     const token = localStorage.getItem("token");
     fetch(`https://localhost:7231/api/services/finish/${id}`, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }
+    });
+}
+
+function startAppointment(id){
+    const token = localStorage.getItem("token");
+    fetch(`https://localhost:7231/api/services/start/${id}`, {
     method: 'PUT',
     headers: {
         'Content-Type': 'application/json',

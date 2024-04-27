@@ -18,6 +18,8 @@ window.onload = function() {
     response.json().then((doctor) => {
       let showName = `${doctor.firstName + " " + doctor.lastName}`;
       document.querySelector(".name").insertAdjacentHTML("beforeend" , showName);
+      let doctorId = doctor.userId;
+      localStorage.setItem("doctorId", doctorId);
     });
   });
 }

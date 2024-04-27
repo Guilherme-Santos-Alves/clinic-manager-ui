@@ -90,7 +90,6 @@ function registerPatient(){
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // Se necessário, inclua outras headers aqui
         },
         body: JSON.stringify(requestBody)
     })
@@ -103,6 +102,7 @@ function registerPatient(){
     .then(data => {
         console.log('Resposta da API:', data);
         showToast(successMsg);
+        window.location.href = "patient.html";
     })
     .catch(error => {
         showToast(errorMsg);

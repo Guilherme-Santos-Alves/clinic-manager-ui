@@ -18,6 +18,8 @@ function listDoctorsSelect(){
   });
 }
 
+let patientFullName;
+
 window.onload = function() {
   const token = localStorage.getItem("token");
 
@@ -38,6 +40,9 @@ window.onload = function() {
     response.json().then((patient) => {
       let showName = `${patient.firstName + " " + patient.lastName}`;
       document.querySelector(".name").insertAdjacentHTML("beforeend" , showName);
+      patientFullName = `${patient.firstName + " " + patient.lastName}`;
+      let patientId = patient.userId;
+      localStorage.setItem("patientId", patientId);
     });
   });
 }
@@ -123,7 +128,7 @@ function postExams(){
     patientId: 2,
     doctorId: idDoctor,
     name: document.querySelector("#exam-name").value,
-    patientName: "Neymar Jr",
+    patientName: `${patientFullName}`,
     doctorName: document.querySelector("#doctors-list option:checked").text,
     startDate: document.querySelector("#date").value + "T" + document.querySelector("#hour").value,
     modality: 0
@@ -227,7 +232,7 @@ function fetchConsultations(){
     patientId: 2,
     doctorId: idDoctor,
     name: document.querySelector("#specialty-consultation").value,
-    patientName: "Neymar Jr",
+    patientName: `${patientFullName}`,
     doctorName: document.querySelector("#doctors-list option:checked").text,
     startDate: document.querySelector("#date").value + "T" + document.querySelector("#hour").value,
     modality: checkModality()
@@ -271,4 +276,9 @@ function limparCampoConsultation() {
   inputs.forEach(function(input){
     input.value = '';
   }) 
+}
+
+function exit(){
+  let token = localStorage.clear();
+  window.location.href = "index.html";
 }
