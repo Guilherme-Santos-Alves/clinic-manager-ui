@@ -1,4 +1,4 @@
-function showPopup(){
+function showPopup(id){
     let popup = document.querySelector(".popup");
     let closePopup = document.querySelector(".close-popup");
 
@@ -7,4 +7,5 @@ function showPopup(){
     closePopup.addEventListener("click", function(){
         popup.style.display = "none";
     });
+    alert(`${id}`);
 }

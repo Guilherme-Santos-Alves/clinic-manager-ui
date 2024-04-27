@@ -1,3 +1,11 @@
+window.onload = function() {
+    const token = localStorage.getItem("token");
+
+    if (token === null || token === undefined){
+      window.location.href = "index.html";
+    }
+}
+
 function buildInputSolution(event) {
     template = `
     <div class="original-line -clone">

@@ -70,6 +70,11 @@
 }
 
 .my-appointments > .appointments> .content{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.my-appointments > .appointments> .content> .data{
     border-left: 4px solid var(--cl-color-primary);
     margin-bottom: 30px;
     padding-left: 20px;
@@ -81,11 +86,11 @@
     transition: all 0.4s ease 0s;
 }
 
-.my-appointments > .appointments> .content:hover{
+.my-appointments > .appointments> .content> .data:hover{
     font-size: 24px;
 }
 
-.my-appointments > .appointments> .content> ul{
+.my-appointments > .appointments> .content> .data> ul{
     margin-bottom: 10px;
 }
 
@@ -95,4 +100,39 @@
 
 .my-appointments > .appointments> .content> .open-popup{
     color: var(--cl-color-primary);
+}
+
+.my-appointments > .appointments> .content> .btns{
+    background-color: transparent;
+    margin-left: 400px;
+    display: block;
+    padding-top: 20px;
+    position: absolute;
+}
+
+.my-appointments > .appointments> .content> .btns> .start{
+    display: block;
+    background-color: var(--cl-color-primary);
+    color: var(--cl-color-gray-lighter);
+    font-size: 16px;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.my-appointments > .appointments> .content> .btns> .cancel{
+    display: block;
+    background-color: var(--cl-color-gray-light);
+    color: var(--cl-color-gray-lighter);
+    font-size: 16px;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
 }

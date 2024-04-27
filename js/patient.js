@@ -20,6 +20,11 @@ function listDoctorsSelect(){
 
 window.onload = function() {
   const token = localStorage.getItem("token");
+
+  if (token === null || token === undefined){
+    window.location.href = "index.html";
+  }
+
   const patientDocument = localStorage.getItem("document");
 
   fetch(`https://localhost:7231/api/patients/document/${patientDocument}`, {
@@ -59,7 +64,7 @@ function buildInputsExams() {
 
   const templateExams = `
   <h1 class="title">Agendar Exame</h1>
-  <form action="javascript:void(0)" class="form-box" onsubmit="postExams()">
+  <form action="javascript:void(0)" class="form-box" onsubmit="postExams()" id="form-exams">
       
       <div class="specialty" id="specialty">
           <div class="select-custom -exam-or-consultation" id="select-custom">
@@ -138,7 +143,7 @@ function postExams(){
   .then(response => {
       console.log(response);
       showToast(successMsg);
-      limparCampo()
+      limparCampoExam();
   })
   .catch(error => {
       console.error('Erro:', error);
@@ -242,7 +247,7 @@ function fetchConsultations(){
   .then(response => {
     console.log(response);
     showToast(successMsg);
-    limparCampo();
+    limparCampoConsultation();
   })
   .catch(error => {
     console.error('Erro:', error);
@@ -329,7 +334,20 @@ function appointments(){
                 month = month < 10 ? "0" + month : month;
                 date = date < 10 ? "0" + date : date;
                 
-                let hourAndMinutes = '<div class="content" id="content-appointment" onclick="showPopup()"><ul> Data: ' + date + "/" + month + "  -  " +  'Hora: ' + hour + ":" + minutes + '</ul><ul>' + appointment.name + '</ul><ul>Dr. ' + appointment.doctorName + '</ul><ul>Av.Terminal de Papicu, 262</ul><ul class="open-popup">Clique para iniciar/cancelar</ul></div>';
+                let hourAndMinutes = 
+                '<div class="content" id="content-appointment">' +
+                  '<div class="data">' +
+                    '<ul> Data: ' + date + "/" + month + "  -  " +  'Hora: ' + hour + ":" + minutes + '</ul>' +
+                    '<ul>' + appointment.name + '</ul>' +
+                    '<ul>Dr. ' + appointment.doctorName + '</ul>' +
+                    '<ul>Av.Terminal de Papicu, 262</ul>' +
+                  '</div>' +
+                  '<div class="btns">' +
+                    `<button class="start" onclick="showPopup(${appointment.id})">Iniciar</button>` +
+                    '<button class="cancel">Cancelar</button>' +
+                  '</div>'
+                '</div>';
+
     
                 document.querySelector(".appointments").insertAdjacentHTML("beforeend", hourAndMinutes);
             });
@@ -339,11 +357,20 @@ function appointments(){
 
 
 
-function limparCampo() {
-  const form = document.getElementById("form-consultations");
-  var inputs = form.querySelectorAll('input, textarea, select, radio');
+function limparCampoExam() {
+  const formExams = document.getElementById("form-exams");
+  var inputsExams = formExams.querySelectorAll('input, textarea, select, radio');
 
-  inputs.forEach(function(input) {
+  inputsExams.forEach(function(input) {
     input.value = '';
   });
+}
+
+function limparCampoConsultation() {
+  const formConsultations = document.getElementById("form-consultations");
+  var inputs = formConsultations.querySelectorAll('input, textarea, select, radio');
+
+  inputs.forEach(function(input){
+    input.value = '';
+  }) 
 }

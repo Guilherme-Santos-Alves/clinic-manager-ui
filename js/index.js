@@ -1,5 +1,5 @@
 function login() {
-    
+    let isAuthenticated = false;
 
     let endpoint = 'https://localhost:7231/api/auth';
     let requestBody = {
@@ -25,7 +25,10 @@ function login() {
         localStorage.setItem("token", data.token)
         showToast(successMsg);
         localStorage.setItem("document", requestBody.login);
+        isAuthenticated = true;
+        localStorage.setItem("authenticated" , isAuthenticated);
         window.location.href = "doctor.html"
+        
     })
     .catch(error => {
         console.error('Erro na requisição:', error);
