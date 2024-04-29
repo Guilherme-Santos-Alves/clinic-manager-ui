@@ -1,3 +1,5 @@
+let patientId;
+
 function buildMyDataPatient(){
     let registrationData = document.querySelector(".registration-data");
     registrationData.innerHTML = '';
@@ -10,7 +12,7 @@ function buildMyDataPatient(){
 
     let template = `
     <h1>Dados Pessoais</h1>
-    <div class="form-box">
+    <form class="form-box" action="javascript:void(0)" onsubmit="editMyDataPatient()">
         <div class="line">
             <div class="left">
                 <label for="">Nome:</label>
@@ -88,7 +90,7 @@ function buildMyDataPatient(){
         </div>
         <div class="line">
             <div class="left">
-                <label for="">Bairo:</label>
+                <label for="">Bairro:</label>
                 <input type="text" id="neighborhood">
             </div>
             <div class="right">
@@ -102,7 +104,10 @@ function buildMyDataPatient(){
                 <input type="text" id="number">
             </div>
         </div>
-    </div>
+        <div class="send-data">
+            <button>Enviar Dados</button>
+        </div>
+    </form>
     `;
 
     document.querySelector(".registration-data").insertAdjacentHTML("beforeend", template);
@@ -122,6 +127,7 @@ function getDataPatient() {
     })
     .then((response) => {
       response.json().then((patient) => {
+        patientId = patient.userId;
         let showName = `${patient.firstName + " " + patient.lastName}`;
         document.querySelector("#firstName").value = patient.firstName;
         document.querySelector("#lastName").value = patient.lastName;
@@ -161,7 +167,7 @@ function buildMyDataDoctor(){
 
     let template = `
     <h1>Meus dados</h1>
-    <form class="form-box">
+    <form class="form-box" action="javascript:void(0)" onsubmit="editMyDataDoctor()">
         <div class="line">
             <div class="left">
                 <label for="">Nome:</label>
@@ -260,7 +266,7 @@ function buildMyDataDoctor(){
         </div>
         <div class="line">
             <div class="left">
-                <label for="">Bairo:</label>
+                <label for="">Bairro:</label>
                 <input type="text" id="neighborhood">
             </div>
             <div class="right">
@@ -274,13 +280,17 @@ function buildMyDataDoctor(){
                 <input type="text" id="number">
             </div>
         </div>
-        <button>Enviar Dados</button>
+        <div class="send-data">
+            <button>Enviar Dados</button>
+        </div>
     </form>
     `;
 
     document.querySelector(".registration-data").insertAdjacentHTML("beforeend", template);
     getDataDoctor();
 }
+
+let doctorId;
 
 function getDataDoctor() {
     const token = localStorage.getItem("token");
@@ -295,6 +305,8 @@ function getDataDoctor() {
     })
     .then((response) => {
       response.json().then((doctor) => {
+        doctorId = doctor.userId;
+
         document.querySelector("#firstName").value = doctor.firstName;
         document.querySelector("#lastName").value = doctor.lastName;
         document.querySelector("#cpf").value = doctor.cpf;
@@ -320,5 +332,84 @@ function getDataDoctor() {
         document.querySelector("#cep").value = doctor.addressDTO.cep;
         document.querySelector("#number").value = doctor.addressDTO.number;
       });
+    });
+}
+
+function editMyDataPatient(){
+    const token = localStorage.getItem("token");
+
+    let numberHouse = parseInt(document.querySelector("#number").value);
+    let height = parseFloat(document.querySelector("#height").value);
+    let weight = parseFloat(document.querySelector("#weight").value);
+
+    const editMyDataPatient = {
+        id: patientId,
+        phone: document.querySelector("#phone").value,
+        email: document.querySelector("#email").value,
+        height: height,
+        weight: weight,
+        addressDTO: {
+            number: numberHouse,
+            city: document.querySelector("#city").value,
+            state: document.querySelector("#state").value,
+            cep: document.querySelector("#cep").value,
+            neighborhood: document.querySelector("#neighborhood").value
+        }
+    }
+    console.log(editMyDataPatient);
+
+    fetch(`https://localhost:7231/api/patients/${patientId}`, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(editMyDataPatient)
+    })
+    .then(response => {
+        console.log(response);
+        showToast(successMsg);
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        showToast(errorMsg);
+    });
+}
+
+function editMyDataDoctor(){
+    const token = localStorage.getItem("token");
+
+    let numberHouse = parseInt(document.querySelector("#number").value);
+
+    const editMyDataDoctor = {
+        id: doctorId,
+        phone: document.querySelector("#phone").value,
+        email: document.querySelector("#email").value,
+        solutions: document.querySelector("#solutions").value,
+        addressDTO: {
+            number: numberHouse,
+            city: document.querySelector("#city").value,
+            state: document.querySelector("#state").value,
+            cep: document.querySelector("#cep").value,
+            neighborhood: document.querySelector("#neighborhood").value
+        }
+    }
+    console.log(editMyDataDoctor);
+
+    fetch(`https://localhost:7231/api/doctors/${doctorId}`, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify(editMyDataDoctor)
+    })
+    .then(response => {
+        console.log(response);
+        showToast(successMsg);
+    })
+    .catch(error => {
+        console.error('Erro:', error);
+        showToast(errorMsg);
     });
 }

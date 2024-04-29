@@ -11,6 +11,11 @@
     background-color: var(--cl-color-gray-lighter);
 }
 
+.registration-data> .form-box{
+    height: 100%;
+    width: 100%;
+}
+
 .registration-data> .form-box> .line{
     grid-template-columns: 1fr 1fr;
     display: grid;
@@ -80,4 +85,23 @@
     padding-top: 3px;
     padding-left: 5px;
     caret-color: transparent;
+}
+
+.registration-data> .form-box> .send-data{
+    display: flex;
+    justify-content: center;
+}
+
+.registration-data> .form-box> .send-data> button{
+    background-color: var(--cl-color-primary);
+    margin: 20px;
+    height: 60px;
+    width: 300px;
+    border-radius: 50px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    color: var(--cl-color-gray-lighter);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
 }
