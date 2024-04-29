@@ -41,6 +41,7 @@ window.onload = function() {
       let showName = `${patient.firstName + " " + patient.lastName}`;
       document.querySelector(".name").insertAdjacentHTML("beforeend" , showName);
       patientFullName = `${patient.firstName + " " + patient.lastName}`;
+      localStorage.setItem("patientName", patientFullName);
       let patientId = patient.userId;
       localStorage.setItem("patientId", patientId);
     });

@@ -1,23 +1,54 @@
-<div class="select-custom -appointments" id="select-custom">
-    <select name="" id="">
-        <option value="">Todos</option>
-        <option selected value="">Agendado</option>
-        <option value="">Efetivado</option>
-        <option value="">Não Realizado</option>
-        <option value="">Cancelado</option>
-    </select>
-    <div class="custom-arrow">
-        <span class="material-symbols-outlined">
-            arrow_drop_down
-        </span>
+<div class="prescriptions">
+    <h1>Receita Médica</h1>
+    <div class="for">
+        <ul>Para:</ul>
+        <div class="name"><ul>Paulo Boia</ul></div>
     </div>
-</div> 
+    <div class="prescription">
+        <ul>Prescrição:</ul>
+        <textarea rows="8" cols="50"></textarea>
+    </div>
+    <div class="btn"><button>Enviar</button></div>
+</div>
 
-<div class="search-button">
-    <button type="submit" class="search">
-        <span class="material-symbols-outlined">
-            search
-        </span>
-        <h3>Buscar</h3>
-    </button>
+<div class="exam-request">
+    <h1>Solicitar Exame</h1>
+    <div class="for">
+        <ul>Para:</ul>
+        <div class="name"><ul>Paulo Boia</ul></div>
+    </div>
+    <div class="request">
+        <ul>Solicito os seguintes exames:</ul>
+        <textarea rows="8" cols="50"></textarea>
+    </div>
+    <div class="btn"><button>Enviar</button></div>
+</div>
+
+<div class="medical-certificate">
+    <h1>Atestado Médico</h1>
+    <div class="content">
+        <ul>
+            Atesto para os devidos fins que o 
+            <div class="for">Sr. (a) Chicão Torneira,</div>
+        </ul>
+        portador do CPF:
+        <ul>
+            <div class="cpf">15199529021,</div>
+            esteve sob cuidados
+        </ul>
+        <ul>
+            médicos no dia
+            <div class="from-date">
+                24/04/2024
+            </div>
+            e deverá se afastar de suas
+        </ul>
+        <ul>
+            atividades pelo período de até:
+            <input class="until-date" type="date">
+            por motivo de:
+        </ul>
+        <textarea name="" id="" cols="30" rows="10" class="reason"></textarea>
+        <div class="btn"><button>Enviar</button></div>
+    </div>
 </div>

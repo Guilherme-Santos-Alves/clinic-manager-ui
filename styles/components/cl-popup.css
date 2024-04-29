@@ -10,7 +10,6 @@
     position: fixed;
 }
   
-
 .popup> .popup-content> .title{
     display: flex;
     justify-content: center;
@@ -100,3 +99,223 @@
     cursor: pointer;
 }
 
+.popup> .popup-content> .attachments> .prescriptions> h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: var(--cl-color-primary-dark);
+}
+
+.popup> .popup-content> .attachments> .prescriptions> .for{
+    margin: 20px 20px 0px 20px;
+}
+
+.popup> .popup-content> .attachments> .prescriptions> .for> .name{
+    width: 100%;
+    height: 30px;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    background-color: var(--cl-color-gray-lighter);
+    padding: 5px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.popup> .popup-content> .attachments> .prescriptions> .prescription{
+    margin: 20px 20px 0px 20px;
+}
+
+.popup> .popup-content> .attachments> .prescriptions> .prescription> textarea{
+    width: 100%;
+    height: 80px;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    background-color: var(--cl-color-gray-lighter);
+    font-family: var(--cl-font-family-base);
+    padding: 5px;
+    font-size: 18px;
+}
+
+.popup> .popup-content> .attachments> .prescriptions> .for> ul,
+.popup> .popup-content> .attachments> .prescriptions> .prescription> ul{
+    color: var(--cl-color-primary-dark);
+    font-size: 18px;
+    font-size: var(--cl-font-family-base);
+    font-weight: 500;
+}
+
+.popup> .popup-content> .attachments> .prescriptions> .btn{
+    display: flex;
+    justify-content: space-around;
+    color: red;
+    margin-top: 20px;
+}
+.popup> .popup-content> .attachments> .prescriptions> .btn> button{
+    background-color: var(--cl-color-primary);
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    color: var(--cl-color-gray-lighter);
+    font-size: 18px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    cursor: pointer;
+    caret-color: transparent;
+}
+
+.popup> .popup-content> .attachments> .prescriptions> h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: var(--cl-color-primary-dark);
+}
+
+.popup> .popup-content> .attachments> .prescriptions> .for{
+    margin: 20px 20px 0px 20px;
+}
+
+.popup> .popup-content> .attachments> .prescriptions> .for> .name{
+    width: 100%;
+    height: 30px;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    background-color: var(--cl-color-gray-lighter);
+    padding: 5px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+
+
+.popup> .popup-content> .attachments> .exam-request> .request{
+    margin: 20px 20px 0px 20px;
+}
+
+.popup> .popup-content> .attachments> .exam-request> .request> textarea{
+    width: 100%;
+    height: 80px;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    background-color: var(--cl-color-gray-lighter);
+
+    font-family: var(--cl-font-family-base);
+    padding: 5px;
+    font-size: 18px;
+}
+
+.popup> .popup-content> .attachments> .exam-request> .for> ul,
+.popup> .popup-content> .attachments> .exam-request> .request> ul{
+    color: var(--cl-color-primary-dark);
+    font-size: 18px;
+    font-size: var(--cl-font-family-base);
+    font-weight: 500;
+}
+
+.popup> .popup-content> .attachments> .exam-request> .btn{
+    display: flex;
+    justify-content: space-around;
+    color: red;
+    margin-top: 20px;
+}
+.popup> .popup-content> .attachments> .exam-request> .btn> button{
+    background-color: var(--cl-color-primary);
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    color: var(--cl-color-gray-lighter);
+    font-size: 18px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    cursor: pointer;
+    caret-color: transparent;
+}
+
+.popup> .popup-content> .attachments> .exam-request> h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: var(--cl-color-primary-dark);
+}
+
+.popup> .popup-content> .attachments> .exam-request> .for{
+    margin: 20px 20px 0px 20px;
+}
+
+.popup> .popup-content> .attachments> .exam-request> .for> .name{
+    width: 100%;
+    height: 30px;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    background-color: var(--cl-color-gray-lighter);
+    padding: 5px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.popup> .popup-content> .attachments> .medical-certificate{
+    font-size: 20px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    color: var(--cl-color-primary-dark);
+}
+
+.popup> .popup-content> .attachments> .medical-certificate> h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: var(--cl-color-primary-dark);
+}
+
+.popup> .popup-content> .attachments> .medical-certificate> .content{
+    margin: 20px 20px;
+}
+
+.popup> .popup-content> .attachments> .medical-certificate> .content> ul> .for,
+.popup> .popup-content> .attachments> .medical-certificate> .content> ul> .cpf,
+.popup> .popup-content> .attachments> .medical-certificate> .content> ul> .from-date{
+    display: inline-block;
+}
+
+.popup> .popup-content> .attachments> .medical-certificate> .content> ul> .until-date{
+    display: inline-block;
+    width: 130px;
+    height: 40px;
+    border: 2px solid var(--cl-color-gray-light);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cl-color-primary);
+    border-radius: 5px;
+}
+
+.popup> .popup-content> .attachments> .medical-certificate> .content> .reason{
+    height: 80px;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid var(--cl-color-gray-light);
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.popup> .popup-content> .attachments> .medical-certificate> .content> ul{
+    display: inline-block;
+    margin: 2px 0px;
+}
+
+.popup> .popup-content> .attachments> .medical-certificate> .content> .btn{
+    display: flex;
+    justify-content: space-around;
+    color: red;
+    margin-top: 20px;
+}
+.popup> .popup-content> .attachments> .medical-certificate> .content> .btn> button{
+    background-color: var(--cl-color-primary);
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    color: var(--cl-color-gray-lighter);
+    font-size: 18px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    cursor: pointer;
+    caret-color: transparent;
+}

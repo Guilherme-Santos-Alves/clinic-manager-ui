@@ -1,10 +1,10 @@
-window.onload = function() {
-    const token = localStorage.getItem("token");
+// window.onload = function() {
+//     const token = localStorage.getItem("token");
 
-    if (token === null || token === undefined){
-      window.location.href = "index.html";
-    }
-}
+//     if (token === null || token === undefined){
+//       window.location.href = "index.html";
+//     }
+// }
 
 let successMsg = '<span class="material-symbols-outlined">check_circle</span>Cadastro realizado com sucesso!';
 let errorMsg = '<span class="material-symbols-outlined">cancel</span>Erro no cadastro!';

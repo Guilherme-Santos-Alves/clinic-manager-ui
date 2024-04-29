@@ -1,10 +1,10 @@
-window.onload = function() {
-    const token = localStorage.getItem("token");
+// window.onload = function() {
+//     const token = localStorage.getItem("token");
 
-    if (token === null || token === undefined){
-      window.location.href = "index.html";
-    }
-}
+//     if (token === null || token === undefined){
+//       window.location.href = "index.html";
+//     }
+// }
 
 document.addEventListener('DOMContentLoaded', function() {
     // Adicionar ouvintes de evento para os campos do formulário
