@@ -149,7 +149,7 @@ function postExams(){
   .then(response => {
       console.log(response);
       showToast(successMsg);
-      limparCampoExam();
+      limparCampos();
   })
   .catch(error => {
       console.error('Erro:', error);
@@ -253,7 +253,7 @@ function fetchConsultations(){
   .then(response => {
     console.log(response);
     showToast(successMsg);
-    limparCampoConsultation();
+    limparCampos();
   })
   .catch(error => {
     console.error('Erro:', error);
@@ -261,22 +261,12 @@ function fetchConsultations(){
   });
 }
 
-function limparCampoExam() {
-  const formExams = document.getElementById("form-exams");
-  var inputsExams = formExams.querySelectorAll('input, textarea, select, radio');
+function limparCampos(){
+  var inputsExams = document.querySelectorAll('input, textarea, select, radio');
 
   inputsExams.forEach(function(input) {
     input.value = '';
   });
-}
-
-function limparCampoConsultation() {
-  const formConsultations = document.getElementById("form-consultations");
-  var inputs = formConsultations.querySelectorAll('input, textarea, select, radio');
-
-  inputs.forEach(function(input){
-    input.value = '';
-  }) 
 }
 
 function exit(){

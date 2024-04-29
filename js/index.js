@@ -23,7 +23,13 @@ function login() {
         localStorage.setItem("token", data.token)
         showToast(successMsg);
         localStorage.setItem("document", requestBody.login);
-        window.location.href = "doctor.html" 
+        if (data.role === "Receptionist"){
+            window.location.href = "admin.html";
+        } else if (data.role === "Patient"){
+            window.location.href = "patient.html";
+        } else if (data.role === "Doctor"){
+            window.location.href = "doctor.html";
+        }
     })
     .catch(error => {
         console.error('Erro na requisição:', error);

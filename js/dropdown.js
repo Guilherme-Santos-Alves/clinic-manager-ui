@@ -16,7 +16,6 @@ function dropdown() {
         dropdownSidebar.style.marginBottom = '40px';
         dropdownMenu.style.padding = '0';
     }
-
     elementoArrow.style.transform = 'rotate(' + anguloAtual + 'deg)';
 }
 

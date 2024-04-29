@@ -14,21 +14,21 @@ function buildMyDataPatient(){
         <div class="line">
             <div class="left">
                 <label for="">Nome:</label>
-                <input type="text" id="firstName">
+                <input type="text" id="firstName" disabled>
             </div>
             <div class="right">
                 <label for="">Sobrenome:</label>
-                <input type="text" id="lastName">
+                <input type="text" id="lastName" disabled>
             </div>
         </div>
         <div class="line">
             <div class="left">
                 <label for="">CPF:</label>
-                <input type="text" id="cpf">
+                <input type="text" id="cpf" disabled>
             </div>
             <div class="right">
                 <label for="">Data de Nascimento:</label>
-                <input type="date" id="birthDay">
+                <input type="date" id="birthDay" disabled>
             </div>
         </div>
         <div class="line">
@@ -49,7 +49,7 @@ function buildMyDataPatient(){
             <div class="right">
                 <label for="">Tipo Sanguíneo:</label>
                 <div class="select-custom -registration">
-                    <select name="" id="bloodType">
+                    <select name="" id="bloodType" disabled>
                         <option value="0">A+</option>
                         <option value="1">A-</option>
                         <option value="4">AB+</option>
@@ -161,25 +161,25 @@ function buildMyDataDoctor(){
 
     let template = `
     <h1>Meus dados</h1>
-    <div class="form-box">
+    <form class="form-box">
         <div class="line">
             <div class="left">
                 <label for="">Nome:</label>
-                <input type="text" id="firstName">
+                <input type="text" id="firstName" disabled>
             </div>
             <div class="right">
                 <label for="">Sobrenome:</label>
-                <input type="text" id="lastName">
+                <input type="text" id="lastName" disabled>
             </div>
         </div>
         <div class="line">
             <div class="left">
                 <label for="">CPF:</label>
-                <input type="text" id="cpf">
+                <input type="text" id="cpf" disabled>
             </div>
             <div class="right">
                 <label for="">Data de Nascimento:</label>
-                <input type="date" id="birthDay">
+                <input type="date" id="birthDay" disabled>
             </div>
         </div>
         <div class="line">
@@ -190,7 +190,7 @@ function buildMyDataDoctor(){
             <div class="right">
                 <label for="">Tipo Sanguíneo:</label>
                 <div class="select-custom -registration">
-                    <select name="" id="bloodType">
+                    <select name="" id="bloodType" disabled>
                         <option value="0">A+</option>
                         <option value="1">A-</option>
                         <option value="4">AB+</option>
@@ -274,7 +274,8 @@ function buildMyDataDoctor(){
                 <input type="text" id="number">
             </div>
         </div>
-    </div>
+        <button>Enviar Dados</button>
+    </form>
     `;
 
     document.querySelector(".registration-data").insertAdjacentHTML("beforeend", template);

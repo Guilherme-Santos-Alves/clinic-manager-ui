@@ -37,39 +37,6 @@
     padding: 5px 0px;
 }
 
-.popup> .popup-content> .popup-btn{
-    margin-top: 80px;
-}
-
-.popup> .popup-content> .popup-btn> button{
-    border-radius: 5px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 30px;
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: var(--cl-font-family-base);
-    color: var(--cl-color-gray-lighter);
-    background-color: red;
-}
-
-.popup> .popup-content> .popup-btn> .enter{
-    background-color: var(--cl-color-primary);
-}
-
-.popup> .popup-content> .popup-btn> .attachment{
-
-    background-color: var(--cl-color-gray-light);
-}
-
-.popup> .popup-content> .popup-btn> .finish{
-    background-color: var(--cl-color-primary-dark);
-}
-
 .close-popup {
     background-color: transparent;
     margin-left: 550px;
@@ -185,8 +152,6 @@
     font-size: 18px;
 }
 
-
-
 .popup> .popup-content> .attachments> .exam-request> .request{
     margin: 20px 20px 0px 20px;
 }
@@ -271,14 +236,14 @@
 }
 
 .popup> .popup-content> .attachments> .medical-certificate> .content> ul> .for,
-.popup> .popup-content> .attachments> .medical-certificate> .content> ul> .cpf,
+.popup> .popup-content> .attachments> .medical-certificate> .content> ul,
 .popup> .popup-content> .attachments> .medical-certificate> .content> ul> .from-date{
     display: inline-block;
 }
 
 .popup> .popup-content> .attachments> .medical-certificate> .content> ul> .until-date{
     display: inline-block;
-    width: 130px;
+    width: 80px;
     height: 40px;
     border: 2px solid var(--cl-color-gray-light);
     font-size: 18px;
@@ -318,4 +283,40 @@
     font-weight: 500;
     cursor: pointer;
     caret-color: transparent;
+}
+
+.popup> .popup-content> .popup-btn,
+.popup> .popup-content> .attachments-btn{
+    margin-top: 80px;
+}
+
+.popup> .popup-content> .popup-btn> button,
+.popup> .popup-content> .attachments-btn> button{
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--cl-font-family-base);
+    color: var(--cl-color-gray-lighter);
+}
+
+.popup> .popup-content> .popup-btn> .enter,
+.medical-prescription{
+    background-color: var(--cl-color-primary);
+}
+
+.popup> .popup-content> .popup-btn> .attachment,
+.certificate{
+    background-color: var(--cl-color-gray-light);
+}
+
+.popup> .popup-content> .popup-btn> .finish,
+.exam-request-btn{
+    background-color: var(--cl-color-primary-dark);
 }
