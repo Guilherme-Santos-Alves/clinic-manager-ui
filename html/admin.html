@@ -21,6 +21,10 @@
     <link rel="stylesheet" href="../styles/components/my-appointments.css">
     <link rel="stylesheet" href="../styles/components/cl-button.css">
     <link rel="stylesheet" href="../styles/components/select-custom.css">
+    <link rel="stylesheet" href="../styles/components/cl-consultations.css">
+    <link rel="stylesheet" href="../styles/components/cl-exams.css">
+    <link rel="stylesheet" href="../styles/components/user-consult.css">
+    <link rel="stylesheet" href="../styles/components/cl-popup.css">
 
     <!--SETTINGS-->
     <link rel="stylesheet" href="../styles/settings/wrapper.css">
@@ -42,6 +46,9 @@
 
     <script src="../js/dropdown.js"></script>
     <script src="../js/admin.js"></script>
+    <script src="../js/show-toast.js"></script>
+    <script src="../js/doctor-consult.js"></script>
+    <script src="../js/patient-consult.js"></script>
 
 <body>
     <nav class="cl-sidebar">
@@ -78,8 +85,7 @@
                 </a>
                 <div class="dropdown-menu" id="dropdown-menu">
                     <a href="doctor-register.html">Cadastrar Médico</a>
-                    <a href="doctor-register.html">Editar Médico</a>
-                    <a href="doctor-register.html">Deletar Médico</a>
+                    <a onclick="buildSearchDoctor()">Consultar Médico</a>
                 </div>
             </li>
             <li class="dropdown-patient" id="dropdown-patient">
@@ -92,23 +98,10 @@
                     </span>
                 </a>
                 <div class="dropdown-menu-patient" id="dropdown-menu-patient">
-                    <a href="doctor-register.html">Cadastrar Paciente</a>
-                    <a href="doctor-register.html">Editar Paciente</a>
-                    <a href="doctor-register.html">Inativar Paciente</a>
+                    <a href="register.html">Cadastrar Paciente</a>
+                    <a onclick="buildSearchPatient()">Consultar Paciente</a>
                 </div>
             </li>            
-            <li>
-                <span class="material-symbols-outlined">
-                    event_note
-                </span>
-                <a onclick="buildMyAppoinyments()">Agendamentos</a>
-            </li>
-            <li>
-                <span class="material-symbols-outlined">
-                    description
-                </span>
-                <a onclick="">Dados Cadastrais</a>
-            </li>
             <li>
                 <span class="material-symbols-outlined">
                     logout
@@ -120,25 +113,32 @@
     
     <div class="cl-navbar">
         <div class="cl-navbar-content">
-            <h3 class="name" onclick="showToast(errorMsg)">
-                adm home
-            </h3>
             <h3>
-                Neymar Jr
+                Recepcionist
+            </h3>
+            <h3 class="name" onclick="showToast(errorMsg)">
+                
             </h3>
         </div>
     </div>
 
     <div class="cl-admin">
+        <div class="cl-toast-box" id="toast-box"></div>
         <div class="cl-wrapper">
             <div class="main-content">
-                <div class="my-appointments">
+                <div class="cl-consultations">
+                    
+                </div>
+                <div class="cl-exams">
+        
+                </div>
+                <div class="consult-user">
 
                 </div>
             </div>
         </div>
     </div>
-    <form action="" onsubmit="corneto()"></form>
+
         
 </body>
 </html>

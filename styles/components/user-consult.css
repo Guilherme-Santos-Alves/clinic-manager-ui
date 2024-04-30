@@ -1,0 +1,211 @@
+.form-box{
+    display: flexbox;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.consult-user > .consult-doctor> h1,
+.consult-user > .consult-patient> h1{
+    justify-content: center;
+    display: flex;
+    font-size: 60px;
+    color: var(--cl-color-primary-dark);
+    margin-top: 50px;
+}
+
+.consult-user > .consult-doctor > .form-box > input,
+.consult-user > .consult-patient > .form-box > input {
+    width: calc(100% - 54px);
+    height: 35px;
+    border-radius: 5px;
+    border: 2px solid var(--cl-color-gray-light);
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 3px;
+    background-color: var(--cl-color-gray-lighter);
+}
+
+.consult-user > .consult-doctor > .form-box > label,
+.consult-user > .consult-patient > .form-box> label {
+    display: block;
+    font-size: 22px;
+    color: var(--cl-color-primary-dark);
+}
+
+.consult-user > .consult-doctor > .form-box > button,
+.consult-user > .consult-patient > .form-box> button {
+    background-color: var(--cl-color-primary);
+    border-radius: 5px;
+    width: 50px;
+    height: 35px;
+    vertical-align: middle;
+    color: var(--cl-color-gray-lighter);
+    padding-top: 2px;
+    cursor: pointer;
+    caret-color: transparent;
+}
+
+.content-consult> .content{
+    margin-top: 30px;
+    padding-left: 20px;
+    border-left: 4px solid var(--cl-color-primary);
+    color: var(--cl-color-primary-dark);
+    font-size: 22px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.content-consult> .content> .data{
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.consult-patient> .content-consult> .content> .data{
+    cursor: pointer;
+    transition: 0.5s ease;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.content-consult> .content> .edit{
+    vertical-align: middle;
+    margin-left: auto;
+}
+
+.content-consult> .content> .edit> button{
+    display: block;
+    width: 200px;
+    height: 34px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    background-color: var(--cl-color-primary);
+    color: var(--cl-color-gray-lighter);
+    font-size: 20px;
+    font-family: var(--cl--font-family-base);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.content-consult> .content> .edit> .inative-btn{
+    background-color: var(--cl-color-gray-light);
+}
+
+.content-consult> .content> .data:hover{
+    font-size: 24px;
+}
+
+.content-consult> .content> .data> ul{
+    padding: 5px 0px;
+}
+
+.consult-user> .form-box> .line> div> input{
+    width: 370px;
+    height: 32px;
+    cursor: pointer;
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    padding: 5px;
+    background-color: var(--cl-color-gray-lighter);
+}
+
+.consult-user> .form-box{
+    height: 100%;
+    width: 100%;
+}
+
+.consult-user> .form-box> .line{
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    width: 800px;
+    height: 80px;
+}
+
+.consult-user> .form-box> .line> div> label{
+    color: var(--cl-color-primary-dark);
+    font-size:18px;
+}
+
+.consult-user> h1{
+    color: var(--cl-color-primary-dark);
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+.consult-user> .form-box> h2{
+    color: var(--cl-color-primary-dark);
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+.select-custom.-registration.-registration{
+    position: relative;
+    display: inline-block;
+}
+
+.select-custom.-registration> select{
+    width: 370px;
+    height: 32px;
+    cursor: pointer;
+    background-color: var(--cl-color-gray-lighter);
+    border: 2px solid var(--cl-color-gray-light);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--cl-font-family-base);
+    padding: 5px;
+    appearance: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+}
+
+.select-custom.-registration> .custom-arrow {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    background-color: var(--cl-color-primary);
+    border-radius: 0 calc(5px - 1px) calc(5px - 1px) 0;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.select-custom.-registration> .custom-arrow> span{
+    color: white;
+    padding-top: 3px;
+    padding-left: 5px;
+    caret-color: transparent;
+}
+
+.consult-user> .form-box> .send-data{
+    display: flex;
+    justify-content: center;
+}
+
+.consult-user> .form-box> .send-data> button{
+    background-color: var(--cl-color-primary);
+    margin: 20px;
+    height: 60px;
+    width: 300px;
+    border-radius: 50px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    color: var(--cl-color-gray-lighter);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
