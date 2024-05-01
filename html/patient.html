@@ -127,7 +127,7 @@
                 <div class="registration-data">
                     
                 </div>
-                <popup class="popup">
+                <div class="popup">
                     <div class="popup-content">
                         <div class="popup-nav">
                             <img src="../assets/logos/clinica-logo-reverse.png" alt="">
@@ -146,8 +146,16 @@
                         <div class="attachments">
                             
                         </div>
+                        <div class="cancel-appointment">
+                            <h1>Cancelar Agendamento?</h1>
+                            <h4>Você está certo de que deseja cancelar ${doctor.firstName + " " + doctor.lastName}?</h4>
+                            <div class="inative-btns">
+                                <button onclick="inativeDoctor()">Inativar</button>
+                                <button class="cancel" onclick="closePopupHandler()">Cancelar</button>
+                            </div>
+                        </div>
                     </div>
-                </popup>
+                </div>
             </div>
         </div>
     </div>

@@ -1,13 +1,14 @@
 let appointmentBody;
 
 function getPrescription(id){
+    console.log("prescription  chamado");
     let attachmentsBtn = document.querySelector("#btn-attachments");
-    attachmentsBtn.style.display = 'none';
+    attachmentsBtn.innerHTML = '';
     let userId = localStorage.getItem("doctorId");
 
     const token = localStorage.getItem("token");
 
-    fetch(`https://localhost:7231/api/services/doctors/${userId}`, {
+    fetch(`https://localhost:7231/api/services/${id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -15,9 +16,7 @@ function getPrescription(id){
         },
     })
     .then((response) => {
-        response.json().then((appointments) => {
-            const appointment = appointments.find(appointment => appointment.id == id);
-            if (appointment) {
+        response.json().then((appointment) => { {
 
                 let template = `
                     <form class="prescriptions" id="form-prescriptions" action="javascript:void(0)" onsubmit="postPrescription()">
@@ -88,12 +87,12 @@ function postPrescription() {
 
 function getExamRequest(id){
     let attachmentsBtn = document.querySelector("#btn-attachments");
-    attachmentsBtn.style.display = 'none';
+    attachmentsBtn.innerHTML = '';
     let userId = localStorage.getItem("doctorId");
 
     const token = localStorage.getItem("token");
 
-    fetch(`https://localhost:7231/api/services/doctors/${userId}`, {
+    fetch(`https://localhost:7231/api/services/${id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -101,9 +100,7 @@ function getExamRequest(id){
         },
     })
     .then((response) => {
-        response.json().then((appointments) => {
-            const appointment = appointments.find(appointment => appointment.id == id);
-            if (appointment) {
+        response.json().then((appointment) => { {
 
                 let template = `
                 <form class="exam-request" id="form-exam-request" action="javascript:void(0)" onsubmit="postExamRequest()">
@@ -177,7 +174,7 @@ function postExamRequest() {
 function getMedicalCertificate(id) {
     let cpfPatient = localStorage.getItem("document");
     let attachmentsBtn = document.querySelector("#btn-attachments");
-    attachmentsBtn.style.display = 'none';
+    attachmentsBtn.innerHTML = '';
     let attachments = document.querySelector(".attachments");
     attachments.innerHTML = '';
 
@@ -196,7 +193,7 @@ function getMedicalCertificate(id) {
 
     const token = localStorage.getItem("token");
 
-    fetch(`https://localhost:7231/api/services/${roleUrl}/${userId}`, {
+    fetch(`https://localhost:7231/api/services/${id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -204,10 +201,7 @@ function getMedicalCertificate(id) {
         },
     })
     .then((response) => {
-        response.json().then((appointments) => {
-            const appointment = appointments.find(appointment => appointment.id == appointmentId);
-            console.log(appointmentId);
-            if (appointment) {
+        response.json().then((appointment) => { {
                 var startDateStr = appointment.startDate;
                 var startDate = new Date(startDateStr);
                 var hour = startDate.getHours();

@@ -18,6 +18,7 @@ function listDoctorsSelect(){
   });
 }
 
+let patientId;
 let patientFullName;
 
 window.onload = function() {
@@ -42,12 +43,11 @@ window.onload = function() {
       document.querySelector(".name").insertAdjacentHTML("beforeend" , showName);
       patientFullName = `${patient.firstName + " " + patient.lastName}`;
       localStorage.setItem("patientName", patientFullName);
-      let patientId = patient.userId;
+      patientId = patient.userId;
       localStorage.setItem("patientId", patientId);
     });
   });
 }
-
 
 function checkModality() {
   let modality = document.getElementsByName("modality");
@@ -57,6 +57,78 @@ function checkModality() {
   } else if (modality[1].checked === true) {
     return 0;
 }}
+
+function appointmentsPatient(){
+  let cleanAppointments = document.querySelector(".appointments");
+  cleanAppointments.innerHTML = '';
+
+  let status = document.getElementById("select-staus").value;
+
+  const token = localStorage.getItem("token");
+  
+  //`https://localhost:7231/api/services?status=${status}` URL COM O PARAMETRO STATUS
+  fetch(`https://localhost:7231/api/services/patients/${patientId}`, {
+  method: 'GET',
+  headers: {
+  'Content-Type': 'application/json',
+  'Authorization': `Bearer ${token}`
+  },
+  })
+  .then((response) => {
+      response.json().then((appointments) => {
+          appointments.forEach((appointment) => {
+              var startDateStr = appointment.startDate;
+              var startDate = new Date(startDateStr);
+              var hour = startDate.getHours();
+              var minutes = startDate.getMinutes();
+              var date = startDate.getDate();
+              var month = startDate.getMonth() + 1;
+              minutes = minutes < 10 ? "0" + minutes : minutes;
+              hour = hour < 10 ? "0" + hour : hour;
+              month = month < 10 ? "0" + month : month;
+              date = date < 10 ? "0" + date : date;
+              let idAppointment = appointment.id;
+
+              let adress;
+              let appointmentData;
+              if (appointment.modality === 0){
+                  adress = "Rua Inexistente, 262"
+                  appointmentData = `
+                      <div class="content" id="content-appointment"> 
+                      <div class="data"> 
+                          <ul> Data: `+ date + "/" + month + "  -  " +  "Hora: " +  hour + ":" + minutes +` </ul>
+                          <ul> ${appointment.name} </ul> 
+                          <ul>Dr. ${appointment.doctorName}</ul> 
+                          <ul>${adress}</ul> 
+                      </div> 
+                      <div class="btns -recepcionist"> 
+                          <button class="cancel " onclick="popupCancelAppointment(${idAppointment}, '${appointment.name}')">Cancelar</button> 
+                      </div>
+                      </div>
+                  `;
+              } else {
+                  adress = "Telemedicina";
+                  appointmentData = `
+                      <div class="content" id="content-appointment"> 
+                      <div class="data"> 
+                          <ul> Data: `+ date + "/" + month + "  -  " +  "Hora: " +  hour + ":" + minutes +` </ul>
+                          <ul> ${appointment.name} </ul> 
+                          <ul>Dr. ${appointment.doctorName}</ul> 
+                          <ul>${adress}</ul> 
+                      </div> 
+                      <div class="btns"> 
+                        <a href="${appointment.meetingLink}" class="start-link" onclick="link aqui">Iniciar</a>
+                        <button class="cancel " onclick="popupCancelAppointment(${idAppointment}, '${appointment.name}')">Cancelar</button> 
+                      </div>
+                      </div>
+                  `;
+              }
+
+              document.querySelector(".appointments").insertAdjacentHTML("beforeend", appointmentData);
+          });
+      });
+  });
+}
 
 function buildInputsExams() {
   let contentConsultations = document.querySelector(".cl-consultations");

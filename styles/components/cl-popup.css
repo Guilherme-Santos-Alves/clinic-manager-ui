@@ -285,13 +285,13 @@
     caret-color: transparent;
 }
 
-.popup> .popup-content> .popup-btn,
-.popup> .popup-content> .attachments-btn{
+.popup> .popup-content> .popup-btn> .buttons,
+.popup> .popup-content> .attachments-btn .buttons{
     margin-top: 80px;
 }
 
-.popup> .popup-content> .popup-btn> button,
-.popup> .popup-content> .attachments-btn> button{
+.popup> .popup-content> .popup-btn> .buttons >button,
+.popup> .popup-content> .attachments-btn> .buttons >button{
     border-radius: 5px;
     display: block;
     margin: 0 auto;
@@ -306,17 +306,86 @@
     color: var(--cl-color-gray-lighter);
 }
 
+.popup> .popup-content> .popup-btn> .buttons >a{
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--cl-font-family-base);
+    color: var(--cl-color-gray-lighter);
+    background-color: var(--cl-color-primary);
+}
+
 .popup> .popup-content> .popup-btn> .enter,
 .medical-prescription{
     background-color: var(--cl-color-primary);
 }
 
-.popup> .popup-content> .popup-btn> .attachment,
+.popup> .popup-content> .popup-btn> .buttons > .attachment,
 .certificate{
     background-color: var(--cl-color-gray-light);
 }
 
-.popup> .popup-content> .popup-btn> .finish,
+.popup> .popup-content> .popup-btn> .buttons > .finish,
 .exam-request-btn{
     background-color: var(--cl-color-primary-dark);
+}
+
+.popup> .popup-content> .inative-patient> h1,
+.popup> .popup-content> .inative-doctor> h1,
+.popup> .popup-content> .cancel-appointment> h1{
+    justify-content: center;
+    display: flex;
+    color: var(--cl-color-primary-dark);
+    margin-top: 20px;
+}
+
+.popup> .popup-content> .inative-patient> h4,
+.popup> .popup-content> .inative-doctor> h4,
+.popup> .popup-content> .cancel-appointment> h4{
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+    color: var(--cl-color-primary-dark);
+}
+
+.popup> .popup-content> .inative-patient> .inative-btns,
+.popup> .popup-content> .inative-doctor> .inative-btns,
+.popup> .popup-content> .cancel-appointment> .inative-btns{
+    justify-content: center;
+    display: grid;
+    margin-top: 30px;
+}
+
+.popup> .popup-content> .inative-patient> .inative-btns> button,
+.popup> .popup-content> .inative-doctor> .inative-btns> button,
+.popup> .popup-content> .cancel-appointment> .inative-btns> button{
+    display: block;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--cl-font-family-base);
+    color: var(--cl-color-gray-lighter);
+    background-color: var(--cl-color-primary);
+}
+
+.popup> .popup-content> .inative-patient> .inative-btns> .cancel,
+.popup> .popup-content> .inative-doctor> .inative-btns> .cancel,
+.popup> .popup-content> .cancel-appointment> .inative-btns> .cancel{
+    background-color: var(--cl-color-gray-light);
 }

@@ -49,6 +49,9 @@
     <script src="../js/show-toast.js"></script>
     <script src="../js/doctor-consult.js"></script>
     <script src="../js/patient-consult.js"></script>
+    <script src="../js/inative-user.js"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../js/appointments.js"></script>
 
 <body>
     <nav class="cl-sidebar">
@@ -101,7 +104,13 @@
                     <a href="register.html">Cadastrar Paciente</a>
                     <a onclick="buildSearchPatient()">Consultar Paciente</a>
                 </div>
-            </li>            
+            </li>
+            <li>
+                <span class="material-symbols-outlined">
+                    event_note
+                </span>
+                <a onclick="buildMyAppointments('patients')">Buscar Agendamentos</a>
+            </li>             
             <li>
                 <span class="material-symbols-outlined">
                     logout
@@ -135,6 +144,40 @@
                 <div class="consult-user">
 
                 </div>
+                <div class="my-appointments">
+
+                </div>
+                <popup class="popup">
+                    <div class="popup-content">
+                        <div class="popup-nav">
+                            <img src="../assets/logos/clinica-logo-reverse.png" alt="">
+                            <button class="close-popup">
+                                <span class="material-symbols-outlined" id="close-popup">
+                                    disabled_by_default
+                                </span>
+                            </button>
+                        </div>
+                        <div class="popup-btn">
+                            
+                        </div>
+                        <div class="attachments-btn">
+                            
+                        </div>
+                        <div class="attachments">
+                            
+                        </div>
+                        <div class="inative-patient">
+
+                        </div>
+
+                        <div class="inative-doctor">
+                            
+                        </div>
+                        <div class="cancel-appointment">
+                            
+                        </div>
+                    </div>
+                </popup>
             </div>
         </div>
     </div>

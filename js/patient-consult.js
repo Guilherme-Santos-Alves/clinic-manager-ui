@@ -5,6 +5,8 @@ function buildSearchPatient() {
     contentConsultations.innerHTML = '';
     let contentExams = document.querySelector(".cl-exams");
     contentExams.innerHTML = '';
+    let contentAppointments = document.querySelector(".my-appointments");
+    contentAppointments.innerHTML = '';
 
     let template = `
     <div class="consult-patient">
@@ -48,7 +50,7 @@ function getPatient() {
                 </div>
                 <div class="edit">
                     <button class="edit-btn" onclick="patientInputs(${patient.cpf})">Editar</button>
-                    <button class="inative-btn">Inativar</button>
+                    <button class="inative-btn" onclick="popupInativePatient(${patient.userId})">Inativar</button>
                 </div>
             </div>
             `;

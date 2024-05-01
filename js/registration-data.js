@@ -1,4 +1,4 @@
-let patientId;
+
 
 function buildMyDataPatient(){
     let registrationData = document.querySelector(".registration-data");

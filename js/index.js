@@ -23,6 +23,7 @@ function login() {
         localStorage.setItem("token", data.token)
         showToast(successMsg);
         localStorage.setItem("document", requestBody.login);
+        localStorage.setItem("roleName", data.role);
         if (data.role === "Receptionist"){
             window.location.href = "admin.html";
         } else if (data.role === "Patient"){

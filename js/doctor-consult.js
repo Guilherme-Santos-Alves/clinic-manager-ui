@@ -5,6 +5,8 @@ function buildSearchDoctor() {
     contentConsultations.innerHTML = '';
     let contentExams = document.querySelector(".cl-exams");
     contentExams.innerHTML = '';
+    let contentAppointments = document.querySelector(".my-appointments");
+    contentAppointments.innerHTML = '';
 
     let template = `
     <div class="consult-doctor">
@@ -70,8 +72,8 @@ function getDoctor() {
                     <ul>CRM: ${doctor.crm}</ul>
                 </div>
                 <div class="edit">
-                    <button class="edit-btn" onclick="doctorInputs(${doctor.cpf})">Editar</button>
-                    <button class="inative-btn">Inativar</button>
+                    <button class="edit-btn" onclick="doctorInputs(${doctor.userId})">Editar</button>
+                    <button class="inative-btn" onclick="popupInativeDoctor(${doctor.userId})">Inativar</button>
                 </div>
             </div>
             `;
@@ -81,7 +83,7 @@ function getDoctor() {
     });
 }
 
-function doctorInputs(doctorDocument){
+function doctorInputs(doctorId){
     let contentConsultations = document.querySelector(".cl-consultations");
     contentConsultations.innerHTML = '';
     let contentExams = document.querySelector(".cl-exams");
@@ -91,7 +93,7 @@ function doctorInputs(doctorDocument){
 
     let template = `
     <h1>Dados Pessoais</h1>
-    <form class="form-box" action="javascript:void(0)" onsubmit="editDataDoctor()">
+    <form class="form-box" action="javascript:void(0)" onsubmit="editDataDoctor(${doctorId})">
         <div class="line">
             <div class="left">
                 <label for="">Nome:</label>
@@ -209,17 +211,14 @@ function doctorInputs(doctorDocument){
         </div>
     </form>
     `;
-
     document.querySelector(".consult-user").insertAdjacentHTML("beforeend", template);
-    getDataDoctor(doctorDocument);
+    getDataDoctor(doctorId);
 }
 
-let doctorId;
 
-function getDataDoctor(doctorDocument) {
+function getDataDoctor(doctorId) {
     const token = localStorage.getItem("token");
-  
-    fetch(`https://localhost:7231/api/doctors/document/${doctorDocument}`, {
+    fetch(`https://localhost:7231/api/doctors/${doctorId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -258,7 +257,7 @@ function getDataDoctor(doctorDocument) {
     });
 }
 
-function editDataDoctor(){
+function editDataDoctor(doctorId){
     const token = localStorage.getItem("token");
 
     let numberHouse = parseInt(document.querySelector("#number").value);

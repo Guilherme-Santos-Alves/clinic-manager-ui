@@ -124,6 +124,22 @@
     cursor: pointer;
 }
 
+.my-appointments > .appointments> .content> .btns> .start-link{
+    display: flex;
+    justify-content: center;
+    background-color: var(--cl-color-primary);
+    color: var(--cl-color-gray-lighter);
+    font-size: 16px;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
 .my-appointments > .appointments> .content> .btns> .cancel{
     display: block;
     background-color: var(--cl-color-gray-light);
@@ -135,4 +151,25 @@
     cursor: pointer;
     font-family: var(--cl-font-family-base);
     font-weight: 500;
+}
+
+.my-appointments > .appointments> .content> .btns.-recepcionist{
+    display: flex;
+    vertical-align: middle;
+    height: auto;
+    width: auto;
+}
+
+.my-appointments > .appointments> .content> .btns.-recepcionist> .cancel{
+    display: block;
+    background-color: var(--cl-color-gray-light);
+    color: var(--cl-color-gray-lighter);
+    font-size: 16px;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--cl-font-family-base);
+    font-weight: 500;
+    margin-top: 50px;
 }
