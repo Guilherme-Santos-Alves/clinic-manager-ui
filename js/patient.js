@@ -1,7 +1,23 @@
-function listDoctorsSelect(){
+function filterDoctor(){
+  let doctorList = document.querySelector("#doctors-list");
+  doctorList.innerHTML = '';
+  let optionDisabled = `<option value="" disabled selected>Selecione um médico</option>`;
+  doctorList.insertAdjacentHTML("beforeend", optionDisabled);
+
+  let specialityValue;
+
+  const specialtyExam = document.querySelector("#specialty-exam");
+  const specialtyConsultation = document.querySelector("#specialty-consultation");
+
+  if (specialtyExam) {
+      specialityValue = specialtyExam.value;
+  } else if (specialtyConsultation) {
+      specialityValue = specialtyConsultation.value;
+  }
+
   const token = localStorage.getItem("token");
 
-  fetch("https://localhost:7231/api/doctors", {
+  fetch(`https://localhost:7231/api/doctors/specialty/${specialityValue}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -11,12 +27,32 @@ function listDoctorsSelect(){
     .then((response) => {
       response.json().then((doctors) => {
           doctors.forEach((doctor) => {
-            let listDoctors = `<option value="${doctor.userId}">${doctor.firstName + " " + doctor.lastName}</option>`
+            let listDoctors = `<option class="option-doctor-list" value="${doctor.userId}">${doctor.firstName + " " + doctor.lastName}</option>`
             document.querySelector("#doctors-list").insertAdjacentHTML("beforeend" , listDoctors);
           });
       });
   });
 }
+
+// function listDoctorsSelect(){
+//   const token = localStorage.getItem("token");
+
+//   fetch("https://localhost:7231/api/doctors", {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Authorization': `Bearer ${token}`
+//     },
+//     })
+//     .then((response) => {
+//       response.json().then((doctors) => {
+//           doctors.forEach((doctor) => {
+//             let listDoctors = `<option value="${doctor.userId}">${doctor.firstName + " " + doctor.lastName}</option>`
+//             document.querySelector("#doctors-list").insertAdjacentHTML("beforeend" , listDoctors);
+//           });
+//       });
+//   });
+// }
 
 let patientId;
 let patientFullName;
@@ -148,9 +184,16 @@ function buildInputsExams() {
           <div class="select-custom -exam-or-consultation" id="select-custom">
               <label class="select-speciality" for="specialty-exam">Selecione a especialidade do exame:</label>
               <select required name="specialty" id="specialty-exam" required>
-                  <option value="" disabled selected>Especialidade</option> 
-                  <option value="Exames de imagem">Exames de imagem</option>
-                  <option value="Cardiologia">Cardiologia</option>
+                <option value="" selected disabled>Especialidade</option>
+                <option value="0">Clínica Médica</option>
+                <option value="1">Cardiologia</option>
+                <option value="2">Neurologia</option>
+                <option value="3">Endocrinologia</option>
+                <option value="4">Ortopedia</option>
+                <option value="5">Dermatologia</option>
+                <option value="6">Oftalmologia</option>
+                <option value="7">Ginecologia</option>
+                <option value="8">Pediatria</option>
               </select>
               <div class="custom-arrow">
                   <span class="material-symbols-outlined">
@@ -187,10 +230,10 @@ function buildInputsExams() {
       </div>
   </form>
   `;
-  
-  listDoctorsSelect();
 
   document.querySelector(".cl-exams").insertAdjacentHTML("beforeend", templateExams);  
+  let doctorSpecialty = document.querySelector("#specialty-exam");
+  doctorSpecialty.addEventListener("change", filterDoctor);
 }
 
 function postExams(){
@@ -246,9 +289,16 @@ function buildInputsConsultations() {
           <div class="select-custom -exam-or-consultation" id="select-custom">
               <label class="select-speciality" for="specialty-consultation">Selecione a especialidade da consulta:</label>
                   <select name="specialty" id="specialty-consultation" required>
-                    <option value="" disabled selected >Especialidade</option> 
-                    <option value="Cardiologia">Cardiologia</option>
-                    <option value="Ortopedia">Ortopedia</option>
+                    <option value="" selected disabled>Especialidade</option>
+                    <option value="0">Clínica Médica</option>
+                    <option value="1">Cardiologia</option>
+                    <option value="2">Neurologia</option>
+                    <option value="3">Endocrinologia</option>
+                    <option value="4">Ortopedia</option>
+                    <option value="5">Dermatologia</option>
+                    <option value="6">Oftalmologia</option>
+                    <option value="7">Ginecologia</option>
+                    <option value="8">Pediatria</option>
                   </select>
               <div class="custom-arrow">
                   <span class="material-symbols-outlined">
@@ -292,9 +342,9 @@ function buildInputsConsultations() {
   </form>
   `;
 
-  listDoctorsSelect();
-
   document.querySelector(".cl-consultations").insertAdjacentHTML("beforeend", templateConsultations);
+  let doctorSpecialty = document.querySelector("#specialty-consultation");
+  doctorSpecialty.addEventListener("change", filterDoctor);
 }
 
 function fetchConsultations(){

@@ -1,6 +1,8 @@
 function buildMyAppointments(){
     let contentConsult = document.querySelector(".consult-user");
-    contentConsult.innerHTML = '';
+    if (contentConsult){
+        contentConsult.innerHTML = '';
+    }
     let contentConsultations = document.querySelector(".cl-consultations");
     contentConsultations.innerHTML = '';
     let contentExams = document.querySelector(".cl-exams");
@@ -48,14 +50,11 @@ function buildMyAppointments(){
         
     </div>
     `;
-    console.log("oi");
     document.querySelector(".my-appointments").insertAdjacentHTML("beforeend", templateAppointments);
 }
 
 function appointmentsRedirect(){
     let roleName = localStorage.getItem("roleName");
-
-    console.log("aq" + roleName);
 
     if (roleName === "Receptionist"){
         appointments();
