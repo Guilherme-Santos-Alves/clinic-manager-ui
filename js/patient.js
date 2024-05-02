@@ -153,7 +153,7 @@ function appointmentsPatient(){
                           <ul>${adress}</ul> 
                       </div> 
                       <div class="btns"> 
-                        <a href="${appointment.meetingLink}" class="start-link" onclick="link aqui">Iniciar</a>
+                        <a href="${appointment.meetingLink}" target="_blank" class="start-link" onclick="link aqui">Iniciar</a>
                         <button class="cancel " onclick="popupCancelAppointment(${idAppointment}, '${appointment.name}')">Cancelar</button> 
                       </div>
                       </div>

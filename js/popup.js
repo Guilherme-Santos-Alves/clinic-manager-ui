@@ -63,7 +63,7 @@ function showPopup(id) {
 
             let templateBtns = `
             <div class="buttons">
-                <a class="enter" id="btn-enter" href="${appointment.meetingLink}">Entrar na Reunião</a>
+                <a class="enter" id="btn-enter" href="${appointment.meetingLink}" target="_blank">Entrar na Reunião</a>
                 <button class="attachment" id="btn-attachment">Gerar Anexo</button>
                 <button class="finish" id="btn-finish" onclick="finishAppointment(${appointment.id})">Finalizar</button>            
             </div>
