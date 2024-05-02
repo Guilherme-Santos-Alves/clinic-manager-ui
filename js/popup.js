@@ -206,7 +206,7 @@ function popupCancelAppointment(id, appointmentName){
     <h1>Cancelar Agendamento?</h1>
     <h4>Você está certo de que deseja cancelar ${appointmentName}?</h4>
     <div class="inative-btns">
-        <button onclick="cancelAppointment(${id})">Cancelar</button>
+        <button onclick="cancelAppointment(${id})">Sim</button>
         <button class="cancel" onclick="closePopupHandler()">Voltar</button>
     </div>
     `;

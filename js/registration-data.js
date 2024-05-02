@@ -39,14 +39,14 @@ function buildMyDataPatient(){
                 <input type="text" id="phone">
             </div>
             <div class="right">
-                <label for="">Altura:</label>
-                <input type="text" id="height">
+                <label for="">Altura (m):</label>
+                <input type="text" id="height" step=".01">
             </div>
         </div>
         <div class="line">
             <div class="left">
-                <label for="">Peso:</label>
-                <input type="text" id="weight">
+                <label for="">Peso (kg):</label>
+                <input type="text" id="weight" step=".01">
             </div>
             <div class="right">
                 <label for="">Tipo Sanguíneo:</label>
@@ -105,7 +105,7 @@ function buildMyDataPatient(){
             </div>
         </div>
         <div class="send-data">
-            <button type="submit">Enviar Dados</button>
+            <button type="submit">Atualizar</button>
         </div>
     </form>
     `;
@@ -281,7 +281,7 @@ function buildMyDataDoctor(){
             </div>
         </div>
         <div class="send-data">
-            <button type="submit">Enviar Dados</button>
+            <button type="submit">Atualizar</button>
         </div>
     </form>
     `;

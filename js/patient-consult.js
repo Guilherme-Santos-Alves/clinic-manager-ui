@@ -163,7 +163,7 @@ function patientInputs(patientDocument){
             </div>
         </div>
         <div class="send-data">
-            <button type="submit">Enviar Dados</button>
+            <button type="submit">Atualizar</button>
         </div>
     </form>
     `;

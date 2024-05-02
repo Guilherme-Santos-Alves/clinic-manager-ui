@@ -226,7 +226,7 @@ function buildInputsExams() {
           <input required class="input" type="time" id="hour">
       </div>
       <div class="cl-button -patient">
-          <button type="submit" class="btn-link" id="btn-link-exam" >Continuar</button>
+          <button type="submit" class="btn-link" id="btn-link-exam" >Agendar</button>
       </div>
   </form>
   `;
@@ -337,7 +337,7 @@ function buildInputsConsultations() {
           <label for="radio-presential-consultations">Presencial</label><input required name="modality" class="radio" type="radio" id="radio-presential-consultations" onchange="checkModality()" required>
       </div>
       <div class="cl-button -patient">
-          <button type="submit" class="btn-link" id="btn-link-consultation" >Continuar</button>
+          <button type="submit" class="btn-link" id="btn-link-consultation" >Agendar</button>
       </div>                     
   </form>
   `;
