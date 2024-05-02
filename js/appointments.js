@@ -12,7 +12,6 @@ function buildMyAppointments(){
 
     let registrationData = document.querySelector(".registration-data");
     if(registrationData){
-
         registrationData.innerHTML = '';
     } 
   

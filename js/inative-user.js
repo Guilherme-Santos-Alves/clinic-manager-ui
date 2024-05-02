@@ -9,7 +9,6 @@ function inativeDoctor(id){
     },
     })
     .then(response => {
-        console.log(response);
         showToast(successMsg);
     })
     .catch(error => {
@@ -19,7 +18,7 @@ function inativeDoctor(id){
 }
 
 function inativePatient(id){
-    fetch(`http://localhost:7231/api/patients/${id}`, {
+    fetch(`https://localhost:7231/api/patients/${id}`, {
     method: 'DELETE',
     headers: {
         'Content-Type': 'application/json',
@@ -27,7 +26,6 @@ function inativePatient(id){
     },
     })
     .then(response => {
-        console.log(response);
         showToast(successMsg);
     })
     .catch(error => {

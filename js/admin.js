@@ -6,6 +6,42 @@ window.onload = function() {
     }
 }
 
+function filterDoctor(){
+  let doctorList = document.querySelector("#doctors-list");
+  doctorList.innerHTML = '';
+  let optionDisabled = `<option value="" disabled selected>Selecione um médico</option>`;
+  doctorList.insertAdjacentHTML("beforeend", optionDisabled);
+
+  let specialityValue;
+
+  const specialtyExam = document.querySelector("#specialty-exam");
+  const specialtyConsultation = document.querySelector("#specialty-consultation");
+
+  if (specialtyExam) {
+      specialityValue = specialtyExam.value;
+  } else if (specialtyConsultation) {
+      specialityValue = specialtyConsultation.value;
+  }
+
+  const token = localStorage.getItem("token");
+
+  fetch(`https://localhost:7231/api/doctors/specialty/${specialityValue}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    })
+    .then((response) => {
+      response.json().then((doctors) => {
+          doctors.forEach((doctor) => {
+            let listDoctors = `<option class="option-doctor-list" value="${doctor.userId}">${doctor.firstName + " " + doctor.lastName}</option>`
+            document.querySelector("#doctors-list").insertAdjacentHTML("beforeend" , listDoctors);
+          });
+      });
+  });
+}
+
 function listDoctorsSelect(){
     const token = localStorage.getItem("token");
   
@@ -68,6 +104,8 @@ function listDoctorsSelect(){
   }}
   
   function buildInputsExams() {
+    let cleanAppointments = document.querySelector(".my-appointments");
+    cleanAppointments.innerHTML = '';
     let contentConsultations = document.querySelector(".cl-consultations");
     contentConsultations.innerHTML = '';
     let contentExams = document.querySelector(".cl-exams");
@@ -128,10 +166,10 @@ function listDoctorsSelect(){
         </div>
     </form>
     `;
-    
-    listDoctorsSelect();
   
     document.querySelector(".cl-exams").insertAdjacentHTML("beforeend", templateExams);  
+    let doctorSpecialty = document.querySelector("#specialty-exam");
+    doctorSpecialty.addEventListener("change", filterDoctor);
   }
   
   function postExams(){
@@ -171,6 +209,8 @@ function listDoctorsSelect(){
   }
   
   function buildInputsConsultations() {
+    let cleanAppointments = document.querySelector(".my-appointments");
+    cleanAppointments.innerHTML = '';
     let contentConsultations = document.querySelector(".cl-consultations");
     contentConsultations.innerHTML = '';
     let contentExams = document.querySelector(".cl-exams");
@@ -237,9 +277,9 @@ function listDoctorsSelect(){
     </form>
     `;
   
-    listDoctorsSelect();
-  
     document.querySelector(".cl-consultations").insertAdjacentHTML("beforeend", templateConsultations);
+    let doctorSpecialty = document.querySelector("#specialty-consultation");
+    doctorSpecialty.addEventListener("change", filterDoctor);
   }
   
   function fetchConsultations(){
