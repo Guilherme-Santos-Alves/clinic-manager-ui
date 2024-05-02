@@ -64,20 +64,24 @@ function getDoctor() {
                 specialty = "Pediatria";
             } 
 
-            let template = `
-            <div class="content">
-                <div class="data">
-                    <ul>${doctor.firstName + " " + doctor.lastName}</ul>
-                    <ul>${specialty}</ul>
-                    <ul>CRM: ${doctor.crm}</ul>
-                </div>
-                <div class="edit">
-                    <button class="edit-btn" onclick="doctorInputs(${doctor.userId})">Editar</button>
-                    <button class="inative-btn" onclick="popupInativeDoctor(${doctor.userId})">Inativar</button>
-                </div>
-            </div>
-            `;
-            document.querySelector(".content-consult").insertAdjacentHTML("beforeend", template);
+            if (doctor.active){
+                let template = `
+                    <div class="content">
+                        <div class="data">
+                            <ul>${doctor.firstName + " " + doctor.lastName}</ul>
+                            <ul>${specialty}</ul>
+                            <ul>CRM: ${doctor.crm}</ul>
+                        </div>
+                        <div class="edit">
+                            <button class="edit-btn" onclick="doctorInputs(${doctor.userId})">Editar</button>
+                            <button class="inative-btn" onclick="popupInativeDoctor(${doctor.userId})">Inativar</button>
+                        </div>
+                    </div>
+                    `;
+                document.querySelector(".content-consult").insertAdjacentHTML("beforeend", template);
+            }
+
+            
         });
 
     });

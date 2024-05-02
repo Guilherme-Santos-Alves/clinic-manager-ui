@@ -10,6 +10,7 @@ function inativeDoctor(id){
     })
     .then(response => {
         showToast(successMsg);
+        getDoctor();
     })
     .catch(error => {
         console.error('Erro:', error);
@@ -27,6 +28,7 @@ function inativePatient(id){
     })
     .then(response => {
         showToast(successMsg);
+        getPatient();
     })
     .catch(error => {
         console.error('Erro:', error);

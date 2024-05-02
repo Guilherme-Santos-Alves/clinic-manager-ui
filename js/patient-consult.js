@@ -42,19 +42,21 @@ function getPatient() {
     .then(response => response.json())
     .then(patients => {
         patients.forEach(patient => {
-            let template = `
-            <div class="content">
-                <div class="data">
-                    <ul>${patient.firstName + " " + patient.lastName}</ul>
-                    <ul>CPF: ${patient.cpf}</ul>
-                </div>
-                <div class="edit">
-                    <button class="edit-btn" onclick="patientInputs(${patient.cpf})">Editar</button>
-                    <button class="inative-btn" onclick="popupInativePatient(${patient.userId})">Inativar</button>
-                </div>
-            </div>
-            `;
+            if(patient.active){
+                let template = `
+                    <div class="content">
+                        <div class="data">
+                            <ul>${patient.firstName + " " + patient.lastName}</ul>
+                            <ul>CPF: ${patient.cpf}</ul>
+                        </div>
+                        <div class="edit">
+                            <button class="edit-btn" onclick="patientInputs(${patient.cpf})">Editar</button>
+                            <button class="inative-btn" onclick="popupInativePatient(${patient.userId})">Inativar</button>
+                        </div>
+                    </div>
+                    `;
             document.querySelector(".content-consult").insertAdjacentHTML("beforeend", template);
+            }
         });
         console.log(patients);
     });
