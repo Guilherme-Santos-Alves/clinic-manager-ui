@@ -241,7 +241,7 @@ function postExams(){
   let idDoctor = parseInt(document.querySelector("#doctors-list").value);
 
   const jsonDataExams = {
-    patientId: 2,
+    patientId: patientId,
     doctorId: idDoctor,
     name: document.querySelector("#exam-name").value,
     patientName: `${patientFullName}`,
@@ -352,9 +352,9 @@ function fetchConsultations(){
   let idDoctor = parseInt(document.querySelector("#doctors-list").value);
 
   const jsonDataConsultations = {
-    patientId: 2,
+    patientId: patientId,
     doctorId: idDoctor,
-    name: document.querySelector("#specialty-consultation").value,
+    name: "Consulta",
     patientName: `${patientFullName}`,
     doctorName: document.querySelector("#doctors-list option:checked").text,
     startDate: document.querySelector("#date").value + "T" + document.querySelector("#hour").value,

@@ -27,6 +27,7 @@ function listDoctorsSelect(){
   }
   
   let patientFullName;
+  let recepcionistId;
   
   window.onload = function() {
     const token = localStorage.getItem("token");
@@ -50,7 +51,7 @@ function listDoctorsSelect(){
         document.querySelector(".name").insertAdjacentHTML("beforeend" , showName);
         patientFullName = `${patient.firstName + " " + patient.lastName}`;
         localStorage.setItem("patientName", patientFullName);
-        let patientId = patient.userId;
+        recepcionistId = patient.userId;
         localStorage.setItem("patientId", patientId);
       });
     });
@@ -81,9 +82,16 @@ function listDoctorsSelect(){
             <div class="select-custom -exam-or-consultation" id="select-custom">
                 <label class="select-speciality" for="specialty-exam">Selecione a especialidade do exame:</label>
                 <select required name="specialty" id="specialty-exam" required>
-                    <option value="" disabled selected>Especialidade</option> 
-                    <option value="Exames de imagem">Exames de imagem</option>
-                    <option value="Cardiologia">Cardiologia</option>
+                  <option value="" selected disabled>Especialidade</option>
+                  <option value="0">Clínica Médica</option>
+                  <option value="1">Cardiologia</option>
+                  <option value="2">Neurologia</option>
+                  <option value="3">Endocrinologia</option>
+                  <option value="4">Ortopedia</option>
+                  <option value="5">Dermatologia</option>
+                  <option value="6">Oftalmologia</option>
+                  <option value="7">Ginecologia</option>
+                  <option value="8">Pediatria</option>
                 </select>
                 <div class="custom-arrow">
                     <span class="material-symbols-outlined">
@@ -131,7 +139,7 @@ function listDoctorsSelect(){
     let idDoctor = parseInt(document.querySelector("#doctors-list").value);
   
     const jsonDataExams = {
-      patientId: 2,
+      patientId: recepcionistId,
       doctorId: idDoctor,
       name: document.querySelector("#exam-name").value,
       patientName: `${patientFullName}`,
@@ -177,8 +185,15 @@ function listDoctorsSelect(){
                 <label class="select-speciality" for="specialty-consultation">Selecione a especialidade da consulta:</label>
                     <select name="specialty" id="specialty-consultation" required>
                       <option value="" disabled selected >Especialidade</option> 
-                      <option value="Cardiologia">Cardiologia</option>
-                      <option value="Ortopedia">Ortopedia</option>
+                      <option value="0">Clínica Médica</option>
+                      <option value="1">Cardiologia</option>
+                      <option value="2">Neurologia</option>
+                      <option value="3">Endocrinologia</option>
+                      <option value="4">Ortopedia</option>
+                      <option value="5">Dermatologia</option>
+                      <option value="6">Oftalmologia</option>
+                      <option value="7">Ginecologia</option>
+                      <option value="8">Pediatria</option>
                     </select>
                 <div class="custom-arrow">
                     <span class="material-symbols-outlined">
@@ -232,9 +247,9 @@ function listDoctorsSelect(){
     let idDoctor = parseInt(document.querySelector("#doctors-list").value);
   
     const jsonDataConsultations = {
-      patientId: 2,
+      patientId: recepcionistId,
       doctorId: idDoctor,
-      name: document.querySelector("#specialty-consultation").value,
+      name: "Consulta",
       patientName: `${patientFullName}`,
       doctorName: document.querySelector("#doctors-list option:checked").text,
       startDate: document.querySelector("#date").value + "T" + document.querySelector("#hour").value,
