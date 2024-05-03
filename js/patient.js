@@ -127,7 +127,9 @@ function appointmentsPatient(){
 
               let adress;
               let appointmentData;
-              if (appointment.modality === 0){
+
+              if (appointment.status === 0 || appointment.status === 1){
+                if (appointment.modality === 0){
                   adress = "Rua Inexistente, 262"
                   appointmentData = `
                       <div class="content" id="content-appointment"> 
@@ -142,6 +144,7 @@ function appointmentsPatient(){
                       </div>
                       </div>
                   `;
+                  document.querySelector(".appointments").insertAdjacentHTML("beforeend", appointmentData);
               } else {
                   adress = "Telemedicina";
                   appointmentData = `
@@ -158,9 +161,9 @@ function appointmentsPatient(){
                       </div>
                       </div>
                   `;
+                  document.querySelector(".appointments").insertAdjacentHTML("beforeend", appointmentData);
               }
-
-              document.querySelector(".appointments").insertAdjacentHTML("beforeend", appointmentData);
+              }
           });
       });
   });

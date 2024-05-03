@@ -26,10 +26,9 @@ function buildMyAppointments(){
             <label for="select-staus">Status:</label>
             <select name="" id="select-staus">
                 <option value="all">Todos</option>
-                <option selected value="pending">Agendado</option>
-                <option value="finished">Efetivado</option>
-                <option value="">Não Realizado</option>
-                <option value="canceled">Cancelado</option>
+                <option selected value="0">Agendado</option>
+                <option value="2">Realizado</option>
+                <option value="3">Cancelado</option>
             </select>
             <div class="custom-arrow">
                 <span class="material-symbols-outlined">
@@ -102,23 +101,24 @@ function appointments(){
                     adress = "Telemedicina";
                 }
                 
-                let hourAndMinutes = `
-                <div class="content" id="content-appointment"> 
-                <div class="data"> 
-                    <ul> Data: `+ date + "/" + month + "  -  " +  "Hora: " +  hour + ":" + minutes +` </ul>
-                    <ul> ${appointment.name} </ul> 
-                    <ul>Dr. ${appointment.doctorName}</ul> 
-                    <ul>Paciente: ${appointment.patientName}</ul> 
-                    <ul>${adress}</ul> 
-                </div> 
-                <div class="btns -recepcionist"> 
-                    <button class="cancel " onclick="popupCancelAppointment(${idAppointment}, '${appointment.name}')">Cancelar</button> 
-                </div>
-                </div>
-                `;
+               if (appointment.status === 0 || appointment.status === 1){
+                    let hourAndMinutes = `
+                    <div class="content" id="content-appointment"> 
+                    <div class="data"> 
+                        <ul> Data: `+ date + "/" + month + "  -  " +  "Hora: " +  hour + ":" + minutes +` </ul>
+                        <ul> ${appointment.name} </ul> 
+                        <ul>Dr. ${appointment.doctorName}</ul> 
+                        <ul>Paciente: ${appointment.patientName}</ul> 
+                        <ul>${adress}</ul> 
+                    </div> 
+                    <div class="btns -recepcionist"> 
+                        <button class="cancel " onclick="popupCancelAppointment(${idAppointment}, '${appointment.name}')">Cancelar</button> 
+                    </div>
+                    </div>
+                    `;
 
-    
                 document.querySelector(".appointments").insertAdjacentHTML("beforeend", hourAndMinutes);
+               }
             });
         });
     });
@@ -128,6 +128,8 @@ function cancelAppointment(idAppointment){
     const token = localStorage.getItem("token");
     console.log(idAppointment);
 
+    let roleName = localStorage.getItem("roleName");
+
     fetch(`https://localhost:7231/api/services/${idAppointment}`, {
     method: 'DELETE',
     headers: {
@@ -136,8 +138,14 @@ function cancelAppointment(idAppointment){
     },
     })
     .then(response => {
-        console.log(response);
         showToast(successMsg);
+        if (roleName === "Patient"){
+            appointmentsPatient();
+        } else if (roleName === "Doctor"){
+            appointmentsDoctor();
+        } else if (roleName === "Receptionist"){
+            appointments();
+        }
     })
     .catch(error => {
         console.error('Erro:', error);
