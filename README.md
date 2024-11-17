@@ -11,9 +11,9 @@ Interface front-end para uma plataforma de gestão de uma clínica médica, com 
 - Emissão de atestados e receitas médicas.
   
 **Tecnologias e padrões utilizados:**
-- HTML5
-- CSS3
 - JavaScript Vanilla
+- CSS3
+- HTML5
 - CSS em cascata
 - Manipulação de APIs para integração com serviços de back-end.
 - Estrutura de pastas padrão ITCSS
