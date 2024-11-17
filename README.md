@@ -13,6 +13,7 @@ Interface front-end para uma plataforma de gestão de uma clínica médica, com 
 **Tecnologias e padrões utilizados:**
 - HTML5
 - CSS3
+- JavaScript Vanilla
 - CSS em cascata
 - Manipulação de APIs para integração com serviços de back-end.
 - Estrutura de pastas padrão ITCSS
